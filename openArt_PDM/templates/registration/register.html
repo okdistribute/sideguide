@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}OpenArt: Registration{% endblock %}
+
+{% block content %}
+    <form action="/accounts/register/" method="post">
+      <legend>Register Yourself with Open Art</legend>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper">
+        <span class="help-block">Username</span>
+        {{ form.username }}
+        {{ form.username.errors }}
+      </div>
+      <div class="fieldWrapper">
+        <span class="help-block">E-mail</span>
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+      <div class="fieldWrapper">
+        <label for="password1">Password</label>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+      </div>
+      <div class="fieldWrapper">
+        <label for="password2">Password confirmation</label>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.accept_terms_and_privacy }}
+        <label>I have read and agreed to OpenArt's <a href="/policies/services/">Terms of Service</a> and <a href="/policies/privacy/">Privacy Policy</a>.
+        {{ form.accept_terms_and_privacy.errors }}
+      <button type="submit" class="btn">Submit</button>
+    </form>
+{% endblock %}

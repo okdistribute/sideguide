@@ -1,0 +1,31 @@
+tests and refactoring
+
+test_register_new_user
+x	all fields are required
+x	email is email, both password fields are text
+x	posts to database (in openArt_db.auth_user collection)
+x	password and password confirmation fields match exactly
+x	ensure new username isn't taken
+x	enforce max length for email (75)
+x	link terms of service and privacy policy
+x	revamp user setup
+	enforce activation of a new user
+	x	create inactive users
+	x	redirect to activation success page
+		send e-mail with activation page 
+
+test_login_system
+x	login existing user
+x	logout users
+x	password change form
+	forgotten password ergo reset
+	
+
+test_user_profile_system
+	acas counts/profile/ exists and is different for each user
+
+new models:
+allow users to tag their own art
+	users own collections (no more institutions)
+
+design page screenshots (by january/end of december)
