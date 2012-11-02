@@ -22,10 +22,4 @@ x	password change form
 	
 
 test_user_profile_system
-	acas counts/profile/ exists and is different for each user
-
-new models:
-allow users to tag their own art
-	users own collections (no more institutions)
-
-design page screenshots (by january/end of december)
+	accounts/profile/ exists and is different for each user
