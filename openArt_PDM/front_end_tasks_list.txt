@@ -1,5 +1,4 @@
 front end
 	render registration template with bootstrap.js
-		INSTALL CRISPY AND FAMILIARIZE SELF WITH CRISPY SYSTEM
 		placeholders in textboxes
 		

@@ -12,20 +12,17 @@ x	revamp user setup
 	enforce activation of a new user
 	x	create inactive users
 	x	redirect to activation success page
-		send e-mail with activation page 
+		x	activate user
+		x	delete activation key upon activation
+			implement expiration date for activation keys
+				check tomorrow at 9PM if activation expires properly
+	x	send e-mail with activation page 
 
 test_login_system
 x	login existing user
 x	logout users
 x	password change form
-	forgotten password ergo reset
-	
+x	forgotten password ergo reset through email
 
 test_user_profile_system
-	acas counts/profile/ exists and is different for each user
-
-new models:
-allow users to tag their own art
-	users own collections (no more institutions)
-
-design page screenshots (by january/end of december)
+	accounts/profile/ exists and is different for each user

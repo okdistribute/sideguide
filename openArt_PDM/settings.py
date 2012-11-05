@@ -21,7 +21,11 @@ DATABASES = {
 }
 
 # ******************** PERSONALLY EDITED SETTINGS **********************
-# empty
+# help patch in django mongodb engine
+SITE_ID = u'508505b21344ed6325ddb8b4'
+# debug backend for e-mails
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/home/minerva/workspace/email_debug'
 
 
 # Local time zone for this installation. Choices can be found here:
@@ -36,8 +40,6 @@ TIME_ZONE = 'America/Los_Angeles'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
-
-SITE_ID = u'508505b21344ed6325ddb8b4'
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -107,7 +109,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'openArt_PDM.urls'
 
 TEMPLATE_DIRS = (
-    "/home/minerva/workspace/openArt_PDM/templates"
+    "/home/minerva/workspace/openart/openArt_PDM/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

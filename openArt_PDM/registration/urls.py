@@ -13,18 +13,20 @@ urlpatterns = patterns('',
 		'post_change_redirect': 'done'}),
 	url(r'^password/change/done/$', auth_views.password_change_done,
 	 	{'template_name': 'registration/password_change_done.html'}),
-
-
-
-
-
 	url(r'^password/reset/$', auth_views.password_reset,
-		{'template_name': 'registration/password_reset.html'}),
+		{'template_name': 'registration/password_reset.html',
+		'from_email': 'staff@openart.com'}),
 	url(r'^password/reset/done/$', auth_views.password_reset_done,
-		{'template_name': 'registration/password_reset_done.html',
-		'email_template_name': 'registration/password_reset_email.html'}),
-    url(r'^register/$', 'registration.views.register'),
+		{'template_name': 'registration/password_reset_done.html'}),
+	url(r'^password/reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+		auth_views.password_reset_confirm,
+		{'post_reset_redirect': '/accounts/password/reset/complete/'}),
+	url(r'^password/reset/complete/$', direct_to_template,
+		{'template': 'registration/password_reset_complete.html'}),
+    url(r'^register/$', 'registration.views.url'),
     url(r'^register/complete/$', direct_to_template, 
     	{'template': 'registration/registration_complete.html'}),  
+    
+
     url(r'^profile/$', 'registration.views.profile'),
 )
