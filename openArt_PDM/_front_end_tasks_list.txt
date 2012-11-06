@@ -1,0 +1,22 @@
+front end
+	use general django template management system?
+	use basecamp error notification
+	register.html
+		functionality
+			redirect to login page
+		subjective prettifying
+			use placeholders instead of labels
+			centering?
+		divorce from form template
+		x	remove form.inputs
+			remove form.error.output
+			div class fieldwrapper?
+	login.html
+		functionality
+			remember me
+		divorce from form template
+			remove form.inputs
+			remove form.error.output
+	password_change_form.html
+	password_reset.html
+	all forms should keep what was previously filled in in the case of an error

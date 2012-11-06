@@ -1,5 +1,3 @@
-tests and refactoring
-
 test_register_new_user
 x	all fields are required
 x	email is email, both password fields are text
@@ -9,14 +7,15 @@ x	ensure new username isn't taken
 x	enforce max length for email (75)
 x	link terms of service and privacy policy
 x	revamp user setup
-	enforce activation of a new user
+x	enforce activation of a new user
 	x	create inactive users
 	x	redirect to activation success page
 		x	activate user
 		x	delete activation key upon activation
-			implement expiration date for activation keys
-				check tomorrow at 9PM if activation expires properly
+		x	implement expiration date for activation keys
+			x	check tomorrow at 9PM if activation expires properly
 	x	send e-mail with activation page 
+		set up cleaning system for expired activation keys
 
 test_login_system
 x	login existing user

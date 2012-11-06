@@ -1,4 +1,0 @@
-front end
-	render registration template with bootstrap.js
-		placeholders in textboxes
-		

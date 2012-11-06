@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 		{'post_reset_redirect': '/accounts/password/reset/complete/'}),
 	url(r'^password/reset/complete/$', direct_to_template,
 		{'template': 'registration/password_reset_complete.html'}),
-    url(r'^register/$', 'registration.views.url'),
+    url(r'^register/$', 'registration.views.register'),
     url(r'^register/complete/$', direct_to_template, 
     	{'template': 'registration/registration_complete.html'}),  
     
