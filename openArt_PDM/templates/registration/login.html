@@ -1,41 +1,63 @@
-{% extends "base.html" %}
-{% load url from future %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenArt: Login</title>
+    <!-- CSS Stylesheets -->  
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 20px auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+    </style>
+  </head>
+  <body>
 
-{% block title %}OpenArt: Login{% endblock %}
-
-{% block content %}
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-
-<form class="form-horizontal" method="post" action="/accounts/login/">
+<div class="container">
+<form class="form-signin" method="post" action="/accounts/login/">
 {% csrf_token %}
-<div id="loginbox" class="row-fluid">
-<div class="span6 offset1">
-<legend>Welcome to OpenArt</legend>
-<div class="control-group">
-	<label class="control-label" for="id_username">Username</label>
-	<div class="controls">
-		<input id="id_username" name="username" maxlength="30" type="text">
-	</div>
-</div>
-<div class="control-group">
-	<label class="control-label" for="id_password">Password</label>
-	<div class="controls">
-		<input id="id_password" name="password" type="password">
-	</div>
-</div>
-<div class="control-group">
-	<div class="controls">
-		<label class="checkbox">
-			<input type="checkbox">Remember me
-		</label>
-		<button type="submit" class="btn">Login</button>
-	</div>
-</div>
-<p>Not a member? <b><a href="/accounts/register/">Sign up</a></b>.
-</p>
-</div>
-</div>
+<h3 class="form-signin-heading">Welcome to Open Art!</h3>
+{{ form.non_field_errors }}
+<div id="alert_box"></div>
+<input id="id_username" class="input-block-level" name="username" maxlength="30" type="text" placeholder="Username">
+{{ form.username.errors }}
+<input id="id_password" class="input-block-level" name="password" type="password" placeholder="Password">
+{{ form.password.errors }}
+<label class="checkbox">
+<input type="checkbox">Remember me
+</label>
+<button id="submit_btn" type="submit" class="btn btn-primary">Login</button>
+<p><br>Not a member? <b><a href="/accounts/register/">Sign up</a></b>.</p>
 </form>
-{% endblock %}
+</div>
+
+  <!-- JavaScript Sources -->
+  <script src="/static/js/jquery-1.8.3.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

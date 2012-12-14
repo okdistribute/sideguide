@@ -26,7 +26,7 @@ SITE_ID = u'508505b21344ed6325ddb8b4'
 # debug backend for e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = '/home/minerva/workspace/email_debug'
-
+AUTH_PROFILE_MODULE = 'registration.UserProfile'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

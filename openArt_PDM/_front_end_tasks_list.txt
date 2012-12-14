@@ -1,9 +1,9 @@
 front end
-	use general django template management system?
-	use basecamp error notification
 	register.html
+	x	sticky footer
 		functionality
 			redirect to login page
+			change to <textarea> for pre-filled input
 		subjective prettifying
 			use placeholders instead of labels
 			centering?
@@ -12,10 +12,11 @@ front end
 			remove form.error.output
 			div class fieldwrapper?
 	login.html
+	x	sticky footer
 		functionality
 			remember me
 		divorce from form template
-			remove form.inputs
+		x	remove form.inputs
 			remove form.error.output
 	password_change_form.html
 	password_reset.html

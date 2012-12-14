@@ -16,12 +16,17 @@ x	enforce activation of a new user
 			x	check tomorrow at 9PM if activation expires properly
 	x	send e-mail with activation page 
 		set up cleaning system for expired activation keys
-
-test_login_system
+			delete bad addresses associated with expired users
+x	add address as embedded property to each user
+	x	center user's personal address on map
+			switch to JSON or use escapejs to prevent script injection of address
+		profile page shows nearby museums on maps to address
+			populate markers for each museum
+			show museum name in pop-up on click
+		google maps needs API key (?? doesn't appear where documentation states)
+	
+-X-test_login_system
 x	login existing user
 x	logout users
 x	password change form
 x	forgotten password ergo reset through email
-
-test_user_profile_system
-	accounts/profile/ exists and is different for each user

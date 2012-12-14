@@ -4,8 +4,10 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import login, authenticate, forms
 from django.contrib.auth.decorators import login_required
+from django.template import Context, Template
+from django.utils import simplejson
 
-from registration.models import RegistrationForm, ActivationProfile
+from registration.models import RegistrationForm, ActivationProfile, Address
 
 def register(request, 
 	template_name='registration/register.html',
@@ -24,7 +26,10 @@ def register(request,
 
 @login_required
 def profile(request):
-	return render_to_response('registration/login_successful.html')
+	address = request.user.get_profile().address
+	return render_to_response('registration/profile.html', 
+		{ 'address' : address },
+		context_instance=RequestContext(request))
 
 def activate(request, activation_key,
 	template_name='registration/activate.html'):
