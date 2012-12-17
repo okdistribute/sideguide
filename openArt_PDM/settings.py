@@ -27,7 +27,8 @@ DATABASES = {
 
 # ******************** PERSONALLY EDITED SETTINGS **********************
 # help patch in django mongodb engine
-SITE_ID = u'508505b21344ed6325ddb8b4'
+#SITE_ID = u'508505b21344ed6325ddb8b4'
+SITE_ID = u'50ceb53b4384d8b7ecf715ad'
 # debug backend for e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(OPENART_DIR, 'email_debug')
@@ -127,10 +128,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_mongodb_engine',
     'registration',
-    # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'djangotoolbox',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
 ]
 
 # A sample logging configuration. The only tangible logging
