@@ -1,0 +1,4 @@
+setenv OPENART_DIR /home/YOURUSERNAME/workspace/openart/openart_PDM
+
+python openart_PDM/manage.py runserver 
+
