@@ -1,4 +1,5 @@
 # Django settings for openArt project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -25,7 +26,7 @@ DATABASES = {
 SITE_ID = u'508505b21344ed6325ddb8b4'
 # debug backend for e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = '/home/minerva/workspace/email_debug'
+EMAIL_FILE_PATH = os.path.join(OPENART_DIR, 'email_debug')
 AUTH_PROFILE_MODULE = 'registration.UserProfile'
 
 # Local time zone for this installation. Choices can be found here:
@@ -75,7 +76,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    "/home/minerva/workspace/openart/openArt_PDM/static",
+    os.path.join(OPENART_DIR, "static")
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -110,13 +111,13 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'openArt_PDM.urls'
 
 TEMPLATE_DIRS = (
-    "/home/minerva/workspace/openart/openArt_PDM/templates"
+    os.path.join(OPENART_DIR, "templates")
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -129,7 +130,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-)
+]
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
