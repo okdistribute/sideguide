@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from djangotoolbox.fields import EmbeddedModelField
+from djangotoolbox.fields import ListField, EmbeddedModelField
 
 class Collection(models.Model):
     name = models.CharField(max_length=45)
@@ -9,8 +9,8 @@ class Collection(models.Model):
     featured = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True) 
-    user = models.EmbeddedModelField('User')
-    tags = models.ListField(models.EmbeddedModelField('Tag'))
+    user = EmbeddedModelField('User')
+    tags = ListField(EmbeddedModelField('Tag'))
 
 class Item(models.Model):
     name = models.CharField(max_length=45)
@@ -20,8 +20,8 @@ class Item(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True) 
     collection_id = models.IntegerField() 
-    coperanda = models.ListField(models.EmbeddedModelField('Item'))
-    tags = models.ListField(models.EmbeddedModelField('Tag'))
+    coperanda = ListField(EmbeddedModelField('Item'))
+    tags = ListField(EmbeddedModelField('Tag'))
 
 class Tag(models.Model):
     text = models.CharField(unique=True, max_length=24)
