@@ -8,8 +8,9 @@ OPENART_DIR = os.getenv("OPENART_DIR", "/home/apps/openart/openart_PDM")
 
 
 ADMINS = (
-    ('Rosalie Tolentino', 'rosatolen@gmail.com'),
-    ('Karissa McKelvey', 'krmckelv@gmail.com')
+    ('Karissa McKelvey', 'krmckelv@gmail.com'),
+    ('Serge Chernetsky', 'serg9008@gmail.com'),
+    ('Rosalie Tolentino', 'rosatolen@gmail.com')
 )
 
 MANAGERS = ADMINS
@@ -127,10 +128,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mongodb_engine',
-    'registration',
     'djangotoolbox',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    ### openart apps 
+    'registration',
+    'browse',
 ]
 
 # A sample logging configuration. The only tangible logging
