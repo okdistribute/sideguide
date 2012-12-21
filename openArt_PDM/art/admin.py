@@ -1,4 +1,4 @@
-from browse.models import *
+from art.models import *
 from django.contrib import admin
 
 admin.site.register(Collection)
