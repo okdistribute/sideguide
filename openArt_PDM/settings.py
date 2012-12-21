@@ -29,7 +29,8 @@ DATABASES = {
 # ******************** PERSONALLY EDITED SETTINGS **********************
 # help patch in django mongodb engine
 #SITE_ID = u'508505b21344ed6325ddb8b4'
-SITE_ID = u'50ceb53b4384d8b7ecf715ad'
+SITE_ID = u'50d3c6114384d8d5f67d67a1'
+
 # debug backend for e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(OPENART_DIR, 'email_debug')
@@ -131,9 +132,12 @@ INSTALLED_APPS = [
     'djangotoolbox',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'django_extensions',
     ### openart apps 
     'registration',
     'browse',
+    'art',
+    'common'
 ]
 
 # A sample logging configuration. The only tangible logging
