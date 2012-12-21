@@ -1,23 +1,23 @@
 front end
-	register.html
-	x	sticky footer
-		functionality
-			redirect to login page
-			change to <textarea> for pre-filled input
-		subjective prettifying
-			use placeholders instead of labels
-			centering?
-		divorce from form template
-		x	remove form.inputs
-			remove form.error.output
-			div class fieldwrapper?
-	login.html
-	x	sticky footer
-		functionality
-			remember me
-		divorce from form template
-		x	remove form.inputs
-			remove form.error.output
-	password_change_form.html
-	password_reset.html
-	all forms should keep what was previously filled in in the case of an error
+    register.html
+    x    sticky footer
+        functionality
+            redirect to login page
+            change to <textarea> for pre-filled input
+        subjective prettifying
+            use placeholders instead of labels
+            centering?
+        divorce from form template
+        x    remove form.inputs
+            remove form.error.output
+            div class fieldwrapper?
+    login.html
+    x    sticky footer
+        functionality
+            remember me
+        divorce from form template
+        x    remove form.inputs
+            remove form.error.output
+    password_change_form.html
+    password_reset.html
+    all forms should keep what was previously filled in in the case of an error
