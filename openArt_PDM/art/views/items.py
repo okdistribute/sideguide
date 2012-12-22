@@ -9,22 +9,14 @@ import datetime
 
 def getItems(request):
     response_status = 200
-    coll_id = request.GET.get('collection_id')
     user_id = request.GET.get('user_id')
-    lat = request.GET.get('lat')
-    lon = request.GET.get('lon')
     featured = request.GET.get('featured')
     name = request.GET.get('name')
     created_at_str = request.GET.get('created_at')
-    if coll_id or user_id or (lat and lon) or featured or name or created_at_str:
+    if user_id or featured or name or created_at_str:
         qset = Q()
-        if coll_id:
-            qset &= Q(collection__id__exact=coll_id)
         if user_id:
             qset &= Q(user__id__exact=user_id)
-        if lat:
-            qset &= Q(lat__exact=lat)
-            qset &= Q(lon__exact=lon)
         if featured:
             qset &= Q(featured__iexact=featured)
         if name:
@@ -34,15 +26,11 @@ def getItems(request):
             qset &= Q(created_at__year=created_at.year)
             qset &= Q(created_at__month=created_at.month)
             qset &= Q(created_at__day=created_at.day)
-        items = Item.objects.filter(qset).select_related()
+        items = Item.objects.filter(qset)
         response = []
         for item in items:
             itemJson = {
                 'id'             : item.id,
-                'collection_id'  : item.collection.id,
-                'lat'            : item.lat,
-                'lon'            : item.lon,
-                'user_id'        : item.user.id,
                 'featured'       : item.featured,
                 'name'           : item.name,
                 'caption'        : item.caption,
@@ -50,14 +38,6 @@ def getItems(request):
                 'created_at'   : str(item.created_at)
                 }
             qset = Q(item__id=item.id)
-            itemTags = Item_Tag.objects.filter(qset).select_related()
-            tagsJson = []
-            for itemTag in itemTags:
-                tagsJson.append({
-                        'tag_id' : itemTag.tag.id,
-                        'text'   : itemTag.tag.text
-                        })
-            itemJson['tags'] = tagsJson
             response.append(itemJson)
     else:
         response = {
@@ -79,10 +59,7 @@ def getItem(request):
             item = items[0]
             itemJson = {
                 'id'             : item.id,
-                'collection_id'  : item.collection.id,
-                'lat'            : item.lat,
-                'lon'            : item.lon,
-                'user_id'        : item.user.id,
+                'user'           : str(item.user),
                 'featured'       : item.featured,
                 'name'           : item.name,
                 'caption'        : item.caption,
@@ -90,14 +67,6 @@ def getItem(request):
                 'created_at'     : str(item.created_at)
                 }
             qset = Q(item__id=item.id)
-            itemTags = Item_Tag.objects.filter(qset).select_related()
-            tagsJson = []
-            for itemTag in itemTags:
-                tagsJson.append({
-                        'tag_id' : itemTag.tag.id,
-                        'text'   : itemTag.tag.text
-                        })
-            itemJson['tags'] = tagsJson
             response = itemJson
     else:
         response = {
