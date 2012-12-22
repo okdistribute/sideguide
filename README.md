@@ -11,15 +11,15 @@ Activate the virtualenv
 </pre></code>
 
 Install requirements
-<code><pre>$ pip install -r requirements.txt
+<code><pre>(oadev) $ pip install -r requirements.txt
 </pre></code>
 
 Starting the Dev Server
 --------------------------
 Set up the script
-<code><pre>$ cp runserver.sh.template runserver.sh</pre></code>
+<code><pre>(oadev) $ cp runserver.sh.template runserver.sh</pre></code>
 Change the details of runserver.sh for your own use. 
 (ie, make sure the environment variables point to the right place for you.)
 
 Run the Development Server
-<code><pre>$ chmod +x runserver.sh <br>$ ./runserver.sh</pre></code>
+<code><pre>(oadev) $ chmod +x runserver.sh <br>(oadev) $ ./runserver.sh</pre></code>
