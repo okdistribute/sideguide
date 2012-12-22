@@ -15,13 +15,14 @@ class RegistrationForm(UserCreationForm):
         label='Email')
     street1 = forms.CharField(max_length=75)
     street2 = forms.CharField(
-        max_length=75,
-        required=False)
+                max_length=75,
+                required=False)
     city = forms.CharField(max_length=75)
     state = forms.CharField(max_length=2)
     zipCode = forms.IntegerField()
     accept_terms_and_privacy = forms.BooleanField(
-        error_messages={'required': 'Please read and agree to the Terms of Service and Privacy Policy.'})
+            error_messages={'required': 'Please read and agree to the Terms of Service and Privacy Policy.'})
+
     def save(self):
         new_user = ActivationProfile.create_inactive_user(
             username=self.cleaned_data['username'],
