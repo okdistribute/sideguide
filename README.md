@@ -7,7 +7,7 @@ Requires:
 Prereq
 -----------------------
 Activate the virtualenv
-<code><pre>$ virtualenv oadev <br> $ source oadev/bin/activate
+<code><pre>$ virtualenv oadev <br>$ source oadev/bin/activate
 </pre></code>
 
 Install requirements
