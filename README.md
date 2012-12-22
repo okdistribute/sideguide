@@ -20,10 +20,10 @@ Make sure mongodb is running locally (and drop existing tables if needed)
 <code><pre>$ mongo <br>$ mongo openArt\_db --eval "db.dropDatabase()"</pre></code>
 
 Create the tables
-<code><pre>$ python manage.py syncdb</pre></code>
+<code><pre>(oadev) $ python manage.py syncdb</pre></code>
 
 Load test data
-<code><pre>$ python manage.py runscript populate\_db</pre></code>
+<code><pre>(oadev) $ python manage.py runscript populate\_db</pre></code>
 
 Start the Dev Server
 --------------------------
