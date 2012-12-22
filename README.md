@@ -4,7 +4,7 @@ Requires:
 * mongodb
 
 
-Prereq
+Prerequisites
 -----------------------
 Activate the virtualenv
 <code><pre>$ virtualenv oadev <br>$ source oadev/bin/activate
@@ -14,7 +14,18 @@ Install requirements
 <code><pre>(oadev) $ pip install -r requirements.txt
 </pre></code>
 
-Starting the Dev Server
+Setup Database
+---------------------
+Make sure mongodb is running locally 
+<code><pre>$ mongo</pre></code>
+
+Create the tables
+<code><pre>$ python manage.py syncdb</pre></code>
+
+Load test data
+<code><pre>$ python manage.py runscript populate\_db</pre></code>
+
+Start the Dev Server
 --------------------------
 Set up the script
 <code><pre>(oadev) $ cp runserver.sh.template runserver.sh</pre></code>
