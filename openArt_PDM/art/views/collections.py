@@ -27,7 +27,9 @@ def getCollections(request):
             'details' : ''
             }
         response_status = 400
-    return HttpResponse(json.dumps(response), mimetype="application/json", status=response_status)
+    return HttpResponse(json.dumps(response), 
+                        mimetype="application/json", 
+                        status=response_status)
 
 def getCollection(request):
     response_status = 200
@@ -46,4 +48,6 @@ def getCollection(request):
             'details' : ''
             }
         response_status = 400
-    return HttpResponse(json.dumps(response), mimetype="application/json", status=response_status)
+    return HttpResponse(json.dumps(response), 
+                        mimetype="application/json", 
+                        status=response_status)
