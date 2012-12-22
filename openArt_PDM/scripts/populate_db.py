@@ -80,6 +80,50 @@ def run():
         hl.items.append(servant)
         servant.save()
 
+    try:
+        item = Item.objects.get(name="Cup")
+    except:
+        item = Item(name="Cup",
+                    user=iuart,
+                    caption=u"""This is surely one of the most masterful of the
+                    elaborately carved cups made by the Kuba, a name referring
+                    to a number of different but related groups living between
+                    the Kasai and Sankuru river""",
+                    description=u'''This is surely one of the most masterful of
+                    the elaborately carved cups made by the Kuba, a name
+                    referring to a number of different but related groups living
+                    between the Kasai and Sankuru rivers, who traditionally
+                    acknowledge the leadership of the same king. Combining
+                    complex and intriguing imagery with a sure sense of form and
+                    proportion, the carver displays facility in creating the
+                    surface texture and patterning for which Kuba art is known:
+                    cross-hatching and raised and incised motifs contrast
+                    beautifully with smooth and broadly grooved surfaces.
+                     
+                    These cups were traditionally used for drinking palm wine, a
+                    mildly intoxicating beverage fermented from the sap of the
+                    raffia palm tree, which the Kuba flavor with roots during
+                    fermentation. Imbibed by both men and women, palm wine
+                    traditionally plays an important role in Kuba social and
+                    ritual life, and Kuba folklore accounts for its origin.
+                    According to one version, a palm-wine lake was originally
+                    available from which all could draw their fill. One day,
+                    however, a woman polluted it and was then denounced by a
+                    fellow villager. The next day, the lake had disappeared, and
+                    in its place were growing four trees. A pygmy, one of the
+                    original inhabitants of the land in which the Kuba settled,
+                    discovered that one of the trees could be tapped for palm
+                    wine. He shared his knowledge only after becoming so
+                    publicly drunk that he was questioned by the village leader,
+                    who then decreed that palm wine should never be consumed in
+                    solitude, but instead should be enjoyed by people in groups.
+                    ''',
+                    featured=True,
+                    image="77.34.2.jpg")
+
+        hl.items.append(item)
+        item.save()
+
     hl.save()
 
 
