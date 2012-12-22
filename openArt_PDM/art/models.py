@@ -20,6 +20,8 @@ class Item(models.Model):
     last_modified = models.DateTimeField(auto_now=True) 
     collection = ListField(EmbeddedModelField(Collection))
     coperanda = ListField(EmbeddedModelField('Item'))
+    #XXX: change these following from static references to GridFS before going to alpha 
     image = models.CharField(max_length=45)
+    audio = models.CharField(max_length=45)
 
     
