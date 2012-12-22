@@ -10,26 +10,17 @@ import datetime
 def getCollections(request):
     response_status = 200
     coll_id = request.GET.get('id')
-    inst_id = request.GET.get('institution_id')
     name = request.GET.get('name')
-    if coll_id or inst_id or name:
+    if coll_id or name:
         qset = Q()
         if coll_id:
             qset &= Q(id__exact=coll_id)
-        if inst_id:
-            qset &= Q(institution__id__exact=inst_id)
         if name:
             qset &= Q(name__iexact=name) 
-        colls = Collection.objects.filter(qset).select_related('institution')
+        colls = Collection.objects.filter(qset)
         response = []
         for coll in colls:
-            response.append({
-                    'id'             : coll.id,
-                    'institution_id' : coll.institution.id,
-                    'name'           : coll.name,
-                    'caption'        : coll.caption,
-                    'description'    : coll.description
-                    })
+            response.append(coll.json())
     else:
         response = {
             'problem' : 'No parameters specified',
@@ -43,18 +34,12 @@ def getCollection(request):
     coll_id = request.GET.get('id')
     if coll_id:
         qset = Q(id__exact=coll_id)
-        colls = Collection.objects.filter(qset).select_related('institution')
+        colls = Collection.objects.filter(qset)
         if not colls:
             response = []
         else:
             coll = colls[0]
-            response = {
-                'id'             : coll.id,
-                'institution_id' : coll.institution.id,
-                'name'           : coll.name,
-                'caption'        : coll.caption,
-                'description'    : coll.description
-                }
+            response = coll.json()
     else:
         response = {
             'problem' : 'No id specified',

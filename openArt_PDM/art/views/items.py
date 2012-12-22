@@ -29,16 +29,8 @@ def getItems(request):
         items = Item.objects.filter(qset)
         response = []
         for item in items:
-            itemJson = {
-                'id'             : item.id,
-                'featured'       : item.featured,
-                'name'           : item.name,
-                'caption'        : item.caption,
-                'description'    : item.description,
-                'created_at'   : str(item.created_at)
-                }
             qset = Q(item__id=item.id)
-            response.append(itemJson)
+            response.append(item.json())
     else:
         response = {
             'problem' : 'No parameters specified',
@@ -57,17 +49,8 @@ def getItem(request):
             response = []
         else:
             item = items[0]
-            itemJson = {
-                'id'             : item.id,
-                'user'           : str(item.user),
-                'featured'       : item.featured,
-                'name'           : item.name,
-                'caption'        : item.caption,
-                'description'    : item.description,
-                'created_at'     : str(item.created_at)
-                }
             qset = Q(item__id=item.id)
-            response = itemJson
+            response = item.json() 
     else:
         response = {
             'problem' : 'No id specified',
