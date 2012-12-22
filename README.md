@@ -3,7 +3,8 @@ Requires:
 * virtualenv
 * mongodb
 * Django 1.3
-* 
+
+
 Prereq
 -----------------------
 Activate the virtualenv
