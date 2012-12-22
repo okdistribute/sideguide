@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from djangotoolbox.fields import ListField, EmbeddedModelField
+from django.utils import simplejson as json
 
 class Collection(models.Model):
     name = models.CharField(max_length=45)
@@ -10,6 +11,7 @@ class Collection(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True) 
     user = EmbeddedModelField(User)
+    items = ListField(EmbeddedModelField('Item'))
 
 class Item(models.Model):
     name = models.CharField(max_length=45)
@@ -18,8 +20,8 @@ class Item(models.Model):
     featured = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True) 
-    collection = ListField(EmbeddedModelField(Collection))
     coperanda = ListField(EmbeddedModelField('Item'))
+    user = EmbeddedModelField(User)
     #XXX: change these following from static references to GridFS before going to alpha 
     image = models.CharField(max_length=45)
     audio = models.CharField(max_length=45)
