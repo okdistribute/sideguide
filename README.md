@@ -2,15 +2,20 @@ Requires:
 * python2.6
 * virtualenv
 * mongodb
-* django
-
-
-Starting the Dev Server
---------------------------
+* Django 1.3
+* 
+Prereq
+-----------------------
 Activate the virtualenv
 <code><pre>$ source oadev/bin/activate
 </pre></code>
 
+Install requirements
+<code><pre>$ pip install -r requirements.txt
+</pre></code>
+
+Starting the Dev Server
+--------------------------
 Set up the script
 <code><pre>$ cp runserver.sh.template runserver.sh</pre></code>
 Change the details of runserver.sh for your own use. 
