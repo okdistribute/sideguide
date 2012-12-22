@@ -16,8 +16,8 @@ Install requirements
 
 Setup Database
 ---------------------
-Make sure mongodb is running locally 
-<code><pre>$ mongo</pre></code>
+Make sure mongodb is running locally (and drop existing tables if needed)
+<code><pre>$ mongo <br>$ mongo openArt\_db --eval "db.dropDatabase()"</pre></code>
 
 Create the tables
 <code><pre>$ python manage.py syncdb</pre></code>
