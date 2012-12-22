@@ -1,11 +1,11 @@
 from django.db.models import Q
 from django.http import HttpResponse
-from django.utils import simplejson as json
 from django.core import serializers
-import datetime
-from django.utils.dateparse import parse_datetime
 from django.shortcuts import render_to_response
 from art.models import Collection
+from django.utils import simplejson as json
+from dateutil.parser import parse as parse_datetime
+import datetime
 
 def getCollections(request):
     response_status = 200

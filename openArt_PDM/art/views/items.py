@@ -2,10 +2,9 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.utils import simplejson as json
 from django.core import serializers
-import datetime
-from django.utils.dateparse import parse_datetime
 from django.shortcuts import render_to_response
 from art.models import Item
+from dateutil.parser import parse as parse_datetime
 import datetime
 
 def getItems(request):
@@ -16,8 +15,8 @@ def getItems(request):
     lon = request.GET.get('lon')
     featured = request.GET.get('featured')
     name = request.GET.get('name')
-    created_date_str = request.GET.get('created_date')
-    if coll_id or user_id or (lat and lon) or featured or name or created_date_str:
+    created_at_str = request.GET.get('created_at')
+    if coll_id or user_id or (lat and lon) or featured or name or created_at_str:
         qset = Q()
         if coll_id:
             qset &= Q(collection__id__exact=coll_id)
@@ -30,11 +29,11 @@ def getItems(request):
             qset &= Q(featured__iexact=featured)
         if name:
             qset &= Q(name__icontains=name)
-        if created_date_str:
-            created_date = parse_datetime(created_date_str)
-            qset &= Q(created_date__year=created_date.year)
-            qset &= Q(created_date__month=created_date.month)
-            qset &= Q(created_date__day=created_date.day)
+        if created_at_str:
+            created_at = parse_datetime(created_at_str)
+            qset &= Q(created_at__year=created_at.year)
+            qset &= Q(created_at__month=created_at.month)
+            qset &= Q(created_at__day=created_at.day)
         items = Item.objects.filter(qset).select_related()
         response = []
         for item in items:
@@ -48,7 +47,7 @@ def getItems(request):
                 'name'           : item.name,
                 'caption'        : item.caption,
                 'description'    : item.description,
-                'created_date'   : str(item.created_date)
+                'created_at'   : str(item.created_at)
                 }
             qset = Q(item__id=item.id)
             itemTags = Item_Tag.objects.filter(qset).select_related()
@@ -88,7 +87,7 @@ def getItem(request):
                 'name'           : item.name,
                 'caption'        : item.caption,
                 'description'    : item.description,
-                'created_date'   : str(item.created_date)
+                'created_at'     : str(item.created_at)
                 }
             qset = Q(item__id=item.id)
             itemTags = Item_Tag.objects.filter(qset).select_related()
