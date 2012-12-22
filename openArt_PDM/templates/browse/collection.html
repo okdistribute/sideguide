@@ -1,4 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>collection page</h1>
+    {% for item in items %}
+        {{item.name}}<br>
+    {% endfor %}
 {% endblock %}
