@@ -2,13 +2,12 @@ Requires:
 * python2.6
 * virtualenv
 * mongodb
-* Django 1.3
 
 
 Prereq
 -----------------------
 Activate the virtualenv
-<code><pre>$ source oadev/bin/activate
+<code><pre>$ virtualenv oadev <br> $ source oadev/bin/activate
 </pre></code>
 
 Install requirements
