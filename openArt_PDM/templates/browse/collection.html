@@ -2,6 +2,6 @@
 {% block content %}
 <h1>collection page</h1>
     {% for item in items %}
-        {{item.name}}<br>
+    <a href="/m/{{user.username}}/{{coll.id}}/{{item.id}}">{{item.name}}</a><br>
     {% endfor %}
 {% endblock %}

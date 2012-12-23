@@ -4,6 +4,6 @@
 <h1>user's collection page</h1>
 
     {% for c in colls %}
-        {{c.name}}<br>
+    <a href="/m/{{user.username}}/{{c.id}}">{{c.name}}</a><br>
     {% endfor %}
 {% endblock %}
