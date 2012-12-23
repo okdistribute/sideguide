@@ -28,12 +28,12 @@ def run():
                    Indiana University Art Museum. These pieces are on display every day
                    unless they are borrowed for collections at other institutions.""",
                    featured=True,
-                   user=iuart)
+                   username=iuart.username)
     try:
         studio = Item.objects.get(name="The Studio")
     except:
         studio = Item(name="The Studio",
-                    user=iuart,
+                   username=iuart.username,
                     caption=u"""June 1934. One of the first major paintings acquired by
                     Henry Radford Hope in 1944 from the New York gallery of Paul
                     Rosenberg""",
@@ -69,7 +69,7 @@ def run():
         servant = Item.objects.get(name="Servant Figure")
     except:
         servant = Item(name="Servant Figure",
-                    user=iuart,
+                   username=iuart.username,
                     caption=u"""Old Kingdom, Dynasty 5, 2565-2420 BC. This statuette of a youthful servant is rare for several reasons: it departs from the frontal treatment characteristic of Egyptian sculpture; its execution is extraordinary delicate and refined; the state of preservation of its painted colors is exceptional; and the vivid expressiveness of the figure's face is remarkable, as well.""",
                     description=u'''Despite the fact that the man's arms and lower legs are lost, he clearly is shown in movement. His body leans forward and his knees are slightly bent, with the left one positioned forward. His arms would have reached forth, carrying most of the body's momentum. His stance indicates engagement in an activity, probably as a beer maker, bending over to strain mash with his hands through a sieve into a waist-high vat. 
 
@@ -84,7 +84,7 @@ def run():
         item = Item.objects.get(name="Cup")
     except:
         item = Item(name="Cup",
-                    user=iuart,
+                    username=iuart.username,
                     caption=u"""This is surely one of the most masterful of the
                     elaborately carved cups made by the Kuba, a name referring
                     to a number of different but related groups living between
