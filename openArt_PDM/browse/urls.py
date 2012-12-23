@@ -3,7 +3,10 @@ from django.views.generic.simple import direct_to_template
 from django.contrib.auth import views as auth_views
 
 urlpatterns = patterns('',
-    url(r'^(?P<username>\w+)$', 'browse.views.user'),
-    url(r'^(?P<username>\w+)/(?P<collection>\w+)$', 'browse.views.collection'),
-    url(r'^(?P<username>\w+)/(?P<collection>\w+)/(?P<item>\w+)$', 'browse.views.item')
+    url(r'^(?P<username>\w+)$', 'browse.views.view',
+        {"template_name": "browse/user.html"}),
+    url(r'^(?P<username>\w+)/(?P<coll_id>\w+)$', 'browse.views.view',
+        {"template_name": "browse/collection.html"}),
+    url(r'^(?P<username>\w+)/(?P<coll_id>\w+)/(?P<item_id>\w+)$','browse.views.view', 
+        {"template_name": "browse/item.html"}),
 )

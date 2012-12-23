@@ -10,25 +10,23 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from art.models import Item, Collection
 
-def user(request, username):
-    """Shows all collections for a given user."""
+def view(request, username=None, coll_id=None, item_id=None, 
+        template_name="browse/user.html"):
+    """main method for mobile browse view"""
     c = {}
-    user = User.objects.get(username__iexact=username)
-    c["user"] = user
+    if not username:
+        return HttpResponseRedirect("/")
 
-    q = Q(user__iexact=username)
-    colls = Collection.objects.filter(q)
-    print colls
-    c["colls"] = colls 
+    if username:
+        c["user"] = User.objects.get(username__iexact=username)
+        c["colls"] = Collection.objects.filter(username__iexact=username)
+    if coll_id:
+        coll = Collection.objects.get(id=coll_id)
+        c["coll"] = coll
+        c["items"] = [i.json() for i in coll.items]
+        print c["items"]
+    if item_id:
+        c["item"] = Item.objects.get(id=item_id)
 
-    return render_to_response('browse/user.html', c)
 
-def collection(request, username, collection):
-    c = {}
-    collection = Collection.objects.get(user__username__iexact=username)
-    return render_to_response('browse/collection.html', c)
-
-
-def item(request, username, collection, item):
-    c = {}
-    return render_to_response('browse/item.html', c)
+    return render_to_response(template_name, c)
