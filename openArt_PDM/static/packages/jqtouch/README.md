@@ -1,5 +1,5 @@
-jQTouch
-=======
+jQTouch (v1.0-b4-rc)
+===================
 
 Create powerful mobile apps with just HTML, CSS, and Zepto.js (or jQuery).
 --------------------------------------------------------------------------
