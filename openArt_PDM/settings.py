@@ -135,7 +135,7 @@ INSTALLED_APPS = [
     'django_extensions',
     ### openart apps 
     'registration',
-    'browse',
+    'mobile',
     'art',
     'common'
 ]
