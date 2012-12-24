@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% block title %}
+{{user.username}}
+{% endblock %}
 
 {% block content %}
-<h1>user's collection page</h1>
 
+<ul class="individual">
     {% for c in colls %}
-    <a href="/m/{{user.username}}/{{c.id}}">{{c.name}}</a><br>
+    <li>
+    <a href="/m/{{user.username}}/{{c.id}}"> {{c.name}}</a>
+     </li>
     {% endfor %}
+</ul>
 {% endblock %}
