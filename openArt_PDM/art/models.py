@@ -12,6 +12,7 @@ class Collection(models.Model):
     last_modified = models.DateTimeField(auto_now=True) 
     username = models.CharField(max_length=255)
     items = ListField(EmbeddedModelField('Item'))
+    image = models.CharField(max_length=45)
 
     def json(self):
         return {
@@ -24,6 +25,7 @@ class Collection(models.Model):
                 'last_modified'  : str(self.last_modified),
                 'username'       : str(self.username),
                 'items'          : [i.json() for i in self.items],
+                'image'          : self.image,
                 }
 
 class Item(models.Model):
