@@ -7,8 +7,13 @@
         <ul class="edgetoedge scroll">
             {% for c in colls %}
             <li>
-            <a href="/m/ajax/{{user.username}}/{{c.id}}">{{c.name}}</a>
-             </li>
+            <a href="/m/ajax/{{user.username}}/{{c.id}}">
+                <img src="/static/img/{{c.image}}"
+                class="mobile-scroll-image"/>
+            <div class="coll-name">
+                <h2>{{c.name}}<h2>
+            </div>
+            </li>
             {% endfor %}
         </ul>
     </div>

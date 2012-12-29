@@ -8,7 +8,8 @@
             {% for item in items %}
             <li>
             <a href="/m/ajax/{{user.username}}/{{coll.id}}/{{item.id}}">
-                <img src="/static/img/{{item.image}}" width=200/></a>
+                <img src="/static/img/{{item.image}}" 
+                     class="mobile-scroll-image"></a>
              </li>
             {% endfor %}
         </ul>
