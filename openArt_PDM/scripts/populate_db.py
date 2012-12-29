@@ -28,7 +28,8 @@ def run():
                    Indiana University Art Museum. These pieces are on display every day
                    unless they are borrowed for collections at other institutions.""",
                    featured=True,
-                   username=iuart.username)
+                   username=iuart.username,
+                   image="69.55.jpg")
     try:
         studio = Item.objects.get(name="The Studio")
     except:
@@ -124,6 +125,19 @@ def run():
         hl.items.append(item)
         item.save()
 
+    try:
+        sp = Collection.objects.get(name="South Pacific")
+    except:
+        sp = Collection(name="South Pacific", 
+                   caption="From the South Pacific",
+                   description=u"""This collection contains items 
+                   attributed to artists in the south pacific""",
+                   featured=False,
+                   username=iuart.username,
+                   image="81.32.4.jpg")
+
+
     hl.save()
+    sp.save()
 
 
