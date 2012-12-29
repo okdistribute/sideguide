@@ -1,0 +1,16 @@
+<div id="collection">
+    <div class="toolbar">
+        <h1>{{coll.name}}</h1>
+        <a href="#" class="back">Back</a>
+    </div>
+    <div>
+        <ul class="edgetoedge scroll">
+            {% for item in items %}
+            <li>
+            <a href="/m/ajax/{{user.username}}/{{coll.id}}/{{item.id}}">
+                <img src="/static/img/{{item.image}}" width=200/></a>
+             </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
