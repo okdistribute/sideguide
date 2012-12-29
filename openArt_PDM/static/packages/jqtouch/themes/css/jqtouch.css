@@ -1,4 +1,4 @@
-/**
+ /**
  * Background noise recipe
  * 
  * This recipe use a sass function to generate a .png file
@@ -1391,6 +1391,9 @@ body {
   -webkit-transform: rotate(45deg) translate3d(0.2px, 0, 0);
   transform: rotate(45deg) translate3d(0.2px, 0, 0);
   -webkit-transform-origin: 0 0;
+  -moz-transform: rotate(45deg) translate3d(0.2px, 0, 0);
+  -moz-transform-origin: 0 0;
+  z-index : -99;
   transform-origin: 0 0;
   background-image: none;
   background-color: #0a0a0a;

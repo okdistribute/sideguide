@@ -1,3 +1,7 @@
 <div class="toolbar">
-  <h1>{{title}}</h1>
+  <h1>{{title|default:"OpenArt"}}</h1>
+  {% block buttons %}
+  <a href="#" class="button slideup">Back</a>
+  <a class="button slideup" id="menuButton" href="#menu">Menu</a>
+  {% endblock %}
 </div>
