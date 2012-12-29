@@ -25,5 +25,6 @@ urlpatterns = patterns('',
      url(r'^admin/', include(admin.site.urls)),
 
      url(r'^art/', include('art.urls')),
+     url(r'^browse/', include('browse.urls')),
      url(r'^m/', include('mobile.urls')),
 )
