@@ -28,13 +28,12 @@
   <body>
     <div id="jqt" class="supports3d portrait">
         <div id="home">
-            <div class="toolbar">
-                <h1>{% block title %}OpenArt{% endblock %}</h1>
-            </div>
+	  {% block toolbar %} {% include "mobile/toolbar.html" with title="OpenArt" %} {% endblock %}
             <div> 
-                {% block content %}{% endblock %}
+                {% block home_content %}{% endblock %}
             </div>
         </div>
+	{% block content %}{% endblock %}
     </div>
   </body>
 </html>
