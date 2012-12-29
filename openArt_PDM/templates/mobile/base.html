@@ -9,6 +9,8 @@
         charset="utf-8"></script>
     <style type="text/css" media="screen">@import
         "/static/packages/jqtouch/themes/css/jqtouch.css";</style>
+    <style type="text/css" media="screen">@import
+        "/static/css/main.css";</style>
     <script>
      var jQT = new $.jQTouch({
                     icon: 'jqtouch.png',
@@ -42,7 +44,7 @@
                 {% block home_content %}{% endblock %}
             </div>
         </div>
-        {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
     </div>
   </body>
 </html>
