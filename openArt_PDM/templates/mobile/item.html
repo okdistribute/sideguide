@@ -1,11 +1,21 @@
 <div id="item">
+    <script type="text/javascript">
+        $(function() {
+            $("#toolbox").removeClass("hidden");
+            $("#audio .sm2_button").attr("href","/static/audio/item_demo.mp3");
+        });
+    </script>
     <div class="toolbar">
         <h1>{{item.name}}</h1>
         <a href="#" class="back">Back</a>
     </div>
-    <img src="/static/img/{{item.image}}"
-         class="mobile-scroll-image"></img>
-    <div class="description scroll">
+    <div class="static">
+        <img src="/static/img/{{item.image}}"
+             class="mobile-scroll-image static"></img>
+    </div>
+    <div class="description">
         {{item.description}}
+    </div>
+    <div class="footer">
     </div>
 </div>

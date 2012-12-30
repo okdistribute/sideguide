@@ -42,4 +42,42 @@
    text-transform:uppercase;
 }
 
+#toolbox {
+    background-color: white;
+    opacity:.6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 10%;
+}
 
+#audio {
+    height:100%;
+    width:33%;
+}
+
+a.sm2_button, 
+a.sm2_button:hover { 
+    background-color: pink;
+    background-size: 100% 100%;
+    width:100% !important;
+    height:100% !important;
+    background-image: url("/static/img/icons/play.png") !important;
+}
+a.sm2_button.sm2_playing, 
+a.sm2_playing:hover {
+    background-image: url("/static/img/icons/pause.png") !important;
+ -moz-transform:rotate(0deg) !important;
+ -webkit-transform:rotate(0deg) !important;
+ -ms-transform:rotate(0deg) !important;
+}
+
+a.sm2_button.sm2_paused, 
+a.sm2_button.sm2_paused:hover {
+    background-image: url("/static/img/icons/play.png") !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
