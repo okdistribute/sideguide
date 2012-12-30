@@ -1,7 +1,7 @@
 #toolbox {
     background-color: white;
     opacity:.6;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     width: 30%;
