@@ -1,0 +1,51 @@
+#toolbox {
+    background-color: white;
+    opacity:.6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 10%;
+    border-radius:6px;
+}
+
+
+.toolbox-item {
+    position: relative;
+    height:100%;
+    width:33%;
+    float: left;
+}
+
+.toolbox-item a {
+    background-color: none !important;
+    background-size: 100% 100%;
+    width:100% !important;
+    height:100% !important;
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-indent: -9999px;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 6px;
+    -webkit-transition-property: hover;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition-property: background-color;
+    -o-transition-duration: 0.15s;
+}
+
+#audio a {
+    background-image: url("/static/img/icons/play.png"); 
+}
+
+#where-at a {
+    background-image: url("/static/img/icons/location.png") !important;
+}
+
+#love-it a {
+    background-image: url("/static/img/icons/heart.png") !important;
+}
+
