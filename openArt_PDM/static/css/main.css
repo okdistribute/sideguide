@@ -22,14 +22,20 @@
 }
 
 .description {
+    margin-top: 300px;
+}
 
+.static {
+    position:fixed;
 }
 
 .mobile-scroll-image {
     height: 300px;
+    width: 100%;
 }
 
 .coll-name {
+
 }
 
 .coll-name h2 {
