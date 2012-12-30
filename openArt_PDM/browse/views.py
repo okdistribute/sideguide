@@ -24,9 +24,7 @@ def view(request, username=None, coll_id=None, item_id=None,
         coll = Collection.objects.get(id=coll_id)
         c["coll"] = coll
         c["items"] = [i.json() for i in coll.items]
-        print c["items"]
     if item_id:
         c["item"] = Item.objects.get(id=item_id)
-
 
     return render_to_response(template_name, c)
