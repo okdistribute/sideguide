@@ -23,8 +23,26 @@
   font-weight: bold;
 }
 
-.description {
+.item-image {
+    background-color: white;
 }
+
+.item-text {
+    background-color: white;
+    line-height: 1.4;
+    padding: .5em;
+}
+
+.item-text h3 {
+    line-height: 2;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.item-text hr {
+    margin: 10px 0px 10px 0px;
+}
+
 
 .static {
     position:fixed;
