@@ -1,0 +1,21 @@
+<div id="collection">
+    <div class="toolbar">
+        <h1>{{coll.name}}</h1>
+        <a href="#" class="back">Back</a>
+        <a href="/m/ajax/{{user.username}}/{{coll.id}}?view=list" 
+            class="button flipleft"
+            id="mapButton"><img src="/static/img/icons/list.png"
+            height="30px"></img></a>
+    </div>
+    <div>
+        <img src="/static/img/map.jpg"
+             class="mobile-scroll-image" />
+    </div>
+    <div>
+        {% for item in items %}
+        <a href="/m/ajax/{{user.username}}/{{coll.id}}/{{item.id}}">
+            <img src="/static/img/{{item.image}}" 
+                 height="100px"></a>
+        {% endfor %}
+    </div>
+</div>

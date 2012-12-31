@@ -13,6 +13,9 @@ from art.models import Item, Collection
 def view(request, username=None, coll_id=None, item_id=None, 
         template_name="browse/user.html"):
     """main method for mobile browse view"""
+    if coll_id and request.GET.get("view") == "map":
+        template_name = "mobile/collection_map.html"
+
     c = {}
     if not username:
         return HttpResponseRedirect("/")
