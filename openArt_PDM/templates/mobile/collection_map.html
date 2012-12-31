@@ -1,7 +1,8 @@
 <div id="collection_map">
     <div class="toolbar">
         <h1>{{coll.name}}</h1>
-        <a href="#" class="back">Back</a>
+        <a href="/m/ajax/{{user.username}}"
+            class="slideright leftButton button">{{user.username}}</a>
         <a href="/m/ajax/{{user.username}}/{{coll.id}}?view=list" 
             class="button flipleft"
             id="mapButton"><img src="/static/img/icons/list.png"
