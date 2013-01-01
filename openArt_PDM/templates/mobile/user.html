@@ -9,11 +9,16 @@
             {% for c in colls %}
             <li>
             <a href="/m/ajax/{{user.username}}/{{c.id}}">
-                <img src="/static/img/{{c.image}}"
+            <div>
+                <div style="background: black url('/static/img/{{c.image}}')
+                    no-repeat top;"
                 class="mobile-scroll-image"/>
-            <div class="coll-name">
-                <h2>{{c.name}}<h2>
+                    <div class="coll-name">
+                        <h2>{{c.name}}</h2>
+                    </div>
+                </div>
             </div>
+            </a>
             </li>
             {% endfor %}
         </ul>

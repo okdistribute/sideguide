@@ -54,14 +54,23 @@
 }
 
 .coll-name {
-
+    background-color:black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .coll-name h2 {
-   text-transform:uppercase;
+   text-transform: uppercase;
+   text-align: center;
+   font-size: 35px !important;
+   margin: 0px !important;
 }
 
 .hidden {
     visibility: hidden;
 }
 
+.icon {
+    height: 30px;
+}
