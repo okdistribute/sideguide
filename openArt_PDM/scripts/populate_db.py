@@ -17,7 +17,7 @@ def run():
             zipCode="47404",
             send_email=False
         )
-        iuart.is_active = True
+    iuart.is_active = True
 
     try:
         hl = Collection.objects.get(name="Highlight")
@@ -61,7 +61,8 @@ def run():
                     model in this process. 
                     ''',
                     featured=True,
-                    image="69.55.jpg")
+                    image="69.55.jpg",
+                    x=30,y=30)
         hl.items.append(studio)
         studio.save()
 
@@ -76,7 +77,8 @@ def run():
 
     While the figure is generic, the sculptor rendered the face with unusual sensitivity. We notice the wide cheeks and full lips, rimmed with a ridge, and the extended cosmetic line at the eyes' outer corner (an innovation of the Old Kingdom artistic canon). The eyes look ahead, into the distance, with a gaze that was supposed to go beyond this mortal world. Such a gaze was usual in sculptures of this genre, but this figure's eyes glimmer with an alertness that, together with the hint of a smile on the lips, subtly distinguishes his countenance from the run-of-mill type. The general conventions observed in our statuette became established in the art of the Fifth Dynasty of ancient Egypt; but, in this case, we may also speak of an individual sculptor's remarkable artistry. For, of all known servant figures of the period, this one is certainly among the finest.''',
                     featured=True,
-                    image="77.77.jpg")
+                    image="77.77.jpg",
+                    x=50,y=45)
 
         hl.items.append(servant)
         servant.save()
@@ -120,7 +122,8 @@ def run():
                     solitude, but instead should be enjoyed by people in groups.
                     ''',
                     featured=True,
-                    image="77.34.2.jpg")
+                    image="77.34.2.jpg",
+                    x=70,y=15)
 
         hl.items.append(item)
         item.save()
