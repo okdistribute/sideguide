@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 250px;
+    width: 150px;
     height: 75px;
     border-radius:6px;
 }
@@ -13,7 +13,7 @@
 .toolbox-item {
     position: relative;
     height:100%;
-    width:33%;
+    width:50%;
     float: left;
 }
 
