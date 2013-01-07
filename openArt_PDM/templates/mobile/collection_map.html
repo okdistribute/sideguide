@@ -1,4 +1,31 @@
-<div id="collection_map">
+<div id="collection_map_{{coll.id}}">
+    <script type="text/javascript">
+        function toggle_map_selection(clickable) {
+            $(clickable).live("click", function(e) {
+                var item_id = $(this).data("itemid");
+                
+                if($("#thumb_" + item_id).hasClass("map_thumb_selected")) {
+                    var loc = "\/m/ajax/{{user.username}}/{{coll.id}}/" + item_id;
+                    //jQT.showPageByHref(loc);
+                }
+
+                //deselect previously selected items
+                $(".map_thumb").each(function() {
+                    $(this).removeClass("map_thumb_selected");
+                });
+
+                $(".marker").each(function() {
+                    $(this).removeClass("marker_selected");
+                });
+
+                //select item
+                $("#marker_" + item_id).addClass("marker_selected");
+                $("#thumb_" + item_id).addClass("map_thumb_selected");
+            });
+        }
+        toggle_map_selection(".marker");
+        toggle_map_selection(".map_thumb");
+    </script>
     <div class="toolbar">
         <h1>{{coll.name}}</h1>
         <a href="/m/ajax/{{user.username}}"
@@ -9,14 +36,23 @@
             height="30px"></img></a>
     </div>
     <div>
-        <img src="/static/img/map.jpg"
-             class="mobile-scroll-image" />
+    <div style="background: black url('/static/img/map.jpg')
+                    no-repeat top;"
+                class="map">
+        {% for item in items %}
+        <img src="/static/img/icons/location.png"
+             id="marker_{{item.id}}"
+             data-itemid="{{item.id}}"
+             class="marker" 
+             style="bottom:{{item.y}}%; left:{{item.x}}%;"/>
+        {% endfor %}
     </div>
     <div>
         {% for item in items %}
-        <a href="/m/ajax/{{user.username}}/{{coll.id}}/{{item.id}}">
             <img src="/static/img/{{item.image}}" 
-                 height="100px"></a>
+                 id="thumb_{{item.id}}"
+                 data-itemid="{{item.id}}"
+                 class="map_thumb"/>
         {% endfor %}
     </div>
 </div>
