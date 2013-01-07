@@ -1,0 +1,25 @@
+.marker {
+    height: 30px;
+    position: absolute;
+    /* change the following later */
+    cursor: pointer;
+}
+
+.marker_selected {
+    height: 50px;
+}
+
+.map {
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+.map_thumb {
+    height: 100px;
+    cursor: pointer;
+}
+
+.map_thumb_selected {
+    border: 3px solid yellow;
+}
