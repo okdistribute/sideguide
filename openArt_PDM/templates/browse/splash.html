@@ -32,15 +32,16 @@
                 pause: 'none'
             });
 
-            $('#mainCarousel').click(function() {
-                $('#mainCarousel').replaceWith($('#youtubeplayer').show());
+            $('#splashbox').click(function() {
+                $('#splashbox').replaceWith($('#youtubeplayer').show());
             });
         });
     </script>
     </head>
   <body>
-    <div class="container">
-        <div id="mainCarousel" class="splashbox carousel slide">
+    <div id="splashbox" class="container splashbox">
+            <img src="/static/img/icons/large-play.jpg" class="splashplay transparent" />
+        <div id="mainCarousel" class="carousel slide">
             <div class="carousel-inner">
                 <div class="active item">
                     <img src="/static/img/vortex.jpg" />
