@@ -1,0 +1,15 @@
+#mainCarousel .item img{
+    height: 360px;
+    width: 640px;
+}
+
+.splashbox {
+    height: 360px;
+    width: 640px;
+    margin: auto;
+
+}
+
+.hidden {
+    display: none;
+}

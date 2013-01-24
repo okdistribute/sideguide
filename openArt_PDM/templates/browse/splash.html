@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta content="Sideguide - Rediscover your world" property="og:title">
+<meta content="Sideguide helps people, organizations, and destinations tell the world's story. Discover and rediscover your world!" property="og:description">
+<meta content="" property="og:image">
+<meta content="http://www.mysideguide.com/" property="og:url">
+<meta content="website" property="og:type">
+<meta content="Sideguide" property="og:site_name">
+<meta content="" property="fb:app_id">
+<meta content="summary" name="twitter:card">
+<meta content="@Sideguide" name="twitter:site">
+<meta content="http://www.mysideguide.com/" name="twitter:url">
+<meta content="Sideguide - Rediscover your world" name="twitter:title">
+<meta content="Sideguide helps people, organizations, and destinations tell the world's story. Discover and rediscover your world!" property="twitter:description">
+<meta content="" name="twitter:image">
+<meta content="" name="google-site-verification">
+<meta content="" name="google-site-verification">
+<meta content="" name="norton-safeweb-site-verification">
+<meta content="" name="msapplication-TileImage">
+<meta content="#ffffff" name="msapplication-TileColor">
+    <title>sideGUIDE</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/css/splash.css" rel="stylesheet" media="screen">
+    <script
+        src="/static/js/jquery-1.8.3.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.carousel').carousel({
+                interval: 3000,
+                pause: 'none'
+            });
+
+            $('#mainCarousel').click(function() {
+                $('#mainCarousel').replaceWith($('#youtubeplayer').show());
+            });
+        });
+    </script>
+    </head>
+  <body>
+    <div class="container">
+        <div id="mainCarousel" class="splashbox carousel slide">
+            <div class="carousel-inner">
+                <div class="active item">
+                    <img src="/static/img/vortex.jpg" />
+                </div>
+                <div class="item">
+                    <img src="/static/img/toweroflondon.jpg" />
+                </div>
+                <div class="item">
+                    <img src="/static/img/sftothearts.jpg" />
+                </div>
+                <div class="item">
+                    <img src="/static/img/bonaroo.jpeg" />
+                </div>
+                <div class="item">
+                    <img src="/static/img/armstrong.jpg" />
+                </div>
+              </div>
+              <!-- Carousel nav 
+              <a class="carousel-control left" href="#mainCarousel" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#mainCarousel" data-slide="next">&rsaquo;</a>
+                !-->
+            </div>
+        </div>
+
+    </div>
+    <div id="youtubeplayer" class="splashbox hidden">
+        <iframe width="640" height="360"
+            src="http://www.youtube.com/embed/ATyl-Vube9o?autoplay=1" 
+            frameborder="0"></iframe>
+    </div>
+    <div class="container marketing">
+        <div class="row">
+                <div class="span4">
+                  <img class="img-circle" data-src="holder.js/140x140">
+                  <h2>Heading</h2>
+                  <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                  <p><a class="btn" href="#">View details »</a></p>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <img class="img-circle" data-src="holder.js/140x140">
+                  <h2>Heading</h2>
+                  <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                  <p><a class="btn" href="#">View details »</a></p>
+                </div><!-- /.span4 -->
+                <div class="span4">
+                  <img class="img-circle" data-src="holder.js/140x140">
+                  <h2>Heading</h2>
+                  <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                  <p><a class="btn" href="#">View details »</a></p>
+                </div><!-- /.span4 -->
+      </div>
+    </div>
+  </body>
+</html>

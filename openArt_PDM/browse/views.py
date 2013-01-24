@@ -31,3 +31,7 @@ def view(request, username=None, coll_id=None, item_id=None,
         c["item"] = Item.objects.get(id=item_id)
 
     return render_to_response(template_name, c)
+
+def splash(request):
+    c = {}
+    return render_to_response("browse/splash.html", c)

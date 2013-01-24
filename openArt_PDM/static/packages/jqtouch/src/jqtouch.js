@@ -280,7 +280,6 @@
                     }
                 }
             }
-
             if (typeof toPage === 'string') {
                 var nextPage = $(toPage);
 
@@ -725,7 +724,8 @@
             goTo: goTo,
             history: history,
             settings: jQTSettings,
-            submitForm: submitHandler
+            submitForm: submitHandler,
+            showPageByHref: showPageByHref
         };
         return publicObj;
     };
