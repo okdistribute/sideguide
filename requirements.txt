@@ -4,3 +4,4 @@ python-dateutil
 psychopg2
 numpy
 south
+django-tastypie

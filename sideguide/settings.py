@@ -1,27 +1,25 @@
-# Django settings for openArt project.
 import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-OPENART_DIR = os.getenv("OPENART_DIR", "/home/apps/openart/openart_PDM")
+SIDEGUIDE_DIR = os.getenv("SIDEGUIDE_DIR", "/home/apps/sideguide/sideguide")
 
 
 ADMINS = (
     ('Karissa McKelvey', 'krmckelv@gmail.com'),
     ('Serge Chernetsky', 'serg9008@gmail.com'),
-    ('Rosalie Tolentino', 'rosatolen@gmail.com')
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django_mongodb_engine', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'openArt_db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'template_postgis2',                      # Or path to database file if using sqlite3.
+        'USER': 'postgres',                      # Not used with sqlite3.
+        'PASSWORD': 'gl0bem4p',                  # Not used with sqlite3.
+        'HOST': 'getsideguide.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -33,7 +31,7 @@ SITE_ID = u'50d3c6114384d8d5f67d67a1'
 
 # debug backend for e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = os.path.join(OPENART_DIR, 'email_debug')
+EMAIL_FILE_PATH = os.path.join(SIDEGUIDE_DIR, 'email_debug')
 AUTH_PROFILE_MODULE = 'registration.UserProfile'
 
 # Local time zone for this installation. Choices can be found here:
@@ -83,7 +81,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = [
-    os.path.join(OPENART_DIR, "static")
+    os.path.join(SIDEGUIDE_DIR, "static")
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -115,10 +113,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'openArt_PDM.urls'
+ROOT_URLCONF = 'sideguide.urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(OPENART_DIR, "templates")
+    os.path.join(SIDEGUIDE_DIR, "templates")
 )
 
 INSTALLED_APPS = [
@@ -128,17 +126,15 @@ INSTALLED_APPS = [
     #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_mongodb_engine',
-    'djangotoolbox',
+    'django.contrib.gis',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_extensions',
-    ### openart apps 
     'registration',
     'browse',
     'mobile',
-    'art',
-    'common'
+    'common',
+    'south'
 ]
 
 # A sample logging configuration. The only tangible logging
