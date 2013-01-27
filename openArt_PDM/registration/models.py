@@ -7,7 +7,6 @@ from django import forms
 from django.contrib.auth.models import User, UserManager
 from django.contrib.auth.forms import UserCreationForm
 from django.template.loader import render_to_string
-from djangotoolbox.fields import EmbeddedModelField
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
@@ -44,7 +43,7 @@ class Address(models.Model):
     zipCode = models.IntegerField()
     
 class UserProfile(models.Model):
-    address = EmbeddedModelField('Address')
+    address = models.ForeignKey('Address')
     user = models.ForeignKey(User, unique=True)
     easydel = models.CharField(max_length=1)
 
