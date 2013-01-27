@@ -1,5 +1,6 @@
-git+https://github.com/django-nonrel/django-nonrel@master
-git+https://github.com/django-nonrel/djangotoolbox@master
-git+https://github.com/django-nonrel/mongodb-engine@master
+django
 django-extensions
 python-dateutil
+psychopg2
+numpy
+south
