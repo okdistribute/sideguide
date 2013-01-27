@@ -1,5 +1,5 @@
 # Copy this file and change the following line to your path.
-export OPENART_DIR=/home/YOURUSERNAME/workspace/openart/openArt_PDM
+export SIDEGUIDE_DIR=/home/YOURUSERNAME/workspace/sideguide/sideguide
 
-python $OPENART_DIR/manage.py runserver 
+python $SIDEGUIDE_DIR/manage.py runserver 
 
