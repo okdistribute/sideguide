@@ -15,8 +15,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'template_postgis2',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'sideguide',                      # Or path to database file if using sqlite3.
         'USER': 'postgres',                      # Not used with sqlite3.
         'PASSWORD': 'gl0bem4p',                  # Not used with sqlite3.
         'HOST': 'getsideguide.com',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -159,3 +159,4 @@ LOGGING = {
         },
     }
 }
+POSTGIS_VERSION = (1, 5, 0)
