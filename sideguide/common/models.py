@@ -18,7 +18,8 @@ class Collection(models.Model):
     org = models.ForeignKey(Organization)
     created_by = models.ForeignKey(User)
     image = models.CharField(max_length=45)
-    poly = models.PolygonField(null=True)
+
+    poly = models.PolygonField(srid=900913)
     objects = models.GeoManager()
 
 class Stop(models.Model):
@@ -28,18 +29,19 @@ class Stop(models.Model):
     featured = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True) 
-
     coperanda = models.ManyToManyField('self')
     created_by = models.ForeignKey(User)
     number = models.IntegerField(null=True)
-    point = models.PointField(null=True)
     image = models.CharField(max_length=45)
     audio = models.CharField(max_length=45)
-    collection = models.ForeignKey(Collection, null=True)
+    collection = models.ForeignKey(Collection, null=True) 
+
+    point = models.PointField(srid=900913)
     objects = models.GeoManager()
 
 class Tour(models.Model):
     name = models.CharField(max_length=255)
-    points = models.MultiPointField(null=True)
+
+    points = models.MultiPointField(srid=900913) 
     objects = models.GeoManager()
 

@@ -24,6 +24,7 @@ def run():
                featured=True,
                created_by=iuart,
                org=org,
+               poly="POLYGON((0 0, 1 0, 1 1, 0 1, 0 0))",
                image="69.55.jpg")
         
     hl.save()
@@ -57,10 +58,10 @@ def run():
                 model in this process. 
                 ''',
                 featured=True,
-                image="69.55.jpg",
-                x=30,y=30)
+                point="POINT(-23,54)",
+                collection=hl,
+                image="69.55.jpg")
     studio.save()
-    hl.stops.add(studio)
 
 
     servant = Stop(name="Servant Figure",
@@ -70,11 +71,11 @@ def run():
 
 While the figure is generic, the sculptor rendered the face with unusual sensitivity. We notice the wide cheeks and full lips, rimmed with a ridge, and the extended cosmetic line at the eyes' outer corner (an innovation of the Old Kingdom artistic canon). The eyes look ahead, into the distance, with a gaze that was supposed to go beyond this mortal world. Such a gaze was usual in sculptures of this genre, but this figure's eyes glimmer with an alertness that, together with the hint of a smile on the lips, subtly distinguishes his countenance from the run-of-mill type. The general conventions observed in our statuette became established in the art of the Fifth Dynasty of ancient Egypt; but, in this case, we may also speak of an individual sculptor's remarkable artistry. For, of all known servant figures of the period, this one is certainly among the finest.''',
                 featured=True,
-                image="77.77.jpg",
-                x=50,y=45)
+                point="POINT(0,1)",
+                collection=hl,
+                image="77.77.jpg")
 
     servant.save()
-    hl.stops.add(servant)
 
     stops = Stop(name="Cup",
                 created_by=iuart,
@@ -112,11 +113,11 @@ While the figure is generic, the sculptor rendered the face with unusual sensiti
                 solitude, but instead should be enjoyed by people in groups.
                 ''',
                 featured=True,
-                image="77.34.2.jpg",
-                x=70,y=15)
+                point="POINT(1,1)",
+                collection=hl,
+                image="77.34.2.jpg")
 
     stops.save()
-    hl.stops.add(stops)
 
     sp = Collection(name="South Pacific", 
                caption="From the South Pacific",
@@ -124,6 +125,7 @@ While the figure is generic, the sculptor rendered the face with unusual sensiti
                attributed to artists in the south pacific""",
                featured=False,
                created_by=iuart,
+               poly="POLYGON((0 1,3 4,5 2, 1 1))",
                org=org,
                image="81.32.4.jpg")
 
