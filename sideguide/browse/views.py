@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from common.models import *
 
+def view(request):
+    return HttpRequest("hello world")
+
 def splash(request):
     c = {}
     return render_to_response("browse/splash.html", c)
