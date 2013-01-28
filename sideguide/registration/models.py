@@ -12,13 +12,6 @@ class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
         max_length=75,
         label='Email')
-    street1 = forms.CharField(max_length=75)
-    street2 = forms.CharField(
-                max_length=75,
-                required=False)
-    city = forms.CharField(max_length=75)
-    state = forms.CharField(max_length=2)
-    zipCode = forms.IntegerField()
     accept_terms_and_privacy = forms.BooleanField(
             error_messages={'required': 'Please read and agree to the Terms of Service and Privacy Policy.'})
 
@@ -26,29 +19,14 @@ class RegistrationForm(UserCreationForm):
         new_user = ActivationProfile.create_inactive_user(
             username=self.cleaned_data['username'],
             email=self.cleaned_data['email'],
-            password=self.cleaned_data['password1'],
-            street1=self.cleaned_data['street1'],
-            street2=self.cleaned_data['street2'],
-            city=self.cleaned_data['city'],
-            state=self.cleaned_data['state'],
-            zipCode=self.cleaned_data['zipCode']
         )
         return new_user
 
-class Address(models.Model):
-    street1 = models.CharField(max_length=75)
-    street2 = models.CharField(max_length=75)
-    city = models.CharField(max_length=75)
-    state = models.CharField(max_length=2)
-    zipCode = models.IntegerField()
-    
 class UserProfile(models.Model):
-    address = models.ForeignKey('Address')
     user = models.ForeignKey(User, unique=True)
-    easydel = models.CharField(max_length=1)
 
 class ActivationProfile(models.Model):
-    MAX_ACTIVATION_DAYS = 1
+    MAX_ACTIVATION_DAYS = 10
     
     user = models.CharField(max_length=30)
     activation_key = models.CharField(max_length=40)
@@ -57,14 +35,11 @@ class ActivationProfile(models.Model):
         return "Activation information for %s" % self.username
 
     @classmethod
-    def create_inactive_user(cls, username, password, email, street1, street2, city, state, zipCode,
-        send_email=True):
+    def create_inactive_user(cls, username, password, email, send_email=True):
         new_user = User.objects.create_user(username=username, password=password, email=email)
         new_user.is_active = False
         new_user_profile = UserProfile(
-            address=Address(street1=street1, street2=street2, city=city, state=state, zipCode=zipCode),
             user=new_user,
-            easydel='a'
         ).save()
         new_user.save()
 
