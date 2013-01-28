@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import Context, Template
 from django.utils import simplejson
 
-from registration.models import RegistrationForm, ActivationProfile, Address
+from registration.models import RegistrationForm, ActivationProfile 
 
 def register(request, 
     template_name='registration/register.html',
@@ -26,9 +26,7 @@ def register(request,
 
 @login_required
 def profile(request):
-    address = request.user.get_profile().address
     return render_to_response('registration/profile.html', 
-        { 'address' : address },
         context_instance=RequestContext(request))
 
 def activate(request, activation_key,
