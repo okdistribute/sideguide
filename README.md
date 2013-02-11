@@ -14,17 +14,6 @@ Install requirements
 <code><pre>(oadev) $ pip install -r requirements.txt
 </pre></code>
 
-Setup Database
----------------------
-Make sure mongodb is running locally and drop existing tables (if needed)
-<code><pre>$ mongo openArt\_db --eval "db.dropDatabase()"</pre></code>
-
-Create the tables
-<code><pre>(oadev) $ python manage.py syncdb</pre></code>
-
-Load test data
-<code><pre>(oadev) $ python manage.py runscript populate\_db</pre></code>
-
 Start the Dev Server
 --------------------------
 Set up the script
