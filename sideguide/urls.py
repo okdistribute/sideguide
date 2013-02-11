@@ -22,6 +22,8 @@ urlpatterns = patterns('',
      url(r'^admin/', include(admin.site.urls)),
 
      url(r'^m/', include('mobile.urls')),
-     url(r'^$', include('browse.urls')),
-     url(r'^api/', include(v1_api.urls)),
+     url(r'^browse/', include('browse.urls')),
+     url(r'^$', "browse.views.base.splash"),
+
+    url(r'^api/', include(v1_api.urls)),
 )
