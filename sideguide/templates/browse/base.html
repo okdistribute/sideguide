@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OpenArt</title>
-
-    <!-- Javascript -->
-    <script src="/static/js/jquery-1.8.3.min.js"></script>
-
-    <!-- CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet"  media="screen">
-    <script src="/static/js/bootstrap.min.js"></script>
-  
+      <meta content="Sideguide - Rediscover your world" property="og:title">
+      <meta content="Sideguide helps people, organizations, and destinations tell the world's story. Discover and rediscover your world!" property="og:description">
+      <meta content="" property="og:image">
+      <meta content="http://www.mysideguide.com/" property="og:url">
+      <meta content="website" property="og:type">
+      <meta content="Sideguide" property="og:site_name">
+      <meta content="" property="fb:app_id">
+      <meta content="summary" name="twitter:card">
+      <meta content="@Sideguide" name="twitter:site">
+      <meta content="http://www.mysideguide.com/" name="twitter:url">
+      <meta content="Sideguide - Rediscover your world" name="twitter:title">
+      <meta content="Sideguide helps people, organizations, and destinations tell the world's story. Discover and rediscover your world!" property="twitter:description">
+      <meta content="" name="twitter:image">
+      <meta content="" name="google-site-verification">
+      <meta content="" name="google-site-verification">
+      <meta content="" name="norton-safeweb-site-verification">
+      <meta content="" name="msapplication-TileImage">
+      <meta content="#ffffff" name="msapplication-TileColor">
+      <title>Sideguide</title>
+      <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link href="/static/css/splash.css" rel="stylesheet" media="screen">
+      <script
+              src="/static/js/jquery-1.8.3.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container">
         <div id="home">
-            <div class="toolbar">
-                <h1>{% block title %}OpenArt{% endblock %}</h1>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">sideguide</a>
+                    <ul class="nav">
+                        <li class="active"><a href="#">Explore</a></li>
+                        <li><a href="#">Create</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                    <form class="navbar-search pull-left">
+                        <input type="text" class="search-query" placeholder="Find Locations">
+                    </form>
+                    <ul class="nav pull-right">
+                        <li><a href="#">Favorites</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Signout</a></li>
+                    </ul>
+                </div>
             </div>
             <div> 
                 {% block content %}{% endblock %}

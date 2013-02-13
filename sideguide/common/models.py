@@ -19,7 +19,7 @@ class Collection(models.Model):
     created_by = models.ForeignKey(User)
     image = models.CharField(max_length=45)
 
-    poly = models.PolygonField(srid=900913)
+    poly = models.PolygonField()
     objects = models.GeoManager()
 
 class Stop(models.Model):
@@ -36,12 +36,12 @@ class Stop(models.Model):
     audio = models.CharField(max_length=45)
     collection = models.ForeignKey(Collection, null=True) 
 
-    point = models.PointField(srid=900913)
+    point = models.PointField()
     objects = models.GeoManager()
 
 class Tour(models.Model):
     name = models.CharField(max_length=255)
 
-    points = models.MultiPointField(srid=900913) 
+    points = models.MultiPointField()
     objects = models.GeoManager()
 

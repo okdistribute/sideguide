@@ -1,6 +1,7 @@
-from common.models import *
+from sideguide.common.models import *
 from django.contrib.auth.models import User
-from registration.models import ActivationProfile
+from sideguide.registration.models import ActivationProfile
+from django.contrib.gis.geos import GEOSGeometry
 
 def run():
     iuart = ActivationProfile.create_inactive_user(
@@ -16,7 +17,7 @@ def run():
     org.save()
     org.owners.add(iuart)
 
-    hl = Collection(name="Highlight", 
+    hl = Collection(name="Highlight",
                caption="The best of our gallery.",
                description=u"""This destinations features some of the best art from the
                Indiana University Art Museum. These pieces are on display every day
@@ -24,7 +25,7 @@ def run():
                featured=True,
                created_by=iuart,
                org=org,
-               poly="POLYGON((0 0, 1 0, 1 1, 0 1, 0 0))",
+               poly=GEOSGeometry("POLYGON((0 0, 1 0, 1 1, 0 1, 0 0))"),
                image="69.55.jpg")
         
     hl.save()
@@ -58,7 +59,7 @@ def run():
                 model in this process. 
                 ''',
                 featured=True,
-                point="POINT(-23,54)",
+                point=GEOSGeometry("POINT(-23 54)"),
                 collection=hl,
                 image="69.55.jpg")
     studio.save()
@@ -71,7 +72,7 @@ def run():
 
 While the figure is generic, the sculptor rendered the face with unusual sensitivity. We notice the wide cheeks and full lips, rimmed with a ridge, and the extended cosmetic line at the eyes' outer corner (an innovation of the Old Kingdom artistic canon). The eyes look ahead, into the distance, with a gaze that was supposed to go beyond this mortal world. Such a gaze was usual in sculptures of this genre, but this figure's eyes glimmer with an alertness that, together with the hint of a smile on the lips, subtly distinguishes his countenance from the run-of-mill type. The general conventions observed in our statuette became established in the art of the Fifth Dynasty of ancient Egypt; but, in this case, we may also speak of an individual sculptor's remarkable artistry. For, of all known servant figures of the period, this one is certainly among the finest.''',
                 featured=True,
-                point="POINT(0,1)",
+                point=GEOSGeometry("POINT(0 1)"),
                 collection=hl,
                 image="77.77.jpg")
 
@@ -113,19 +114,19 @@ While the figure is generic, the sculptor rendered the face with unusual sensiti
                 solitude, but instead should be enjoyed by people in groups.
                 ''',
                 featured=True,
-                point="POINT(1,1)",
+                point=GEOSGeometry("POINT(1 1)"),
                 collection=hl,
                 image="77.34.2.jpg")
 
     stops.save()
 
-    sp = Collection(name="South Pacific", 
+    sp = Collection(name="South Pacific",
                caption="From the South Pacific",
                description=u"""This destinations contains stopss 
                attributed to artists in the south pacific""",
                featured=False,
                created_by=iuart,
-               poly="POLYGON((0 1,3 4,5 2, 1 1))",
+               poly=GEOSGeometry("POLYGON((0 1,3 4,5 2, 1 1))"),
                org=org,
                image="81.32.4.jpg")
 
