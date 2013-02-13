@@ -4,4 +4,4 @@ python-dateutil
 numpy
 south
 django-tastypie
-psychopg2
+psycopg2
