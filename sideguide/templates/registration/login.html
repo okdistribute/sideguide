@@ -1,52 +1,35 @@
 {% extends "browse/base.html" %}
 {% block content %}
-    <style type="text/css">
-      body {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-      }
-      .form-signin {
-        max-width: 300px;
-        padding: 19px 29px 29px;
-        margin: 20px auto 20px;
-        background-color: #fff;
-        border: 1px solid #e5e5e5;
-        -webkit-border-radius: 5px;
-           -moz-border-radius: 5px;
-                border-radius: 5px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-                box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
-        margin-bottom: 10px;
-      }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 16px;
-        height: auto;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-      }
-    </style>
+<div class="span8 offset2">
+    <form class="form-horizontal" method="post"  action="/accounts/login/">
+        {% csrf_token %}
+        <legend>Login</legend>
+        {{ form.non_field_errors }}
+        <div class="control-group">
+            <label class="control-label" for="id_username">Username</label>
+            <div class="controls">
+                <input id="id_username" class="input" name="username" maxlength="30" type="text" placeholder="Username">
+            </div>
+        </div>
+        {{ form.username.errors }}
+        <div id="alert_box"></div>
+        <div class="control-group">
+            <label class="control-label" for="id_password">Password</label>
+            <div class="controls">
+                <input id="id_password" class="input" name="password" type="password" placeholder="Password">
+            </div>
+        </div>
+        {{ form.password.errors }}
 
-<div class="container">
-<form class="form-signin" method="post" action="/accounts/login/">
-{% csrf_token %}
-<h3 class="form-signin-heading">Login</h3>
-{{ form.non_field_errors }}
-<div id="alert_box"></div>
-<input id="id_username" class="input-block-level" name="username" maxlength="30" type="text" placeholder="Username">
-{{ form.username.errors }}
-<input id="id_password" class="input-block-level" name="password" type="password" placeholder="Password">
-{{ form.password.errors }}
-<label class="checkbox">
-<input type="checkbox">Remember me
-</label>
-<button id="submit_btn" type="submit" class="btn btn-primary">Login</button>
-<p><br>Not a member? <b><a href="/accounts/register/">Sign up</a></b>.</p>
-</form>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"> Remember me
+                </label>
+                <button id="submit_btn" type="submit" class="btn btn-primary">Sign in</button>
+                <p><br>Not a member? <b><a href="/accounts/register/">Sign up</a></b>.</p>
+            </div>
+        </div>
+    </form>
 </div>
 {% endblock %}
