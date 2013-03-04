@@ -22,4 +22,4 @@ Change the details of runserver.sh for your own use.
 (ie, make sure the environment variables point to the right place for you.)
 
 Run the Development Server
-<code><pre>(sandbox) $ chmod +x runserver.sh <br>(oadev) $ ./runserver.sh</pre></code>
+<code><pre>(sandbox) $ chmod +x runserver.sh <br>(sandbox) $ ./runserver.sh</pre></code>
