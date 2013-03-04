@@ -19,7 +19,7 @@ Start the Dev Server
 Set up the script
 <code><pre>(sandbox) $ cp runserver.sh.template runserver.sh</pre></code>
 Change the details of runserver.sh for your own use. 
-(ie, make sure the environment variables point to the right place for you.)
+(ie, make sure the variables point to the right place for you.)
 
 Run the Development Server
 <code><pre>(sandbox) $ chmod +x runserver.sh <br>(sandbox) $ ./runserver.sh</pre></code>
