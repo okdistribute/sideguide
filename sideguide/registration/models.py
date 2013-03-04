@@ -18,6 +18,7 @@ class RegistrationForm(UserCreationForm):
     def save(self):
         new_user = ActivationProfile.create_inactive_user(
             username=self.cleaned_data['username'],
+            password=self.cleaned_data['password1'],
             email=self.cleaned_data['email'],
         )
         return new_user

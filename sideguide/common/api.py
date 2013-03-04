@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from common.models import * 
+from sideguide.common.models import *
 
 class StopsResource(ModelResource):
     class Meta:

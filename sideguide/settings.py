@@ -19,7 +19,7 @@ DATABASES = {
         'NAME': 'sideguide',                      # Or path to database file if using sqlite3.
         'USER': 'postgres',                      # Not used with sqlite3.
         'PASSWORD': 'gl0bem4p',                  # Not used with sqlite3.
-        'HOST': 'getsideguide.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': 'mysideguide.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }

@@ -22,4 +22,4 @@ def autoregister(*app_list):
             except AlreadyRegistered:
                 pass
 
-autoregister('common','registration')
+autoregister('browse', 'common','registration')

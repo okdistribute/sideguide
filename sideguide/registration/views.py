@@ -6,8 +6,7 @@ from django.contrib.auth import login, authenticate, forms
 from django.contrib.auth.decorators import login_required
 from django.template import Context, Template
 from django.utils import simplejson
-
-from registration.models import RegistrationForm, ActivationProfile 
+from sideguide.registration.models import RegistrationForm, ActivationProfile
 
 def register(request, 
     template_name='registration/register.html',
