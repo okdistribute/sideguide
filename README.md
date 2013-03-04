@@ -6,20 +6,20 @@ Requires:
 
 Prerequisites
 -----------------------
-Activate the virtualenv
-<code><pre>$ virtualenv oadev <br>$ source oadev/bin/activate
+Install virtualenv. Use the following command:
+<code><pre>$ virtualenv sandbox <br>$ source sandbox/bin/activate
 </pre></code>
 
 Install requirements
-<code><pre>(oadev) $ pip install -r requirements.txt
+<code><pre>(sandbox) $ pip install -r requirements.txt
 </pre></code>
 
 Start the Dev Server
 --------------------------
 Set up the script
-<code><pre>(oadev) $ cp runserver.sh.template runserver.sh</pre></code>
+<code><pre>(sandbox) $ cp runserver.sh.template runserver.sh</pre></code>
 Change the details of runserver.sh for your own use. 
 (ie, make sure the environment variables point to the right place for you.)
 
 Run the Development Server
-<code><pre>(oadev) $ chmod +x runserver.sh <br>(oadev) $ ./runserver.sh</pre></code>
+<code><pre>(sandbox) $ chmod +x runserver.sh <br>(oadev) $ ./runserver.sh</pre></code>
