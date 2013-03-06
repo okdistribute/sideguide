@@ -56,4 +56,11 @@ body {
     padding-top:20px;
 }
 
+.nav {
+    font-size:24px;
+}
+.nav li {
+    line-height:40px;
+}
+
 
