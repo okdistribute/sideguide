@@ -29,29 +29,28 @@
   <body>
      <div id="wrap" class="container">
         <div class="navbar">
-            <div class="navbar-inner">
                 <a class="brand" href="/">sideguide</a>
                 <ul class="nav">
-                    <li class="active"><a href="/browse">Explore</a></li>
-                    <li><a href="/create">Create</a></li>
+                    <form class="form-search navbar-form pull-left">
+                        <input type="text" class="search-query" placeholder="Search">
+                        <button type="submit" class="btn"> <i class="icon-search"></i></button>
+                    </form>
+                    <li><a href="/browse">Explore</a></li>
+                    <li><a href="/create">Curate</a></li>
                     <li><a href="/help">Help</a></li>
                 </ul>
-                <form class="navbar-search pull-left">
-                    <input type="text" class="search-query" placeholder="Find Locations">
-                </form>
                 <ul class="nav pull-right">
+                    {% if user.is_autenticated %}
                     <li><a href="/favorites">Favorites</a></li>
                     <li><a href="/accounts/profile">Account</a></li>
-                    {% if user.is_autenticated %}
                     <li><a href="/accounts/logout">Signout</a></li>
                     {% else %}
                      <li><a href="/accounts/register/">Sign up</a></li>
                      <li><a href="/accounts/login">Login</a></li>
                     {% endif %}
                 </ul>
-            </div>
         </div>
-        <div id="main" class="container">
+        <div id="main" class="container-fluid">
             {% block content %}{% endblock %}
         </div>
      </div>
