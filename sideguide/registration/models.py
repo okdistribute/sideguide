@@ -51,7 +51,7 @@ class ActivationProfile(models.Model):
         if send_email:
             from django.core.mail import send_mail
             
-            subject = 'Activate Your Account at OpenArt'
+            subject = 'Sideguide: Activate Your Account'
             message = render_to_string('registration/activation_email.html',
                 {'activation_key' : activation_key,
                 'expiration_days' : ActivationProfile.MAX_ACTIVATION_DAYS})
@@ -71,7 +71,6 @@ class ActivationProfile(models.Model):
             user_for_activation = User.objects.get(username=existing_profile.user)
             user_for_activation.is_active = True
             user_for_activation.save()
-            # existing_profile.delete()
             return True
 
     def activation_key_expired(self):

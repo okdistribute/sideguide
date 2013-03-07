@@ -1,9 +1,9 @@
 {% extends "browse/base.html" %}
 {% block content %}
 <div class="span10 offset1">
+    <h1 class="page-header">Login</h1>
     <form class="form-horizontal" method="post"  action="/accounts/login/">
         {% csrf_token %}
-        <legend>Login</legend>
         {{ form.non_field_errors }}
         <div class="control-group">
             <label class="control-label" for="id_username">Username</label>

@@ -1,7 +1,8 @@
-from django.conf.urls.defaults import patterns, include, url
-from django.views.generic.simple import direct_to_template
-from django.contrib.auth import views as auth_views
+from django.conf.urls import patterns, url
 
 urlpatterns = patterns('browse.views',
-    url(r'', "base.splash")
+    url(r'^explore$', "explore.index"),
+    url(r'^explore/(\w+)/$', 'explore.dest'),
+
+    url(r'^curate$', 'curate.index'),
 )

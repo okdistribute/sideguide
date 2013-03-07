@@ -23,20 +23,19 @@
       <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link href="/static/css/main.css" rel="stylesheet" media="screen">
       <script src="/static/js/jquery-1.8.3.min.js"></script>
-      <link href="/static/css/stickyfooter-bootstrap.css" rel="stylesheet" media="screen">
       <script src="/static/js/bootstrap.min.js"></script>
   </head>
   <body>
      <div id="wrap" class="container">
         <div class="navbar">
-                <a class="brand" href="/">sideguide</a>
                 <ul class="nav">
+                    <li><a href="/">sideguide</a></li>
                     <form class="form-search navbar-form pull-left">
                         <input type="text" class="search-query" placeholder="Search">
                         <button type="submit" class="btn"> <i class="icon-search"></i></button>
                     </form>
                     <li><a href="/browse">Explore</a></li>
-                    <li><a href="/create">Curate</a></li>
+                    <li><a href="/curate">Curate</a></li>
                     <li><a href="/help">Help</a></li>
                 </ul>
                 <ul class="nav pull-right">
@@ -45,7 +44,7 @@
                     <li><a href="/accounts/profile">Account</a></li>
                     <li><a href="/accounts/logout">Signout</a></li>
                     {% else %}
-                     <li><a href="/accounts/register/">Sign up</a></li>
+                     <li><a href="/accounts/register/">Register</a></li>
                      <li><a href="/accounts/login">Login</a></li>
                     {% endif %}
                 </ul>

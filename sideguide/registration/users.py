@@ -5,8 +5,8 @@ from django.core import serializers
 import datetime
 from django.utils.dateparse import parse_datetime
 from django.shortcuts import render_to_response
-from art.models import User
-from common.utils import *
+from sideguide.common.models import User
+from sideguide.common.utils import *
 
 def getUsers(request):
     response_status = 200
