@@ -21,283 +21,138 @@
 <meta content="#ffffff" name="msapplication-TileColor">
     <title>Sideguide</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/css/splash.css" rel="stylesheet" media="screen">
       <link href="/static/css/stickyfooter-bootstrap.css" rel="stylesheet" media="screen">
     <link href="/static/css/main.css" rel="stylesheet" media="screen">
       <script src="/static/js/jquery-1.8.3.min.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-      <style type="text/css">
-              /* Main marketing message and sign up button */
-          .jumbotron {
-              text-align: center;
-          }
-          .jumbotron h1 {
-              font-size: 100px;
-              line-height: 1;
-              padding: 10px;
-          }
-          .jumbotron .lead {
-              font-size: 24px;
-              line-height: 1.25;
-          }
-          .jumbotron .btn {
-              font-size: 21px;
-              padding: 14px 24px;
-          }
-
-
-              /* MARKETING CONTENT
-       -------------------------------------------------- */
-
-           /* Center align the text within the three columns below the carousel */
-          .marketing .span4 {
-              text-align: center;
-          }
-          .marketing h2 {
-              font-weight: normal;
-          }
-          .marketing .span4 p {
-              margin-left: 10px;
-              margin-right: 10px;
-          }
-
-
-              /* Featurettes
-              ------------------------- */
-
-          .featurette-divider {
-              margin: 80px 0; /* Space out the Bootstrap <hr> more */
-          }
-          .featurette {
-              padding: 60px 0px 60px 0px; /* Vertically center images part 1: add padding above and below text. */
-              overflow: hidden; /* Vertically center images part 2: clear their floats. */
-              text-align: center;
-          }
-          .featurette-image {
-              margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-          }
-
-              /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-          .featurette-image.pull-left {
-              margin-right: 40px;
-          }
-          .featurette-image.pull-right {
-              margin-left: 40px;
-          }
-
-              /* Thin out the marketing headings */
-          .featurette-heading {
-              font-size: 50px;
-              font-weight: 300;
-              line-height: 1;
-              letter-spacing: -1px;
-          }
-
-
-              /*splash */
-          #mainCarousel .item img{
-              height: 360px;
-              width: 640px;
-          }
-          .splashbox {
-              height: 360px;
-              width: 640px;
-              z-index: 1;
-              margin: auto;
-              position: relative;
-          }
-          .splashplay {
-              position: absolute;
-              z-index: 3;
-              top: 70px;
-              left: 220px;
-          }
-
-          .splashbox:hover {
-              cursor: pointer;
-
-          }
-
-              /* RESPONSIVE CSS
-              -------------------------------------------------- */
-
-          @media (max-width: 979px) {
-
-              .container.navbar-wrapper {
-                  margin-bottom: 0;
-                  width: auto;
-              }
-              .navbar-inner {
-                  border-radius: 0;
-                  margin: -20px 0;
-              }
-
-              .carousel .item {
-                  height: 500px;
-              }
-              .carousel img {
-                  width: auto;
-                  height: 500px;
-              }
-
-              .featurette {
-                  height: auto;
-                  padding: 0;
-              }
-              .featurette-image.pull-left,
-              .featurette-image.pull-right {
-                  display: block;
-                  float: none;
-                  max-width: 40%;
-                  margin: 0 auto 20px;
-              }
-          }
-
-
-          @media (max-width: 767px) {
-
-              .navbar-inner {
-                  margin: -20px;
-              }
-
-              .carousel {
-                  margin-left: -20px;
-                  margin-right: -20px;
-              }
-              .carousel .container {
-
-              }
-              .carousel .item {
-                  height: 300px;
-              }
-              .carousel img {
-                  height: 300px;
-              }
-              .carousel-caption {
-                  width: 65%;
-                  padding: 0 70px;
-                  margin-top: 100px;
-              }
-              .carousel-caption h1 {
-                  font-size: 30px;
-              }
-              .carousel-caption .lead,
-              .carousel-caption .btn {
-                  font-size: 18px;
-              }
-
-              .marketing .span4 + .span4 {
-                  margin-top: 40px;
-              }
-
-              .featurette-heading {
-                  font-size: 30px;
-              }
-              .featurette .lead {
-                  font-size: 18px;
-                  line-height: 1.5;
-              }
-
-          }
-      </style>
-    <script type="text/javascript">
-        $(function() {
-            $('.carousel').carousel({
-                interval: 3000,
-                pause: 'none'
-            });
-
-            $('#splashbox').click(function() {
-                $('#splashbox').replaceWith($('#youtubeplayer').show());
-                ytplayer = $("#youtubeplayer");
-                ytplayer.playVideo();
-            });
-        });
-    </script>
     </head>
   <body>
-  <div id="wrap">
-      <div class="container-fluid" >
-            <div class="navbar">
-                  <ul class="nav pull-right">
-                      <li><a href="/explorers">Explorers</a></li>
-                      <li><a href="/curators">Curators</a></li>
-                      <li><a href="/fund">Fund us</a></li>
-                  </ul>
+  <div class="container-fluid marketing">
+    <div class="navbar navbar-static">
+        <div class="splash-nav">
+          <a class="brand" href="#"></a>
+          <ul class="nav pull-right">
+              <li><a href="#explorers">Explorers</a></li>
+              <li><a href="#curators">Curators</a></li>
+              <li><a href="#fund">Fund us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="splashfront">
+            <div class="header">
+                <h1 class="header-logo">Sideguide</h1>
+                <p class="lead">Mobile tour guide platform for museums, parks, landmarks, cities... </p>
             </div>
-            <div id="main">
-                    <div class="jumbotron container">
-                        <h1 class="jumbotron-header">Sideguide</h1>
-                        <p class="lead">The world in the palm of your hand.</p>
-                        <div class="splashbox">
-                            <img src="/static/img/icons/large-play.jpg" class="splashplay transparent" />
-                            <div id="mainCarousel" class="carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="active item">
-                                        <img src="/static/img/splash/toweroflondon.jpg" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="/static/img/splash/louvre.jpg" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="/static/img/splash/sftothearts.jpg" />
-                                    </div>
-                                    <div class="item">
-                                        <img src="/static/img/splash/armstrong.jpg" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+          <div class="container">
+              <div class="videobox">
+                  <a href="http://fast.wistia.net/embed/iframe/v96o7s1d4b?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=540&videoWidth=960&volumeControl=true" class="wistia-popover[height=540,width=960]"><img src="http://embed-0.wistia.com/deliveries/d806356afb0b55712c173f7b75f703fc08d2227b.jpg?image_play_button=true&image_crop_resized=480x270" alt="" /></a>
+                  <script charset="ISO-8859-1" src="http://fast.wistia.com/static/popover-v1.js"></script>
+              </div>
+               <div class="signupbox">
+                   <form>
+                       <fieldset>
+                           <input type="text" class="span5" placeholder="Name"><br>
+                           <input type="text" class="span5" placeholder="Email"><br>
+                           <input type="text" class="span5" placeholder="Institution"><br>
+                           <button type="submit" class="btn-large btn btn-success">Jump on the bandwagon!</button>
+                       </fieldset>
+                   </form>
+              </div>
+          </div>
+      </div>
+          <div id="splashbottom">
+                <div class="splashbar">
+                    <div class="downarrow"></div>
                 </div>
-                    <div id="youtubeplayer" class="hidden">
-                        <iframe width="640" height="360"
-                            src="http://www.youtube.com/embed/L9TvN82Zf1o?rel=0&autoplay=0"
-                            frameborder="0" allowfullscreen></iframe>
-                    </div>
-               <div class="featurette">
-                  <div id="users" class="span9">
-                      <h2 class="featurette-heading">
-                          Explorers<br>
-                          <span class="muted">Rediscover your world</span>
-                      </h2>
-                      <p class="lead">Experience tours of points of interest around you<br>
-                          Collect your favorites and share them with your friends<br>
-                          Become a Sideguide Leader: create guided tours of the outside world<br>
-                          Find new destinations, complete tasks, and earn achievements<br>
-                      </p>
-                      <form class="form-inline">
-                          <fieldset>
-                              <input type="text" class="input-medium" placeholder="Email">
-                              <button type="submit" class="btn-large">Signup</button>
-                          </fieldset>
-                      </form>
-                      <button class="btn-large btn-success">More info >>></button>
-                  </div>
+                <hr class="featurette-divider">
+                <div id="explorers" class="featurette">
+                    <img class="featurette-image pull-left" src="/static/img/splash/travel.jpg">
+                    <h2 class="featurette-heading">
+                        Explorers
+                        <span class="muted">Rediscover your world</span>
+                    </h2>
+                    <div class="featurette-text pull-right">
+                        <div class="span5">
+                            <h4>Experience</h4>
+                            <p>Experience tours of points of interest and exhibits around you, personalized to
+                                your previous use at destinations.</p>
 
-                  <div id="destinations" class="span9">
+                            <h4>Learn</h4>
+                            <p>Find new destinations, read and listen to information about exhibits,
+                                and earn points for completing achievements</p>
+                        </div>
+                        <div class="span5">
+                            <h4>Collect</h4>
+                            <p>Save your favorite exhibits to remember your experience and share it with your friends, family, and other explorers.</p>
+
+                            <h4>Lead</h4>
+                            <p>Create guided tours with your voice and camera to lead
+                                other explorers through your favorite places.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="featurette-divider">
+                  <div id="curators" class="featurette">
+                      <img class="featurette-image pull-right" src="/static/img/splash/compass.png">
                       <h2 class="featurette-heading">
-                          Curators<br>
+                          Curators
                           <span class="muted">Propel into the information age</span>
                       </h2>
-                      <p class="lead">Give your visitors the self-guided tours they've been waiting for<br>
-                      Reduce crowding around small placards describing points of interest<br>
-                      Create achievements with special perks for your most loyal visitors<br>
-                      Get real-time feedback about your visitors to curate the best experience<br>
-                       </p>
-                      <form class="form-inline">
-                          <fieldset>
-                              <input type="text" class="input-medium" placeholder="Email">
-                              <input type="text" class="input-medium" placeholder="Name of Destination">
-                              <input type="text" class="input-medium" placeholder="Zip code">
-                              <button type="submit" class="btn-large">Signup</button>
-                          </fieldset>
-                      </form>
-                      <button class="btn-large btn-success">More info >>></button>
-                  </div>
+
+                      <div class="featurette-text pull-left">
+                          <div class="span5">
+                              <h4>Guide</h4>
+                              <p>Give your visitors the mobile app they've been waiting for without the equipment
+                                   maintenance and development costs. </p>
+
+                              <h4>Streamline</h4>
+                              <p>Reduce crowding around small placards describing points of interest by providing digital audio, text,
+                                and other media straight to their mobile device.</p>
+                            </div>
+                          <div class="span5">
+
+                          <h4>Reward</h4>
+                              <p>Create achievements tailored to your destination, redeem points for discounts and other items
+                                  at your discretion.</p>
+
+                              <h4>Respond</h4>
+                              <p>Get real-time feedback about your visitors favorite exhibits and walking patterns to curate the best experience.</p>
+                          </div>
+                     </div>
                </div>
+                <hr class="featurette-divider">
+            <div id="fund" class="featurette">
+                <h2 class="featurette-heading">
+                    Fund us
+                    <span class="muted">Ready for more</span>
+                </h2>
+
+                <div class="row-fluid marketing">
+
+                    <div class="span4">
+                        <img  src="http://asdf">
+                        <h4>Serge Chernetsky, CTO</h4>
+                        <p>Bachelors degree in Computer Science from Indiana University.</p>
+                    </div>
+                    <div class="span4">
+                        <img  src="http://rissarae.net/wp-content/uploads/2012/10/asdf.jpg">
+                        <h4>Design Team</h4>
+                        <p></p>
+                    </div>
+                    <div class="span4">
+                        <img  src="http://rissarae.net/wp-content/uploads/2012/10/headshot.jpg">
+                        <h4>Karissa McKelvey, CEO</h4>
+                        <p>Bachelors degrees in Computer Science and Political Science from Indiana University.
+                            Worked as an intern at Microsoft, was a PhD student for a year, but prefers
+                            bringing new ideas to life with teams in whiteboard-lined rooms.</p>
+                    </div>
+                </div>
+
+            </div>
            </div>
-      </div>
   </div>
-      {% include "browse/footer.html" %}
+      <!-- {% include "browse/footer.html" %} -->
 
   </body>
 </html>

@@ -1,0 +1,222 @@
+/* Main marketing message and sign up button */
+.header {
+    text-align: center;
+    padding-top:50px;
+    padding-bottom:40px;
+}
+.header h1 {
+    font-size: 100px;
+    line-height: 1;
+    padding: 10px;
+}
+.header .lead {
+    font-size: 24px;
+    line-height: 1.25;
+}
+.header .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+.marketing {
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing  p {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette-text {
+    position:relative;
+}
+.featurette-text.pull-right {
+    padding:50px 100px 0px 0px;
+}
+.featurette-text.pull-left {
+    padding:50px 00px 0px 100px;
+}
+.featurette {
+    padding: 60px 0px 60px 0px; /* Vertically center images part 1: add padding above and below text. */
+    overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    text-align: center;
+}
+.featurette-image {
+    height:400px;
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+    margin-right: 40px;
+}
+.featurette-image.pull-right {
+    margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.splash-nav {
+    min-height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.downarrow {
+    margin:auto;
+    width: 0;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 75px solid #28ABE2;
+}
+#splashfront {
+    height:750px;
+    width:100%;
+    position:relative;
+}
+#splashbottom {
+    width:100%;
+}
+.splashbox {
+    height: 360px;
+    width: 640px;
+    z-index: 1;
+    margin: auto;
+    position: relative;
+}
+
+.videobox {
+    float:left;
+    width:49%;
+}
+.signupbox {
+    float:right;
+    width:49%;
+    text-align: center;
+}
+
+.signupbox input[type="text"] {
+    height: 40px;
+    padding: 4px;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 18px;
+}
+
+.signupbox button[type="submit"] {
+    padding: 9px 40px;
+    font-size: 24px;
+}
+
+.splashbox:hover {
+    cursor: pointer;
+}
+
+.splashbar {
+    margin-top:-100px;
+    height:100px;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 979px) {
+
+    .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+    }
+    .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+    }
+
+    .carousel .item {
+        height: 500px;
+    }
+    .carousel img {
+        width: auto;
+        height: 500px;
+    }
+
+    .featurette {
+        height: auto;
+        padding: 0;
+    }
+    .featurette-image.pull-left,
+    .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .navbar-inner {
+        margin: -20px;
+    }
+
+    .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .carousel .container {
+
+    }
+    .carousel .item {
+        height: 300px;
+    }
+    .carousel img {
+        height: 300px;
+    }
+    .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+    }
+    .carousel-caption h1 {
+        font-size: 30px;
+    }
+    .carousel-caption .lead,
+    .carousel-caption .btn {
+        font-size: 18px;
+    }
+
+    .marketing .span4 + .span4 {
+        margin-top: 40px;
+    }
+
+    .featurette-heading {
+        font-size: 30px;
+    }
+    .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+}

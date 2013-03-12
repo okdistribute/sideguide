@@ -9,4 +9,4 @@ class StopsResource(ModelResource):
 class CollectionsResource(ModelResource):
     class Meta:
         queryset = Collection.objects.all()
-        resource_name = 'Collections'
+        resource_name = 'collections'

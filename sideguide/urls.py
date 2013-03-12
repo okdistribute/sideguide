@@ -1,14 +1,13 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 from django.views.generic.simple import direct_to_template
 from tastypie.api import Api
-from common.api import * 
 from django.contrib import admin
+from common.api import *
 admin.autodiscover()
 
 v1_api = Api(api_name='v1')
 v1_api.register(CollectionsResource())
 v1_api.register(StopsResource())
-
 
 urlpatterns = patterns('',
     # url(r'^$', 'django.contrib.auth.views.login'),
