@@ -45,12 +45,7 @@
 }
 .featurette-text {
     position:relative;
-}
-.featurette-text.pull-right {
-    padding:50px 100px 0px 0px;
-}
-.featurette-text.pull-left {
-    padding:50px 00px 0px 100px;
+    padding-top:50px;
 }
 .featurette {
     padding: 60px 0px 60px 0px; /* Vertically center images part 1: add padding above and below text. */
