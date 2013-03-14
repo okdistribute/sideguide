@@ -20,7 +20,6 @@ urlpatterns = patterns('',
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
      url(r'^admin/', include(admin.site.urls)),
 
-     url(r'^m/', include('mobile.urls')),
      url(r'^$', "common.views.splash"),
      url(r'^', include("browse.urls")),
 
