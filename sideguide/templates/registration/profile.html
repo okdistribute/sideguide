@@ -1,5 +1,42 @@
 {% extends "browse/base.html" %}
 {% block content %}
-<h1>LOGIN SUCCESSFUL!</h1>
-<h2>You now have access to the launch codes.</h2>
+    <div class="page-header">
+    <h1> Hello {{ user.username }}</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="span2 well">
+            <ul class="nav nav-list">
+                <li ><a href="#account"  data-toggle="tab">Account</a></li>
+                <li ><a href="#organization"  data-toggle="tab">Organizations</a></li>
+            </ul>
+        </div>
+        <div class="span8">
+            <div class="tab-content">
+                <div class="tab-pane active" id="account">
+                    Username: {{ user.username  }}<br>
+                    Name: {{ user.first_name }} {{ user.last_name }}<br>
+                    Email: {{ user.email }}<br>
+                    <a href="/accounts/password/change/">Change your password</a>
+                </div>
+                <div class="tab-pane" id="organization">
+                    <form class="form-horizontal" action="/common/orgs/create" method="post">
+                        {{ form.non_field_errors }}
+                        <legend>Create an organization</legend>
+                        <div class="control-group">
+                            <label class="control-label" for="id_name">Name</label>
+                            <div class="controls">
+                                <input id="id_name" name="name" type="text">
+                                {{ form.name.errors }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
