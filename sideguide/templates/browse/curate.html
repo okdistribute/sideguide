@@ -1,5 +1,36 @@
 {% extends "browse/base.html" %}
 
 {% block content %}
-    Curate
+    <form class="form-horizontal" action="/api/v1/" method="post">
+        {{ form.non_field_errors }}
+        <legend>Create a collection</legend>
+        <div class="control-group">
+            <label class="control-label" for="id_name">Name</label>
+            <div class="controls">
+                <input id="id_name" name="name" type="text">
+                {{ form.name.errors }}
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="id_caption">Caption</label>
+            <div class="controls">
+                <input id="id_caption" name="caption" type="text">
+                {{ form.name.errors }}
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="id_descript">Description</label>
+            <div class="controls">
+                <input id="id_descript" name="description" type="text">
+                {{ form.name.errors }}
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
 {% endblock %}
