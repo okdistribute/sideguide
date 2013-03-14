@@ -18,8 +18,33 @@
     padding: 14px 24px;
 }
 
+/* people*/
+.item {
+    width: 220px;
+    margin: 10px;
+    float: left;
+}
 
+.hover-content .active {
+    visibility: visible;
+    opacity: 1 !important;
+}
 
+.hover-content {
+    float:left;
+}
+
+.hover-content div {
+    opacity: .2;
+}
+
+.hover-wrapper {
+    float:right;
+}
+
+.item .details {
+    visibility: hidden;
+}
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -35,7 +60,6 @@
     font-size: 18px;
     line-height: 1.5;
 }
-
 
 /* Featurettes
 ------------------------- */

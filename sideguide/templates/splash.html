@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
 <meta content="Sideguide - Rediscover your world" property="og:title">
 <meta content="Sideguide helps people, organizations, and destinations tell the world's story. Discover and rediscover your world!" property="og:description">
@@ -26,7 +26,29 @@
     <link href="/static/css/main.css" rel="stylesheet" media="screen">
       <script src="/static/js/jquery-1.8.3.min.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-    </head>
+      <script src="/static/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var $container = $('#people');
+
+                $container.imagesLoaded( function(){
+                    $container.masonry({
+                        itemSelector : '.item'
+                    });
+                });
+
+
+                $(".item").hover(function() {
+                       href = $(this).find("a").attr("href");
+                       $details = $(href+".details");
+                       $details.addClass("active");
+                },
+                function() {
+                       $(".details").removeClass("active");
+                });
+            });
+        </script>
+  </head>
   <body>
   <div class="container-fluid marketing">
     <div class="navbar navbar-static">
@@ -128,30 +150,74 @@
                     <span class="muted">Ready for more</span>
                 </h2>
 
-                <div class="row-fluid marketing">
-
-                    <div class="span4">
-                        <img  src="http://asdf">
-                        <h4>Serge Chernetsky, CTO</h4>
-                        <p>Bachelors degree in Computer Science from Indiana University.</p>
-                    </div>
-                    <div class="span4">
-                        <img  src="http://rissarae.net/wp-content/uploads/2012/10/asdf.jpg">
-                        <h4>Design Team</h4>
-                        <p></p>
-                    </div>
-                    <div class="span4">
-                        <img  src="http://rissarae.net/wp-content/uploads/2012/10/headshot.jpg">
+                <div class="hover-content span8">
+                    <div id="karissa" class="details">
                         <h4>Karissa McKelvey, CEO</h4>
-                        <p>Bachelors degrees in Computer Science and Political Science from Indiana University.
-                            Worked as an intern at Microsoft, was a PhD student for a year, but prefers
+                        <p> With bachelors degrees in Computer Science and Political Science, Karissa now works
+                            as a research assistant at Indiana University.
+                            She worked as an intern at Microsoft, was a PhD student for a year, but prefers
                             bringing new ideas to life with teams in whiteboard-lined rooms.</p>
+                    </div>
+                    <div id="serge" class="details">
+                        <h4>Serge Chernetsky, Principal Development Engineer</h4>
+                        <p> With a Bachelor's in CS, Serge has a passion for mobile development, algorithms, and software design.
+                            His wide array of skills acquired over various jobs and
+                            internships translates into technical know-how required to bring projects to fruition. </p>
+                    </div>
+                    <div id="mengyao" class="details">
+                        <h4>Mengyao Zhao, User Experience</h4>
+                        <p>Mengyao is a graduate student in Human-computer Interaction Design, Indiana University Bloomington.
+                            She is a Chinese Zeither player, a photographer, a flower lover, a UX designer and a design researcher.
+                            She is interested in Aesthetic Experience, Heritage Study and Design Methods in HCI and she gains design
+                            inspirations from music, arts and life.</p>
+                    </div>
+                    <div id="anhe" class="details">
+                        <h4>Anhe Guo, User Experience</h4>
+                        <p>this is a story about anhe</p>
+                    </div>
+                    <div id="ashleigh" class="details">
+                        <h4>Ashleigh Nero, Animation and Graphic Design</h4>
+                        <p>this is a story about ashleigh</p>
+                    </div>
+
+                    <div id="zak" class="details">
+                        <h4>Zak Roz, Marketing and Graphic Design</h4>
+                        <p>this is a story about zak</p>
                     </div>
                 </div>
 
-            </div>
+                <div class="hover-wrapper span10">
+                    <div id="people" class="hover-triggers">
+                        <div class="item">
+                            <a href="#karissa"><img src="/static/img/people/karissa.jpg" /></a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#serge"><img src="/static/img/people/serge.png" /></a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#mengyao"><img src="/static/img/people/mengyao.jpg" /></a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#anhe"><img src="/static/img/people/person.gif" /></a>
+                        </div>
+
+                        <div class="item">
+                            <a href="#ashleigh"><img src="/static/img/people/person.gif" /></a>
+                        </div>
+
+
+                        <div class="item">
+                            <a href="#zak"><img src="/static/img/people/person.gif" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
            </div>
-  </div>
+    </div>
       <!-- {% include "browse/footer.html" %} -->
 
   </body>
