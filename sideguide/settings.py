@@ -132,7 +132,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'registration',
     'browse',
-    'mobile',
     'common',
     'south'
 ]
