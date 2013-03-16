@@ -1,5 +1,5 @@
 Requires:
-* python2.6
+* python2.6+
 * virtualenv
 * postgresql
 * postgis
