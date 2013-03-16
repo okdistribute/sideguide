@@ -1,7 +1,8 @@
 Requires:
 * python2.6
 * virtualenv
-* mongodb
+* postgresql
+* postgis
 
 
 Prerequisites
