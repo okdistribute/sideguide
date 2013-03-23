@@ -68,27 +68,16 @@
 ------------------------- */
 
 .featurette-divider {
-    margin: 20px 0; /* Space out the Bootstrap <hr> more */
+    margin: 10px 0; /* Space out the Bootstrap <hr> more */
 }
 .featurette-text {
     position:relative;
     margin:auto;
 }
 .featurette {
-    padding: 60px 0px 60px 0px; /* Vertically center images part 1: add padding above and below text. */
+    padding: 30px 0px 30px 0px; /* Vertically center images part 1: add padding above and below text. */
     overflow: hidden; /* Vertically center images part 2: clear their floats. */
     text-align: center;
-}
-.featurette-image {
-    height:400px;
-}
-
-/* Give some space on the sides of the floated elements so text doesn't run right into it. */
-.featurette-image.pull-left {
-    margin-right: 40px;
-}
-.featurette-image.pull-right {
-    margin-left: 40px;
 }
 
 /* Thin out the marketing headings */
@@ -97,6 +86,7 @@
     font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
+    padding-bottom:60px;
 }
 
 .splash-nav {
