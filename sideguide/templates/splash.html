@@ -20,16 +20,16 @@
 <meta content="" name="msapplication-TileImage">
 <meta content="#ffffff" name="msapplication-TileColor">
     <title>Sideguide</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/packages/flat/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="/static/packages/flat/css/flat-ui.css" rel="stylesheet">
     <link href="/static/css/splash.css" rel="stylesheet" media="screen">
-      <link href="/static/css/stickyfooter-bootstrap.css" rel="stylesheet" media="screen">
     <link href="/static/css/main.css" rel="stylesheet" media="screen">
-      <script src="/static/js/jquery-1.8.3.min.js"></script>
-        <script src="/static/js/bootstrap.min.js"></script>
-      <script src="/static/js/jquery.masonry.min.js"></script>
-        <script type="text/javascript">
+    <script src="/static/js/jquery-1.8.3.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.masonry.min.js"></script>
+    <script type="text/javascript">
             $(function() {
                 /*var $container = $('#people');
 
@@ -50,6 +50,16 @@
                 });
             });
         </script>
+      <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-39488878-1', 'sideguide.co');
+          ga('send', 'pageview');
+
+      </script>
   </head>
   <body>
   <div class="container-fluid marketing">
@@ -69,19 +79,6 @@
                 <p class="lead">Mobile tour guide platform for museums, parks, landmarks, cities... </p>
             </div>
           <div class="container">
-              <div class="videobox">
-                  <a href="http://fast.wistia.net/embed/iframe/v96o7s1d4b?autoPlay=true&controlsVisibleOnLoad=true&popover=true&version=v1&videoHeight=540&videoWidth=960&volumeControl=true" class="wistia-popover[height=540,width=960]"><img src="http://embed-0.wistia.com/deliveries/d806356afb0b55712c173f7b75f703fc08d2227b.jpg?image_play_button=true&image_crop_resized=480x270" alt="" /></a>
-                  <script charset="ISO-8859-1" src="http://fast.wistia.com/static/popover-v1.js"></script>
-              </div>
-               <div class="signupbox">
-                   <form>
-                       <fieldset>
-                           <input type="text" class="span5" placeholder="Name"><br>
-                           <input type="text" class="span5" placeholder="Email"><br>
-                           <input type="text" class="span5" placeholder="Institution"><br>
-                           <button type="submit" class="btn-large btn btn-success">Jump on the bandwagon!</button>
-                       </fieldset>
-                   </form>
               </div>
           </div>
       </div>
@@ -96,22 +93,39 @@
                         <span class="muted">Rediscover your world</span>
                     </h2>
                     <div class="featurette-text">
-                        <div class="column pull-left">
-                            <h4>Experience</h4>
-                            <p>Experience tours of points of interest and exhibits around you, personalized to
-                                your previous use at destinations.</p>
+                        <div class="row demo-tiles">
+                            <div class="span3">
+                                <div class="tile">
+                                    <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/map.png">
+                                    <h3 class="tile-title">Experience</h3>
+                                    <p>Find new points of interest and exhibits around you.</p>
+                                </div>
+                            </div>
 
-                            <h4>Learn</h4>
-                            <p>Find new destinations, read and listen to information about exhibits,
-                                and earn points for completing achievements</p>
-                        </div>
-                        <div class="column pull-right">
-                            <h4>Collect</h4>
-                            <p>Save your favorite exhibits to remember your experience and share it with your friends, family, and other explorers.</p>
+                            <div class="span3">
+                                <div class="tile">
+                                    <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/compass.png">
+                                    <h3 class="tile-title">Search</h3>
+                                    <p>Get a personalized tour for topics that interest you.</p>
+                                </div>
+                            </div>
 
-                            <h4>Lead</h4>
-                            <p>Create guided tours with your voice and camera to lead
-                                other explorers through your favorite places.</p>
+                            <div class="span3">
+                                <div class="tile">
+                                    <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/time.png">
+                                    <h3 class="tile-title">Limit</h3>
+                                    <p>Tell us how much time you have for a quality tour.</p>
+                                </div>
+                            </div>
+
+                            <div class="span3">
+                                <div class="tile">
+                                    <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/book.png">
+                                    <h3 class="tile-title">Record</h3>
+                                    <p>Rate, save, and share the places you visit.</p>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,24 +137,48 @@
                       </h2>
 
                       <div class="featurette-text">
-                          <div class="column pull-left">
-                              <h4>Guide</h4>
-                              <p>Give your visitors the mobile app they've been waiting for without the equipment
-                                   maintenance and development costs. </p>
+                          <div class="row demo-tiles">
+                              <div class="span3">
+                                  <div class="tile">
+                                      <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/colors.png">
+                                      <h3 class="tile-title">Guide</h3>
+                                      <p>Provide your original maps, info, and audio guide.</p>
+                                  </div>
+                              </div>
 
-                              <h4>Streamline</h4>
-                              <p>Reduce crowding around small placards describing points of interest by providing digital audio, text,
-                                and other media straight to their mobile device.</p>
-                            </div>
-                          <div class="column pull-right">
-                          <h4>Reward</h4>
-                              <p>Create achievements tailored to your destination, redeem points for discounts and other items
-                                  at your discretion.</p>
+                              <div class="span3">
+                                  <div class="tile">
+                                      <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/clipboard.png">
+                                      <h3 class="tile-title">Secure</h3>
+                                      <p>Keep your collection Amazon-grade secure.</p>
+                                  </div>
+                              </div>
 
-                              <h4>Respond</h4>
-                              <p>Get real-time feedback about your visitors favorite exhibits and walking patterns to curate the best experience.</p>
+                              <div class="span3">
+                                  <div class="tile">
+                                      <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/retina.png">
+                                      <h3 class="tile-title">Engage</h3>
+                                      <p>Get real-time feedback and walking patterns.</p>
+                                  </div>
+                              </div>
+
+                              <div class="span3">
+                                  <div class="tile">
+                                      <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/mail.png">
+                                      <h3 class="tile-title">Reach</h3>
+                                      <p>Build a community and identify your returnees.</p>
+                                  </div>
+
+                              </div>
                           </div>
                      </div>
+                      <div id="mc_embed_signup">
+                          <h1>Interested? Sign up to hear when Sideguide is ready</h1>
+                          <form action="http://sideguide.us5.list-manage.com/subscribe/post?u=cc3f1c3b548018e9abb08aef0&amp;id=ff19a6ec81" method="post" class="form-inline" target="_blank" novalidate>
+                              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
+                             <input type="submit" value="Click here!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-large  btn-success">
+                          </form>
+                      </div>
                </div>
                 <hr class="featurette-divider">
             <div id="fund" class="featurette">
@@ -165,7 +203,7 @@
                         </div>
 
                         <div class="item">
-                            <a href="#anhe"><img src="/static/img/people/Anhe.JPG" /></a>
+                            <a href="#anhe"><img src="/static/img/people/Anhe.jpg" /></a>
                         </div>
 
                         <div class="item">
