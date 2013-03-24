@@ -23,5 +23,8 @@ urlpatterns = patterns('',
      url(r'^$', "common.views.splash"),
      url(r'^', include("browse.urls")),
 
-    url(r'^api/', include(v1_api.urls))
+    url(r'^api/', include(v1_api.urls)),
+    url(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url':
+        '/static/img/fav.ico'}),
+
 )
