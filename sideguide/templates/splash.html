@@ -39,6 +39,7 @@
                         itemSelector : '.item'
                     });
                 });
+
                 $(".scroll").each(function(){
                     $(this).click(function() {
                         $($(this).attr("href")).ScrollTo({
@@ -47,10 +48,9 @@
                     });
                 });
 
-
                 $(".item").hover(function() {
                        $("#background").removeClass("active");
-                       href = $(this).find("a").attr("href");
+                       href = $(this).find("a").attr("data-item");
                        $details = $(href+".details");
                        $details.addClass("active");
                 },
@@ -87,7 +87,7 @@
       </div>
       <div id="splashfront">
             <div class="header">
-                <h1 class="header-logo"><img src="/static/img/logo.png" width="900px"/> </h1>
+                <h1 class="header-logo"><img src="/static/img/sideguidelogo.png" width="900px"/> </h1>
                 <p class="lead">Mobile tour guide for museums, parks, landmarks, cities, malls... </p>
             </div>
   </div>
@@ -97,8 +97,8 @@
             <div id="explorers" class="featurette">
                 <hr class="featurette-divider">
                 <h2 class="featurette-heading">
-                    Explorers
-                    <span class="muted">Rediscover your world</span>
+                    Explorers,
+                    <span class="muted">rediscover your world</span>
                 </h2>
                 <div class="featurette-text">
                     <div class="row demo-tiles">
@@ -120,7 +120,7 @@
                             <div class="tile">
                                 <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/time.png">
                                 <h3 class="tile-title">Limit</h3>
-                                <p>Finish within a certain allotted time.</p>
+                                <p>Finish within a certain amount of time.</p>
                             </div>
                         </div>
                         <div class="span3">
@@ -136,8 +136,8 @@
               <div id="curators" class="featurette">
                   <hr class="featurette-divider">
                   <h2 class="featurette-heading">
-                      Curators
-                      <span class="muted">Propel into the information age</span>
+                      Curators,
+                      <span class="muted">propel into the information age</span>
                   </h2>
 
                   <div class="featurette-text">
@@ -154,7 +154,7 @@
                               <div class="tile">
                                   <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/clipboard.png">
                                   <h3 class="tile-title">Archive</h3>
-                                  <p>Store your collection with Amazon security.</p>
+                                  <p>Store your assets securely with Amazon.</p>
                               </div>
                           </div>
 
@@ -175,7 +175,7 @@
                           </div>
 
                       </div>
-                      <div id="mc_embed_signup">
+                      <div class="container">
                           <h1>Be the first to know when sideguide is ready<br><small>(don't worry, we hate spam too)</small></h1>
                           <!-- <form action="http://sideguide.us5.list-manage.com/subscribe/post?u=cc3f1c3b548018e9abb08aef0&amp;id=ff19a6ec81" method="post" class="form-inline" target="_blank" novalidate>
                               <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
@@ -189,28 +189,33 @@
         <div id="fund" class="featurette">
             <hr class="featurette-divider">
             <h2 class="featurette-heading">
-                Fund us
-                <span class="muted">Ready for more</span>
+                Fund us,
+                <span class="muted">ready for more</span>
             </h2>
 
 
             <div class="hover-wrapper">
                 <div id="people" class="hover-triggers span5">
                     <div class="item tile">
-                        <a href="#karissa"><img src="/static/img/people/karissa-small.png" /></a>
+                        <a data-item="#karissa" href="http://rissarae.net" target="_blank"><img src="/static/img/people/karissa-small.png" /></a>
                         <h3>Karissa</h3>
                     </div>
                     <div class="item tile">
-                        <a href="#serge"><img src="/static/img/people/serge-small.png" /></a>
+                        <a data-item="#serge" href="http://www.linkedin.com/pub/serge-chernetsky/1b/969/8a2" target="_blank">
+                            <img src="/static/img/people/serge-small.png" /></a>
                         <h3>Serge</h3>
                     </div>
                     <div class="item tile">
-                        <a href="#mengyao"><img src="/static/img/people/mengyao-small.png" /></a>
+                        <a data-item="#mengyao" href="http://www.mengyaozhao.com/" target="_blank"><img src="/static/img/people/mengyao-small.png" /></a>
                         <h3>Mengyao</h3>
                     </div>
                     <div class="item tile">
-                        <a href="#anhe"><img src="/static/img/people/anhe-small.png" /></a>
+                        <a data-item="#anhe" href="http://anheguo.com" target="_blank"><img src="/static/img/people/anhe-small.png" /></a>
                         <h3>Anhe</h3>
+                    </div>
+                    <div class="item tile">
+                        <a data-item="#ashleigh" href="http://www.ashnero.com/" target="_blank"><img src="/static/img/people/ash-small.png" /></a>
+                        <h3>Ashleigh</h3>
                     </div>
 
                 </div>
@@ -250,6 +255,7 @@
                         His wide array of skills acquired over various jobs and
                         internships translates into technical know-how required to bring projects to fruition. </p>
                     <img src="/static/img/people/serge.png" />
+
                 </div>
                 <div id="mengyao" class="details">
                     <h1>Mengyao Zhao <br><small>User Experience Designer</small></h1>
@@ -275,8 +281,15 @@
                 </div>
 
                 <div id="ashleigh" class="details">
-                    <h1>Ashleigh Nero <br><small>Animation and Graphic Design</small></h1>
-                    <p>this is a story about ashleigh</p>
+                    <h1>Ashleigh Nero <br><small>Animation and Graphic Designer</small></h1>
+                    <p>After finishing a degree in composition from the Jacobs School of
+                        Music of Indiana University, Ashleigh found her interests shifting
+                        toward web, interactive design and animation. She has continued her
+                        education with courses in digital media production and hundreds of
+                        hours of self-teaching and practice. She strives to create media that
+                        are well-designed, artistic and delightful.</p>
+                    <img src="/static/img/people/Ash.JPG" />
+
                 </div>
             </div>
        </div>
