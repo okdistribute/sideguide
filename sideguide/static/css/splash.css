@@ -1,7 +1,7 @@
 /* Main marketing message and sign up button */
 .header {
     text-align: center;
-    padding-top:50px;
+    padding-top:100px;
     padding-bottom:40px;
 }
 .header h1 {
@@ -23,14 +23,23 @@
 
 /* people*/
 .item {
-    width: 150px;
     margin: 10px;
     float: left;
+    background-color:#ecf0f5;
+    padding:20px;
+}
+
+.details > img {
+    max-height: 300px;
 }
 
 .hover-content .active {
     visibility: visible;
     opacity: 1 !important;
+}
+.hover-content {
+    position:relative;
+    height:600px;
 }
 
 .hover-content div {
@@ -38,13 +47,9 @@
 }
 
 .details {
-    border: 5px #69BF6C solid;
-    width: 500px;
+    width:500px;
+    height:600px;
     position:absolute;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px; /* future proofing */
-    -khtml-border-radius: 10px; /* for old Konqueror browsers */
 }
 
 
@@ -68,14 +73,16 @@
 ------------------------- */
 
 .featurette-divider {
-    margin: 10px 0; /* Space out the Bootstrap <hr> more */
+    margin: 20px 0px 20px 0px; /* Space out the Bootstrap <hr> more */
+    padding-bottom: 5px;
+    background-color: #2b8949;
 }
 .featurette-text {
     position:relative;
     margin:auto;
 }
 .featurette {
-    padding: 30px 0px 30px 0px; /* Vertically center images part 1: add padding above and below text. */
+    padding: 15px 0px 15px 0px; /* Vertically center images part 1: add padding above and below text. */
     overflow: hidden; /* Vertically center images part 2: clear their floats. */
     text-align: center;
 }
@@ -86,7 +93,7 @@
     font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
-    padding-bottom:60px;
+    padding:40px 0px;
 }
 
 .splash-nav {
@@ -101,10 +108,12 @@
     height: 0;
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
-    border-top: 75px solid #28ABE2;
+    border-top: 75px solid #2b8949;
 }
+
+
 #splashfront {
-    height:750px;
+    height:600px;
     width:100%;
     position:relative;
 }

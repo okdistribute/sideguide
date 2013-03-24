@@ -10,7 +10,7 @@
 <meta content="" property="fb:app_id">
 <meta content="summary" name="twitter:card">
 <meta content="@Sideguide" name="twitter:site">
-<meta content="http://www.mysideguide.com/" name="twitter:url">
+<meta content="http://getsideguide.com/" name="twitter:url">
 <meta content="Sideguide - Rediscover your world" name="twitter:title">
 <meta content="Sideguide helps people, organizations, and destinations tell the world's story. Discover and rediscover your world!" property="twitter:description">
 <meta content="" name="twitter:image">
@@ -23,30 +23,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/static/packages/flat/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="/static/packages/flat/css/flat-ui.css" rel="stylesheet">
+    <link href="/static/css/sideguide.css" rel="stylesheet">
     <link href="/static/css/splash.css" rel="stylesheet" media="screen">
     <link href="/static/css/main.css" rel="stylesheet" media="screen">
     <script src="/static/js/jquery-1.8.3.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/jquery.masonry.min.js"></script>
+      <script src="/static/js/jquery.scrollto.js"></script>
     <script type="text/javascript">
             $(function() {
-                /*var $container = $('#people');
+                var $container = $('#people');
 
                 $container.imagesLoaded( function(){
                     $container.masonry({
                         itemSelector : '.item'
                     });
-                });*/
+                });
+                $(".scroll").each(function(){
+                    $(this).click(function() {
+                        $($(this).attr("href")).ScrollTo({
+                            offset: 300
+                        });
+                    });
+                });
 
 
                 $(".item").hover(function() {
+                       $("#background").removeClass("active");
                        href = $(this).find("a").attr("href");
                        $details = $(href+".details");
                        $details.addClass("active");
                 },
                 function() {
                        $(".details").removeClass("active");
+                       $("#background").addClass("active");
                 });
             });
         </script>
@@ -61,192 +71,209 @@
 
       </script>
   </head>
-  <body>
-  <div class="container-fluid marketing">
-    <div class="navbar navbar-static">
-        <div class="splash-nav">
+  <body data-spy="scroll" data-target=".navbar" data-offset="300">
+  <div id="wrap">
+  <div id="main" class="container marketing clearfix">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
           <a class="brand" href="#"></a>
           <ul class="nav pull-right">
-              <li><a href="#explorers">Explorers</a></li>
-              <li><a href="#curators">Curators</a></li>
-              <li><a href="#fund">Fund us</a></li>
+              <li><a href="#splashfront" class="scroll">About</a></li>
+              <li><a href="#explorers" class="scroll">Explorers</a></li>
+              <li><a href="#curators" class="scroll">Curators</a></li>
+              <li><a href="#fund" class="scroll">Fund us</a></li>
           </ul>
         </div>
       </div>
       <div id="splashfront">
             <div class="header">
-                <h1 class="header-logo">Sideguide</h1>
-                <p class="lead">Mobile tour guide platform for museums, parks, landmarks, cities... </p>
+                <h1 class="header-logo"><img src="/static/img/logo.png" width="900px"/> </h1>
+                <p class="lead">Mobile tour guide platform for museums, parks, landmarks, cities, malls... </p>
             </div>
-          </div>
-      </div>
-          <div class="container" >
-                <div class="splashbar">
-                    <div class="downarrow"></div>
-                </div>
+  </div>
+            <div class="splashbar">
+                <div href="#explorers" class="downarrow"></div>
+            </div>
+            <div id="explorers" class="featurette">
                 <hr class="featurette-divider">
-                <div id="explorers" class="featurette">
-                    <h2 class="featurette-heading">
-                        Explorers
-                        <span class="muted">Rediscover your world</span>
-                    </h2>
-                    <div class="featurette-text">
-                        <div class="row demo-tiles">
-                            <div class="span3">
-                                <div class="tile">
-                                    <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/map.png">
-                                    <h3 class="tile-title">Experience</h3>
-                                    <p>Find new points of interest and exhibits around you.</p>
-                                </div>
+                <h2 class="featurette-heading">
+                    Explorers
+                    <span class="muted">Rediscover your world</span>
+                </h2>
+                <div class="featurette-text">
+                    <div class="row demo-tiles">
+                        <div class="span3">
+                            <div class="tile">
+                                <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/map.png">
+                                <h3 class="tile-title">Experience</h3>
+                                <p>Know where to go, and what's there.</p>
                             </div>
-
-                            <div class="span3">
-                                <div class="tile">
-                                    <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/compass.png">
-                                    <h3 class="tile-title">Search</h3>
-                                    <p>Get a personalized tour for topics that interest you.</p>
-                                </div>
+                        </div>
+                        <div class="span3">
+                            <div class="tile">
+                                <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/colors.png">
+                                <h3 class="tile-title">Personalize</h3>
+                                <p>Use suggestions and keyword search.</p>
                             </div>
-
-                            <div class="span3">
-                                <div class="tile">
-                                    <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/time.png">
-                                    <h3 class="tile-title">Limit</h3>
-                                    <p>Tell us how much time you have for a quality tour.</p>
-                                </div>
+                        </div>
+                        <div class="span3">
+                            <div class="tile">
+                                <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/time.png">
+                                <h3 class="tile-title">Limit</h3>
+                                <p>Tell us how much time you want to spend.</p>
                             </div>
-
-                            <div class="span3">
-                                <div class="tile">
-                                    <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/book.png">
-                                    <h3 class="tile-title">Record</h3>
-                                    <p>Rate, save, and share the places you visit.</p>
-                                </div>
-
+                        </div>
+                        <div class="span3">
+                            <div class="tile">
+                                <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/book.png">
+                                <h3 class="tile-title">Record</h3>
+                                <p>Rate, save, and share the places you visit.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr class="featurette-divider">
-                  <div id="curators" class="featurette">
-                      <h2 class="featurette-heading">
-                          Curators
-                          <span class="muted">Propel into the information age</span>
-                      </h2>
+            </div>
+              <div id="curators" class="featurette">
+                  <hr class="featurette-divider">
+                  <h2 class="featurette-heading">
+                      Curators
+                      <span class="muted">Propel into the information age</span>
+                  </h2>
 
-                      <div class="featurette-text">
-                          <div class="row demo-tiles">
-                              <div class="span3">
-                                  <div class="tile">
-                                      <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/colors.png">
-                                      <h3 class="tile-title">Guide</h3>
-                                      <p>Provide your original maps, info, and audio guide.</p>
-                                  </div>
-                              </div>
-
-                              <div class="span3">
-                                  <div class="tile">
-                                      <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/clipboard.png">
-                                      <h3 class="tile-title">Secure</h3>
-                                      <p>Keep your collection Amazon-grade secure.</p>
-                                  </div>
-                              </div>
-
-                              <div class="span3">
-                                  <div class="tile">
-                                      <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/retina.png">
-                                      <h3 class="tile-title">Engage</h3>
-                                      <p>Get real-time feedback and walking patterns.</p>
-                                  </div>
-                              </div>
-
-                              <div class="span3">
-                                  <div class="tile">
-                                      <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/mail.png">
-                                      <h3 class="tile-title">Reach</h3>
-                                      <p>Build a community and identify your returnees.</p>
-                                  </div>
-
+                  <div class="featurette-text">
+                      <div class="row demo-tiles">
+                          <div class="span3">
+                              <div class="tile">
+                                  <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/compass.png">
+                                  <h3 class="tile-title">Guide</h3>
+                                  <p>Provide image, text, and audio guides.</p>
                               </div>
                           </div>
-                     </div>
-                      <div id="mc_embed_signup">
-                          <h1>Interested? Sign up to hear when Sideguide is ready</h1>
-                          <form action="http://sideguide.us5.list-manage.com/subscribe/post?u=cc3f1c3b548018e9abb08aef0&amp;id=ff19a6ec81" method="post" class="form-inline" target="_blank" novalidate>
-                              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
-                             <input type="submit" value="Click here!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-large  btn-success">
-                          </form>
+
+                          <div class="span3">
+                              <div class="tile">
+                                  <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/clipboard.png">
+                                  <h3 class="tile-title">Store</h3>
+                                  <p>Keep your collection Amazon-grade secure.</p>
+                              </div>
+                          </div>
+
+                          <div class="span3">
+                              <div class="tile">
+                                  <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/retina.png">
+                                  <h3 class="tile-title">Improve</h3>
+                                  <p>Get real time analytics and feedback.</p>
+                              </div>
+                          </div>
+
+                          <div class="span3">
+                              <div class="tile">
+                                  <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/mail.png">
+                                  <h3 class="tile-title">Reach</h3>
+                                  <p>Identify and build your community.</p>
+                              </div>
+
+                          </div>
                       </div>
-               </div>
-                <hr class="featurette-divider">
-            <div id="fund" class="featurette">
-                <h2 class="featurette-heading">
-                    Fund us
-                    <span class="muted">Ready for more</span>
-                </h2>
-
-
-                <div class="hover-wrapper">
-                    <div id="people" class="hover-triggers">
-                        <div class="item">
-                            <a href="#karissa"><img src="/static/img/people/karissa.jpg" /></a>
-                        </div>
-
-                        <div class="item">
-                            <a href="#serge"><img src="/static/img/people/serge.png" /></a>
-                        </div>
-
-                        <div class="item">
-                            <a href="#mengyao"><img src="/static/img/people/mengyao.jpg" /></a>
-                        </div>
-
-                        <div class="item">
-                            <a href="#anhe"><img src="/static/img/people/Anhe.jpg" /></a>
-                        </div>
-
-                        <div class="item">
-                            <a href="#ashleigh"><img src="/static/img/people/person.gif" /></a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="hover-content span4">
-                    <div id="karissa" class="details">
-                        <h4>Karissa McKelvey <br><small>Chief Executive Officer</small></h4>
-                        <p> Karissa is a graduate student in Informatics. She is a web developer, musician, computational social scientist, beer enthusiast, and
-                            experienced team player. She enjoys bringing new ideas to life with teams in whiteboard-lined rooms.</p>
-                    </div>
-                    <div id="serge" class="details">
-                        <h4>Serge Chernetsky <br><small>Principal Software Developer</small></h4>
-                        <p> Serge has a passion for mobile development, algorithms, and software design.
-                            His wide array of skills acquired over various jobs and
-                            internships translates into technical know-how required to bring projects to fruition. </p>
-                    </div>
-                    <div id="mengyao" class="details">
-                        <h4>Mengyao Zhao <br><small>User Experience Designer</small></h4>
-                        <p>Mengyao is a graduate student in Human-computer Interaction Design.
-                            She is a Chinese Zeither player, a photographer, a flower lover, a UX designer and a design researcher.
-                            She is interested in Aesthetic Experience, Heritage Study and Design Methods in HCI and she gains design
-                            inspirations from music, arts and life.</p>
-                    </div>
-                    <div id="anhe" class="details">
-                        <h4>Anhe Guo <br><small>User Experience Designer</small></h4>
-                        <p>Anhe Guo is a UX designer and graduate student in
-                        HCI and design. She appreciates the changes brought
-                        by technology and design, and loves to imagine and
-                        design a better world. </p>
-                    </div>
-                    <div id="ashleigh" class="details">
-                        <h4>Ashleigh Nero <br><small>Animation and Graphic Design</small></h4>
-                        <p>this is a story about ashleigh</p>
-                    </div>
-
-                </div>
-                </div>
+                 </div>
            </div>
+        <div id="fund" class="featurette">
+            <hr class="featurette-divider">
+            <h2 class="featurette-heading">
+                Fund us
+                <span class="muted">Ready for more</span>
+            </h2>
+
+
+            <div class="hover-wrapper">
+                <div id="people" class="hover-triggers span5">
+                    <div class="item tile">
+                        <a href="#karissa"><img src="/static/img/people/karissa-small.png" /></a>
+                        <h3>Karissa</h3>
+                    </div>
+                    <div class="item tile">
+                        <a href="#serge"><img src="/static/img/people/serge-small.png" /></a>
+                        <h3>Serge</h3>
+                    </div>
+                    <div class="item tile">
+                        <a href="#mengyao"><img src="/static/img/people/mengyao-small.png" /></a>
+                        <h3>Mengyao</h3>
+                    </div>
+                    <div class="item tile">
+                        <a href="#anhe"><img src="/static/img/people/anhe-small.png" /></a>
+                        <h3>Anhe</h3>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="hover-content span4">
+                <div id="background" class="details active">
+                    <h1>The Team<br><small></small></h1>
+                    <hr class="featurette-divider">
+
+                    <p> <b>We are </b> young developers, designers, researchers, and entrepeneurs.
+                        Our goal is to <b>replace paper maps and navigation signs</b> and <b>improve traffic flow</b>, by creating a well-built and easy-to-use app
+                    that is <b>stylish </b> and <b>reliable.</b></p>
+
+                    <p>
+                        <b>Future goals </b> include creating a web portal for visitors to experience <b>virtual tours</b> of destinations, providing
+                        <b>open APIs</b> for developers to incorporate <b>open collections</b> into applications, and building <b>game modes</b> and <b>achievements</b>
+                        that make trips <b>educational and fun</b> for children... and adults.
+                    </p>
+                    <hr class="featurette-divider">
+                    <p>
+                        Currently looking for <b>venture capital</b> to quit our day jobs and <b>make this happen</b>.
+                        Give us a shot by scheduling a meeting at<b><br><a href="mailto:hello@getsideguide.com">hello-at-getsideguide-dot-com</a></b>
+                    </p>
+                </div>
+                <div id="karissa" class="details">
+                    <h1>Karissa McKelvey <br><small>CEO, Principal Web Developer</small></h1>
+
+                    <p> Karissa is a web developer,
+                         computational social scientist, data visualization expert, and
+                         experienced team player. She enjoys bringing new ideas to life with teams in whiteboard-lined rooms.</p>
+                    <img src="/static/img/people/karissa.jpg" />
+                </div>
+                <div id="serge" class="details">
+                    <h1>Serge Chernetsky <br><small>Principal Software Developer</small></h1>
+                    <p> Serge has a passion for mobile development, algorithms, and software design.
+                        His wide array of skills acquired over various jobs and
+                        internships translates into technical know-how required to bring projects to fruition. </p>
+                    <img src="/static/img/people/serge.png" />
+                </div>
+                <div id="mengyao" class="details">
+                    <h1>Mengyao Zhao <br><small>User Experience Designer</small></h1>
+                    <p>Mengyao is a graduate student in Human-Computer Interaction Design.
+                        She is a Chinese Zeither player, a photographer, a flower lover, a UX designer and a design researcher.
+                        She is interested in Aesthetic Experience, Heritage Study and HCI Design Methods. She gains
+                        inspiration from music, arts and life.</p>
+                    <img src="/static/img/people/mengyao.jpg" />
+                </div>
+                <div id="anhe" class="details">
+                    <h1>Anhe Guo <br><small>User Experience Designer</small></h1>
+                    <p>Anhe is a graduate student in Human-Computer Interaction
+                    Design. Her inspiration comes from the positive influence that
+                   design and technology bring to the world on a personal,
+                    social or political level. She focuses this passion on designing and
+                   imagining a better world. </p>
+                    <img src="/static/img/people/Anhe.JPG" />
+                </div>
+
+                <div id="hayley" class="details">
+                    <h1>Hayley Plageman <br><small>Principal Graphic and Web Designer </small></h1>
+                    <p>Hayley is a graphic designer and interactive web developer.</p>
+                </div>
+
+                <div id="ashleigh" class="details">
+                    <h1>Ashleigh Nero <br><small>Animation and Graphic Design</small></h1>
+                    <p>this is a story about ashleigh</p>
+                </div>
+            </div>
+       </div>
     </div>
-      <!-- {% include "browse/footer.html" %} -->
+  </div>
+  {% include "browse/footer.html" %}
 
   </body>
 </html>
