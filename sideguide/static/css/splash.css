@@ -1,9 +1,9 @@
 /* Main marketing message and sign up button */
 .header {
     text-align: center;
-    padding-top:100px;
+    padding-top:200px;
     padding-bottom:40px;
-    float:right;
+    float:left;
     position:relative;
     width: 50%;
 }
@@ -29,8 +29,7 @@
     margin: 10px;
     float: left;
     background-color: #ecf0f5;
-    padding:10px 10px 0px 10px;
-
+    padding:20px;
 }
 
 .details > img {
@@ -121,7 +120,6 @@
     border-top: 80px solid #e16e2f;
 }
 
-
 #splashfront {
     width:100%;
     position:relative;
@@ -170,7 +168,7 @@
     margin-top:100px;
     height:100px;
     width:50%;
-    float:right;
+    float:left;
 }
 
 /* RESPONSIVE CSS
@@ -187,6 +185,13 @@
         margin: -20px 0;
     }
 
+    .carousel .item {
+        height: 500px;
+    }
+    .carousel img {
+        width: auto;
+        height: 500px;
+    }
 
     .featurette {
         height: auto;
@@ -206,6 +211,32 @@
 
     .navbar-inner {
         margin: -20px;
+    }
+
+    .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .carousel .container {
+
+    }
+    .carousel .item {
+        height: 300px;
+    }
+    .carousel img {
+        height: 300px;
+    }
+    .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+    }
+    .carousel-caption h1 {
+        font-size: 30px;
+    }
+    .carousel-caption .lead,
+    .carousel-caption .btn {
+        font-size: 18px;
     }
 
     .marketing .span4 + .span4 {
@@ -229,7 +260,7 @@
     background-image: url(/static/img/wireframe-iphone.png);
     background-size:378px 730px;
     background-repeat:no-repeat;
-    float:left;
+    float:right;
     postition:relative;
     padding-bottom:50px;
 }
