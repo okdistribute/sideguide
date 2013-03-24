@@ -115,9 +115,9 @@
 }
 .downarrow:hover {
     cursor:pointer;
-    border-left: 80px solid transparent;
-    border-right: 80px solid transparent;
-    border-top: 80px solid #e16e2f;
+    border-left: 77px solid transparent;
+    border-right: 77px solid transparent;
+    border-top: 77px solid #e16e2f;
 }
 
 #splashfront {
