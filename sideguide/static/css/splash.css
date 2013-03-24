@@ -3,6 +3,9 @@
     text-align: center;
     padding-top:100px;
     padding-bottom:40px;
+    float:right;
+    position:relative;
+    width: 50%;
 }
 .header h1 {
     font-size: 100px;
@@ -26,7 +29,8 @@
     margin: 10px;
     float: left;
     background-color: #ecf0f5;
-    padding:20px;
+    padding:10px 10px 0px 10px;
+
 }
 
 .details > img {
@@ -75,7 +79,7 @@
 .featurette-divider {
     margin: 20px 0px 20px 0px; /* Space out the Bootstrap <hr> more */
     padding-bottom: 5px;
-    background-color: #2b8949;
+    background-color: #34495e;
 }
 .featurette-text {
     position:relative;
@@ -93,7 +97,7 @@
     font-weight: 300;
     line-height: 1;
     letter-spacing: -1px;
-    padding:40px 0px;
+    padding:40px 0px 40px 0px;
 }
 
 .splash-nav {
@@ -108,15 +112,22 @@
     height: 0;
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
-    border-top: 75px solid #2b8949;
+    border-top: 75px solid #34495e;
+}
+.downarrow:hover {
+    cursor:pointer;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-top: 80px solid #e16e2f;
 }
 
 
 #splashfront {
-    height:600px;
     width:100%;
     position:relative;
+    padding-top:80px;
 }
+
 #splashbottom {
     width:100%;
 }
@@ -155,9 +166,11 @@
     cursor: pointer;
 }
 
-.splashbar {
-    margin-top:-100px;
+#splashbar {
+    margin-top:100px;
     height:100px;
+    width:50%;
+    float:right;
 }
 
 /* RESPONSIVE CSS
@@ -174,13 +187,6 @@
         margin: -20px 0;
     }
 
-    .carousel .item {
-        height: 500px;
-    }
-    .carousel img {
-        width: auto;
-        height: 500px;
-    }
 
     .featurette {
         height: auto;
@@ -202,32 +208,6 @@
         margin: -20px;
     }
 
-    .carousel {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
-    .carousel .container {
-
-    }
-    .carousel .item {
-        height: 300px;
-    }
-    .carousel img {
-        height: 300px;
-    }
-    .carousel-caption {
-        width: 65%;
-        padding: 0 70px;
-        margin-top: 100px;
-    }
-    .carousel-caption h1 {
-        font-size: 30px;
-    }
-    .carousel-caption .lead,
-    .carousel-caption .btn {
-        font-size: 18px;
-    }
-
     .marketing .span4 + .span4 {
         margin-top: 40px;
     }
@@ -241,3 +221,123 @@
     }
 
 }
+
+/* slideshow */
+#iphone-container {
+    width:378px;
+    height:730px;
+    background-image: url(/static/img/wireframe-iphone.png);
+    background-size:378px 730px;
+    background-repeat:no-repeat;
+    float:left;
+    postition:relative;
+    padding-bottom:50px;
+}
+#slides-container {
+    width:320px;
+    height:480px;
+    padding:10px;
+    padding-left: 31px;
+    padding-top: 120px;
+    float:left;
+
+}
+#slides {
+    display: none;
+
+}
+#slides .slidesjs-navigation {
+    margin-top:5px;
+}
+
+a.slidesjs-next,
+a.slidesjs-previous,
+a.slidesjs-play,
+a.slidesjs-stop {
+    background-image: url(/static/packages/slidesjs-3/examples/playing/img/btns-next-prev.png);
+    background-repeat: no-repeat;
+    display:block;
+    width:12px;
+    height:18px;
+    overflow: hidden;
+    text-indent: -9999px;
+    float: left;
+    margin-right:5px;
+}
+
+a.slidesjs-next {
+    margin-right:10px;
+    background-position: -12px 0;
+}
+
+a:hover.slidesjs-next {
+    background-position: -12px -18px;
+}
+
+a.slidesjs-previous {
+    background-position: 0 0;
+}
+
+a:hover.slidesjs-previous {
+    background-position: 0 -18px;
+}
+
+a.slidesjs-play {
+    width:15px;
+    background-position: -25px 0;
+}
+
+a:hover.slidesjs-play {
+    background-position: -25px -18px;
+}
+
+a.slidesjs-stop {
+    width:18px;
+    background-position: -41px 0;
+}
+
+a:hover.slidesjs-stop {
+    background-position: -41px -18px;
+}
+
+.slidesjs-pagination {
+    margin: 7px 0 0;
+    float: right;
+    list-style: none;
+}
+
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    width: 12px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(/static/packages/slidesjs-3/examples/playing/img/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+    background-position: 0 -13px
+}
+
+.slidesjs-pagination li a:hover {
+    background-position: 0 -26px
+}
+
+#slides a:link,
+#slides a:visited {
+    color: #34495e;
+}
+
+#slides a:hover,
+#slides a:active {
+    color: #06b33c;
+}
+

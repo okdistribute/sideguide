@@ -19,6 +19,7 @@
 <meta content="" name="norton-safeweb-site-verification">
 <meta content="" name="msapplication-TileImage">
 <meta content="#ffffff" name="msapplication-TileColor">
+<meta name="viewport" content="width=device-width">
     <title>Sideguide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
@@ -29,7 +30,8 @@
     <script src="/static/js/jquery-1.8.3.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/jquery.masonry.min.js"></script>
-      <script src="/static/js/jquery.scrollto.js"></script>
+    <script src="/static/js/jquery.scrollto.js"></script>
+    <script src="/static/packages/slidesjs-3/source/jquery.slides.min.js"></script>
     <script type="text/javascript">
             $(function() {
                 var $container = $('#people');
@@ -40,23 +42,41 @@
                     });
                 });
 
+                // scrolling buttons in nav
                 $(".scroll").each(function(){
                     $(this).click(function() {
-                        $($(this).attr("href")).ScrollTo({
-                            offset: 300
-                        });
+                        $($(this).attr("href")).ScrollTo();
                     });
                 });
 
-                $(".item").hover(function() {
+                // fund us items
+                $(".item").hover(function() { //hover in
                        $("#background").removeClass("active");
                        href = $(this).find("a").attr("data-item");
                        $details = $(href+".details");
                        $details.addClass("active");
                 },
-                function() {
+                function() { //hover out
                        $(".details").removeClass("active");
                        $("#background").addClass("active");
+                });
+
+               var triangle =  $("#splashbar");
+                triangle.click(function() {
+                    $("#explorers").ScrollTo();
+                });
+
+
+                //mobile slideshow
+                $('#slides').slidesjs({
+                    height: 480,
+                    width: 320,
+                    play: {
+                        active: true,
+                        auto: true,
+                        interval: 6000,
+                        pauseOnHover: true
+                    }
                 });
             });
         </script>
@@ -86,16 +106,30 @@
         </div>
       </div>
       <div id="splashfront">
+          <div id="iphone-container">
+              <div id="slides-container">
+                  <div id="slides">
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_4.jpg" alt="" />
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_17.jpg" alt="" />
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_6.jpg" alt="" />
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_10.jpg" alt="" />
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_12.jpg" alt="" />
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_13.jpg" alt="" />
+                      <img  src="/static/img/prototypImgs/JPEG/mockup_0324_15.jpg" alt="" />
+                   </div>
+              </div>
+          </div>
             <div class="header">
-                <h1 class="header-logo"><img src="/static/img/sideguidelogo.png" width="900px"/> </h1>
+                <h1 class="header-logo"><img src="/static/img/sideguidelogo.png" /> </h1>
                 <p class="lead">Mobile tour guide for museums, parks, landmarks, cities, malls... </p>
             </div>
-  </div>
-            <div class="splashbar">
-                <div href="#explorers" class="downarrow"></div>
-            </div>
+      </div>
+      <div id="splashbar">
+
+           <div href="#explorers" class="downarrow"></div>
+      </div>
+    <div class="clearfix"></div>
             <div id="explorers" class="featurette">
-                <hr class="featurette-divider">
                 <h2 class="featurette-heading">
                     Explorers,
                     <span class="muted">rediscover your world</span>
@@ -134,7 +168,6 @@
                 </div>
             </div>
               <div id="curators" class="featurette">
-                  <hr class="featurette-divider">
                   <h2 class="featurette-heading">
                       Curators,
                       <span class="muted">propel into the information age</span>
@@ -187,10 +220,9 @@
                  </div>
            </div>
         <div id="fund" class="featurette">
-            <hr class="featurette-divider">
             <h2 class="featurette-heading">
                 Fund us,
-                <span class="muted">ready for more</span>
+                <span class="muted">we're ready for more</span>
             </h2>
 
 
@@ -198,24 +230,24 @@
                 <div id="people" class="hover-triggers span5">
                     <div class="item tile">
                         <a data-item="#karissa" href="http://rissarae.net" target="_blank"><img src="/static/img/people/karissa-small.png" /></a>
-                        <h3>Karissa</h3>
+                        <h4>Karissa</h4>
                     </div>
                     <div class="item tile">
                         <a data-item="#serge" href="http://www.linkedin.com/pub/serge-chernetsky/1b/969/8a2" target="_blank">
                             <img src="/static/img/people/serge-small.png" /></a>
-                        <h3>Serge</h3>
+                        <h4>Serge</h4>
                     </div>
                     <div class="item tile">
                         <a data-item="#mengyao" href="http://www.mengyaozhao.com/" target="_blank"><img src="/static/img/people/mengyao-small.png" /></a>
-                        <h3>Mengyao</h3>
+                        <h4>Mengyao</h4>
                     </div>
                     <div class="item tile">
                         <a data-item="#anhe" href="http://anheguo.com" target="_blank"><img src="/static/img/people/anhe-small.png" /></a>
-                        <h3>Anhe</h3>
+                        <h4>Anhe</h4>
                     </div>
                     <div class="item tile">
                         <a data-item="#ashleigh" href="http://www.ashnero.com/" target="_blank"><img src="/static/img/people/ash-small.png" /></a>
-                        <h3>Ashleigh</h3>
+                        <h4>Ashleigh</h4>
                     </div>
 
                 </div>
@@ -228,17 +260,17 @@
 
                     <p> <b>We are </b> young developers, designers, researchers, and entrepeneurs.
                         Our goal is to <b>replace paper maps and navigation signs</b> and <b>improve traffic flow</b>, by creating a well-built and easy-to-use app
-                    with <b>seamless design</b> and <b>smart AI</b>.</p>
+                    with seamless design and smart AI.</p>
 
                     <p>
                         <b>Future goals </b> include creating a web portal for visitors to experience <b>virtual tours</b> of destinations, providing
-                        <b>open APIs</b> for developers to incorporate <b>open collections</b> into applications, and building <b>game modes</b> and <b>achievements</b>
-                        that make trips <b>educational and fun</b> for children... and adults.
+                        <b>APIs</b> for developers to incorporate open collections into applications, and building <b>game modes and achievements</b>
+                        that make trips educational and fun for children... and adults.
                     </p>
                     <hr class="featurette-divider">
                     <p>
                         Currently looking for <b>venture capital</b> to quit our day jobs and <b>make this happen</b>.
-                        Give us a shot by scheduling a meeting at<b><br><a href="mailto:hello@getsideguide.com">hello-at-getsideguide-dot-com</a></b>
+                        Give us a shot by <b><a href="mailto:hello@getsideguide.com">scheduling a meeting</a></b>
                     </p>
                 </div>
                 <div id="karissa" class="details">
