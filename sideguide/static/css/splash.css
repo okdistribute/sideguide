@@ -233,10 +233,10 @@
 
 /* slideshow */
 #iphone-container {
-    width:378px;
-    height:730px;
+    width:440px;
+    height:760px;
     background-image: url(/static/img/wireframe-iphone.png);
-    background-size:378px 730px;
+    background-size:440px 760px;
     background-repeat:no-repeat;
     float:right;
     postition:relative;
@@ -246,8 +246,8 @@
     width:320px;
     height:480px;
     padding:10px;
-    padding-left: 31px;
-    padding-top: 120px;
+    padding-left: 62px;
+    padding-top: 130px;
     float:left;
 
 }
