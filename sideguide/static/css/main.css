@@ -15,6 +15,11 @@ body > #wrap {height: auto; min-height: 100%;}
     clear:both;
     background-color: #e16e2f;
     width:100%;
+    color: #ccc;
+}
+
+#footer a {
+    color: #ccc;
 }
 
 .credit {

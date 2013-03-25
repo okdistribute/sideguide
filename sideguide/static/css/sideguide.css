@@ -181,7 +181,7 @@ body {
 
 a {
   color: #06b33c;
-  text-decoration: underline;
+  text-decoration: none;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -189,7 +189,7 @@ a {
   -webkit-backface-visibility: hidden; }
   a:hover {
     color: #06b33c;
-    text-decoration: none; }
+    text-decoration: underline; }
 
 h1 {
   font-size: 32px;
