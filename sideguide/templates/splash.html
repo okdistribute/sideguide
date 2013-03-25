@@ -48,17 +48,19 @@
                         $($(this).attr("href")).ScrollTo();
                     });
                 });
-
+                var bgrd = $("#background");
                 // fund us items
                 $(".item").hover(function() { //hover in
-                       $("#background").removeClass("active");
-                       href = $(this).find("a").attr("data-item");
-                       $details = $(href+".details");
-                       $details.addClass("active");
+                   bgrd.removeClass("active");
+                   bgrd.addClass("hidden");
+                   href = $(this).find("a").attr("data-item");
+                   $details = $(href+".details");
+                   $details.addClass("active");
                 },
                 function() { //hover out
-                       $(".details").removeClass("active");
-                       $("#background").addClass("active");
+                   $(".details").removeClass("active");
+                   bgrd.removeClass("hidden");
+                   bgrd.addClass("active");
                 });
 
                var triangle =  $("#splashbar");
