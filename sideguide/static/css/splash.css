@@ -235,7 +235,7 @@
 #iphone-container {
     width:440px;
     height:760px;
-    background-image: url(/static/img/wireframe-iphone.png);
+    background-image: url(/static/img/wireframe-iphone-header.png);
     background-size:440px 760px;
     background-repeat:no-repeat;
     float:right;
