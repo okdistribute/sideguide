@@ -28,8 +28,9 @@
 .item {
     margin: 10px;
     float: left;
-    background-color: #ecf0f5;
-    padding:10px 10px 0px 10px;
+    background-color: #34495e;
+    padding: 10px 10px 0px 10px;
+    color: #ecf0f5;
 }
 
 .item > a > img {
@@ -90,7 +91,6 @@
     margin:auto;
 }
 .featurette {
-    padding: 15px 0px 15px 0px; /* Vertically center images part 1: add padding above and below text. */
     overflow: hidden; /* Vertically center images part 2: clear their floats. */
     text-align: center;
 }
@@ -116,13 +116,13 @@
     height: 0;
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
-    border-top: 75px solid #34495e;
+    border-top: 75px solid #2b8949;
 }
 .downarrow:hover {
     cursor:pointer;
     border-left: 77px solid transparent;
     border-right: 77px solid transparent;
-    border-top: 77px solid #e16e2f;
+    border-top: 77px solid #06b33c;
 }
 
 #splashfront {
