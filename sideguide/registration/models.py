@@ -1,10 +1,10 @@
-import sha
+import hashlib
 import random
 import datetime
 
 from django.db import models
 from django import forms
-from django.contrib.auth.models import User, UserManager
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.template.loader import render_to_string
 
@@ -44,8 +44,8 @@ class ActivationProfile(models.Model):
         ).save()
         new_user.save()
 
-        salt = sha.new(str(random.random())).hexdigest()[:5]
-        activation_key = sha.new(salt + username).hexdigest()
+        salt = hashlib.new(str(random.random())).hexdigest()[:5]
+        activation_key = hashlib.new(salt + username).hexdigest()
         cls.objects.create(user=username, activation_key=activation_key)
         
         if send_email:
