@@ -133,7 +133,8 @@ INSTALLED_APPS = [
     'browse',
     'registration',
     'common',
-    'south'
+    'south',
+    'social_auth'
 ]
 
 # A sample logging configuration. The only tangible logging
