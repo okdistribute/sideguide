@@ -4,4 +4,5 @@ python-dateutil
 numpy
 south
 django-tastypie
+django-social-auth
 psycopg2
