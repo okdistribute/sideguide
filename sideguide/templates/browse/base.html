@@ -28,12 +28,13 @@
   </head>
   <body>
      <div id="wrap" class="container">
-        <div class="navbar">
+         <div class="navbar navbar-inverse ">
+             <div class="navbar-inner">
                 <ul class="nav">
                     <li><a href="/">sideguide</a></li>
                     <form class="form-search navbar-form pull-left">
                         <input type="text" class="search-query" placeholder="Search">
-                        <button type="submit" class="btn"> <i class="icon-search"></i></button>
+                        <button type="submit" class="nav-btn btn"> Go</button>
                     </form>
                     <li><a href="/explore">Explore</a></li>
                     <li><a href="/curate">Curate</a></li>
@@ -45,10 +46,10 @@
                     <li><a href="/accounts/profile">Account</a></li>
                     <li><a href="/accounts/logout">Signout</a></li>
                     {% else %}
-                     <li><a href="/accounts/register/">Register</a></li>
                      <li><a href="/accounts/login">Login</a></li>
                     {% endif %}
                 </ul>
+            </div>
         </div>
         <div id="main" class="container-fluid">
             {% block content %}{% endblock %}
