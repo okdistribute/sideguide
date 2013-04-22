@@ -31,5 +31,9 @@
             </div>
         </div>
     </form>
+    {% load url from future %}
+    <a href="{% url "socialauth_begin" "facebook" %}"><img src="/static/img/social/f_logo.png" /></a>
+    <a href="{% url "socialauth_begin" "twitter" %}"><img src="/static/img/social/twitter-bird.png" /></a>
+    <a href="{% url "socialauth_begin" "google" %}"><img src="/static/img/social/google-login.png" /></a>
 </div>
 {% endblock %}

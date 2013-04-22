@@ -27,7 +27,7 @@ DATABASES = {
 # ******************** PERSONALLY EDITED SETTINGS **********************
 # help patch in django mongodb engine
 #SITE_ID = u'508505b21344ed6325ddb8b4'
-SITE_ID = u'50d3c6114384d8d5f67d67a1'
+SITE_ID = u'50d3c6114384d8d5f67d67a1'\
 
 # debug backend for e-mails
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
@@ -42,7 +42,6 @@ AUTH_PROFILE_MODULE = 'registration.UserProfile'
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
 TIME_ZONE = 'America/Los_Angeles'
-
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
@@ -167,3 +166,32 @@ LOGGING = {
     },
 }
 POSTGIS_VERSION = (1, 5, 0)
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuthBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleBackend',
+  #  'social_auth.backends.contrib.foursquare.FoursquareBackend',
+    'social_auth.backends.OpenIDBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    )
+
+TWITTER_CONSUMER_KEY         = 'qPkq0c0CC4h6pqwlaxWA'
+TWITTER_CONSUMER_SECRET      = 'ELCGtRgc6VInKlPo7YuWkz32V9kTJlqnK3Cy27rDwCk'
+
+FACEBOOK_APP_ID              = '152021008306752'
+FACEBOOK_API_SECRET          = 'd3ed2fdd69232de52585336541e5ad09'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+GOOGLE_OAUTH2_CLIENT_ID      = '541060389402.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET  = 'Hm_cYlhG4601BqEccf3PilHY'
+GOOGLE_DISPLAY_NAME = 'Sideguide'
+
+#FOURSQUARE_CONSUMER_KEY      = ''
+#FOURSQUARE_CONSUMER_SECRET   = ''
+
+LOGIN_URL          = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/accounts/profile/'
+LOGIN_ERROR_URL    = '/accounts/register/'
