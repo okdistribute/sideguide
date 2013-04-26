@@ -1,9 +1,9 @@
 {% extends "browse/base.html" %}
 
 {% block content %}
-    <form class="form-horizontal" action="/api/v1/" method="post">
+    <form class="form-horizontal" action="/curate/point" method="post">
         {{ form.non_field_errors }}
-        <legend>Create a collection</legend>
+        <legend>Create a point of interest</legend>
         <div class="control-group">
             <label class="control-label" for="id_name">Name</label>
             <div class="controls">
