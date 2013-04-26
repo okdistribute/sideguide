@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
 from sideguide.common.forms import CollForm
+from django.contrib.auth.decorators import login_required
 
+@login_required()
 def index(request):
     """/curate"""
     c = {}
