@@ -33,10 +33,11 @@
     <script src="/static/js/jquery.masonry.min.js"></script>
     <script src="/static/js/jquery.scrollto.js"></script>
     <script src="/static/packages/slidesjs-3/source/jquery.slides.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script type="text/javascript">
             $(function() {
-                var $container = $('#people');
+                var $container = $('#team .bubbles');
 
                 $container.imagesLoaded( function(){
                     $container.masonry({
@@ -65,9 +66,10 @@
                    bgrd.addClass("active");
                 });
 
-               var triangle =  $("#splashbar");
+               var triangle =  $(".splashbar");
                 triangle.click(function() {
-                    $("#explorers").ScrollTo();
+                    var togo = $(this).find("div").attr("href");
+                    $(togo).ScrollTo();
                 });
 
 
@@ -82,6 +84,23 @@
                         swap: true
                     }
                 });
+
+
+                $('a.scroller').bind('click',function(event){
+                    var $anchor = $(this);
+
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1500,'easeInOutExpo');
+                    /*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1000);
+                    */
+                    event.preventDefault();
+                });
+
             });
         </script>
       <script>
@@ -96,20 +115,21 @@
       </script>
   </head>
   <body data-spy="scroll" data-target=".navbar" data-offset="300">
+
   <div id="wrap">
   <div id="main" class="container marketing clearfix">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
           <a class="brand" href="#"></a>
           <ul class="nav pull-right">
-              <li><a href="#splashfront" class="scroll">About</a></li>
-              <li><a href="#explorers" class="scroll">Explorers</a></li>
-              <li><a href="#curators" class="scroll">Curators</a></li>
-              <li><a href="#fund" class="scroll">Fund us</a></li>
+              <li><a href="#sideguide" class="scroller">Sideguide</a></li>
+              <li><a href="#explorers" class="scroller">Explore</a></li>
+              <li><a href="#guides" class="scroller">Guide</a></li>
+              <li><a href="#team" class="scroller">The Team</a></li>
           </ul>
         </div>
       </div>
-      <div id="splashfront">
+      <div id="sideguide" class="section">
           <div id="iphone-container">
               <div id="slides-container">
                   <div id="slides">
@@ -129,25 +149,20 @@
           </div>
             <div class="header">
                 <h1 class="header-logo"><img src="/static/img/sideguidelogo-header.png" /> </h1>
-                <p class="lead">Harnessing the crowd's knowledge about art,
-                architecture, and sightseeing.</p>
+                <p class="lead">Self-guided tours about art, architecture, and sightseeing.</p>
                 <div id="mc_embed_signup">
                 <form action="http://getsideguide.us5.list-manage.com/subscribe/post?u=cc3f1c3b548018e9abb08aef0&amp;id=ff19a6ec81" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank" novalidate>
                     <input type="email" value="" name="EMAIL" class="email input-xlarge" id="mce-EMAIL" placeholder="email address" required><br>
                     <input type="submit" value="Know when it's ready" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success">
                 </form>
                 </div>
-
-<!--End mc_embed_signup-->
                 <small>(don't worry, we hate spam too)</small>
             </div>
-      </div>
-      <div id="splashbar">
-
+          <div class="splashbar left">
            <div href="#explorers" class="downarrow"></div>
       </div>
-    <div class="clearfix"></div>
-            <div id="explorers" class="featurette">
+       </div>
+          <div id="explorers" class="section">
                 <h2 class="featurette-heading">
                     Explorers,
                     <span class="muted">rediscover your world</span>
@@ -184,11 +199,15 @@
                         </div>
                     </div>
                 </div>
+
+              <div class="splashbar">
+               <div href="#guides" class="downarrow"></div>
+          </div>
             </div>
-              <div id="curators" class="featurette">
+              <div id="guides" class="section">
                   <h2 class="featurette-heading">
-                      Curators,
-                      <span class="muted">propel into the information age</span>
+                      Cuators,
+                      <span class="muted">guide hundreds with a click</span>
                   </h2>
 
                   <div class="featurette-text">
@@ -214,7 +233,7 @@
                               <div class="tile">
                                   <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/retina.png">
                                   <h3 class="tile-title">Improve</h3>
-                                  <p>Get followers and feedback.</p>
+                                  <p>Collect followers and feedback.</p>
                               </div>
                           </div>
 
@@ -229,66 +248,59 @@
                       </div>
 
                  </div>
+
+                 <div class="splashbar">
+                       <div href="#team" class="downarrow"></div>
+                  </div>
            </div>
-        <div id="fund" class="featurette">
-            <h2 class="featurette-heading">
-                Fund us,
-                <span class="muted">we're ready for more</span>
-            </h2>
+        <div class="section" id="team">
+                <div class="hover-wrapper">
+                    <div class="bubbles hover-triggers span5">
+                        <div class="item tile">
+                            <a data-item="#karissa" href="http://rissarae.net" target="_blank"><img src="/static/img/people/karissa-small.png" /></a>
+                            <h4>Karissa</h4>
+                        </div>
+                        <div class="item tile">
+                            <a data-item="#serge" href="http://www.linkedin.com/pub/serge-chernetsky/1b/969/8a2" target="_blank">
+                                <img src="/static/img/people/serge-small.png" /></a>
+                            <h4>Serge</h4>
+                        </div>
+                        <div class="item tile">
+                            <a data-item="#frank" href="" target="_blank">
+                                <img src="/static/img/people/person.gif" /></a>
+                            <h4>Frank</h4>
+                        </div>
+                        <div class="item tile">
+                            <a data-item="#mengyao" href="http://www.mengyaozhao.com/" target="_blank"><img src="/static/img/people/mengyao-small.png" /></a>
+                            <h4>Mengyao</h4>
+                        </div>
+                        <div class="item tile">
+                            <a data-item="#anhe" href="http://anheguo.com" target="_blank"><img src="/static/img/people/anhe-small.png" /></a>
+                            <h4>Anhe</h4>
+                        </div>
+                        <div class="item tile">
+                            <a data-item="#hayley" href="" target="_blank">
+                                <img src="/static/img/people/hayleyp.jpg" /></a>
+                            <h4>Hayley</h4>
+                        </div>
+                        <div class="item tile">
+                            <a data-item="#ashleigh" href="http://www.ashnero.com/" target="_blank"><img src="/static/img/people/ash-small.png" /></a>
+                            <h4>Ashleigh</h4>
+                        </div>
 
 
-            <div class="hover-wrapper">
-                <div id="people" class="hover-triggers span5">
-                    <div class="item tile">
-                        <a data-item="#karissa" href="http://rissarae.net" target="_blank"><img src="/static/img/people/karissa-small.png" /></a>
-                        <h4>Karissa</h4>
                     </div>
-                    <div class="item tile">
-                        <a data-item="#serge" href="http://www.linkedin.com/pub/serge-chernetsky/1b/969/8a2" target="_blank">
-                            <img src="/static/img/people/serge-small.png" /></a>
-                        <h4>Serge</h4>
-                    </div>
-                    <div class="item tile">
-                        <a data-item="#frank" href="" target="_blank">
-                            <img src="/static/img/people/person.gif" /></a>
-                        <h4>Frank</h4>
-                    </div>
-                    <div class="item tile">
-                        <a data-item="#mengyao" href="http://www.mengyaozhao.com/" target="_blank"><img src="/static/img/people/mengyao-small.png" /></a>
-                        <h4>Mengyao</h4>
-                    </div>
-                    <div class="item tile">
-                        <a data-item="#anhe" href="http://anheguo.com" target="_blank"><img src="/static/img/people/anhe-small.png" /></a>
-                        <h4>Anhe</h4>
-                    </div>
-                    <div class="item tile">
-                        <a data-item="#hayley" href="" target="_blank">
-                            <img src="/static/img/people/hayleyp.jpg" /></a>
-                        <h4>Hayley</h4>
-                    </div>
-                    <div class="item tile">
-                        <a data-item="#ashleigh" href="http://www.ashnero.com/" target="_blank"><img src="/static/img/people/ash-small.png" /></a>
-                        <h4>Ashleigh</h4>
-                    </div>
-
-
                 </div>
-            </div>
 
             <div class="hover-content span5">
                 <div id="background" class="details active">
                     <h1>The Team<br></h1>
                     <hr class="featurette-divider">
 
-                    <p> <b>We are </b> young developers, designers, researchers, and entrepeneurs.
-                        Our goal is to <b>replace paper maps and navigation signs</b> while <b>improving traffic flow</b>, by creating a well-built and easy-to-use application
-                    with seamless design, smart artificial intelligence, and useful visualizations.</p>
+                    <h3> <b>We are </b> young developers, designers, entrepeneurs, and researchers.
+                        We create well-built and easy-to-use applications
+                    with seamless design, smart artificial intelligence, and useful visualizations.</h3>
 
-                    <p>
-                        <b>Future goals </b> include creating a web portal for visitors to experience <b>virtual tours</b> of destinations, providing
-                        <b>APIs</b> for incorporating open collections into existing applications, and building <b>game modes and achievements</b>
-                        that make trips educational and fun for children... and adults.
-                    </p>
                     <hr class="featurette-divider">
                     <p>
                         Currently looking for <b>venture capital</b> to quit our day jobs and <b>make this happen</b>.
@@ -355,6 +367,8 @@
                     <img src="/static/img/people/ash.JPG" />
 
                 </div>
+            </div>
+
             </div>
        </div>
     </div>

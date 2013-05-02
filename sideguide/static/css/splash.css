@@ -1,3 +1,20 @@
+
+.section {
+    padding-top:100px;
+    height: 800px;
+}
+
+.green {
+    background-color: #2b8949;
+}
+.orange {
+    background-color: #E16E2F;
+}
+
+.blue {
+    background-color: #34495e;
+}
+
 /* Main marketing message and sign up button */
 .header {
     text-align: center;
@@ -169,10 +186,16 @@
     cursor: pointer;
 }
 
-#splashbar {
+.splashbar.left {
     margin-top:100px;
     height:100px;
     width:50%;
+    float:left;
+}
+.splashbar {
+    margin-top:100px;
+    height:100px;
+    width:100%;
     float:left;
 }
 
