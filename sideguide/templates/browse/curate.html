@@ -1,36 +1,37 @@
 {% extends "browse/base.html" %}
 
 {% block content %}
-    <form class="form-horizontal" action="/curate/point" method="post">
-        {{ form.non_field_errors }}
-        <legend>Create a point of interest</legend>
-        <div class="control-group">
-            <label class="control-label" for="id_name">Name</label>
-            <div class="controls">
-                <input id="id_name" name="name" type="text">
-                {{ form.name.errors }}
-            </div>
-        </div>
+ <div ng-controller="CurateCtrl">
+    <h1>Curate</h1>
+ <form class="form-horizontal" action="/curate/item">
+  <div class="control-group">
+    <label class="control-label" for="inputOwner">Owner</label>
+    <div class="controls">
+        <select id="inputOwner">
+            <option value="{{user.id}}">{{user.username}}</option>
+        </select>
 
-        <div class="control-group">
-            <label class="control-label" for="id_caption">Caption</label>
-            <div class="controls">
-                <input id="id_caption" name="caption" type="text">
-                {{ form.caption.errors }}
-            </div>
-        </div>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputName">Name</label>
+    <div class="controls">
+      <input type="text" id="inputName" placeholder="Name">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputDescription">Description</label>
+    <div class="controls">
+      <textarea type="text" id="inputDescription" class="span5" placeholder="Description">
+        </textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">Create</button>
+    </div>
+  </div>
+</form>
 
-        <div class="control-group">
-            <label class="control-label" for="id_descript">Description</label>
-            <div class="controls">
-                <input id="id_descript" name="description" type="text">
-                {{ form.description.errors }}
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-success">Submit</button>
-            </div>
-        </div>
-    </form>
+ </div>
 {% endblock %}

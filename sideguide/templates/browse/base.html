@@ -19,14 +19,22 @@
       <meta content="" name="norton-safeweb-site-verification">
       <meta content="" name="msapplication-TileImage">
       <meta content="#ffffff" name="msapplication-TileColor">
-      <title>Sideguide:{% block title %} Tell the world's story {% endblock %}</title>
+      <title>Sideguide:{% block title %} Discover and Rediscover your world {% endblock %}</title>
       <link href="/static/packages/flat/css/bootstrap.css" rel="stylesheet" media="screen">
-      <link href="/static/packages/flat/css/flat-ui.css" rel="stylesheet">
+      <link href="/static/css/sideguide.css" rel="stylesheet">
       <link href="/static/css/main.css" rel="stylesheet" media="screen">
+
       <script src="/static/js/jquery-1.8.3.min.js"></script>
       <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/map.js"></script>
+
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+      <script src="/static/js/angular/angular-google-maps.js"></script>
+      <script src="/static/js/angular/app.js"></script>
+      <script src="/static/js/angular/controllers.js"></script>
+      {% block head %} {% endblock %}
   </head>
-  <body>
+  <body ng-app="Sideguide">
      <div id="wrap" class="container">
          <div class="navbar navbar-inverse ">
              <div class="navbar-inner">
@@ -34,15 +42,14 @@
                     <li><a href="/">sideguide</a></li>
                     <form class="form-search navbar-form pull-left">
                         <input type="text" class="search-query" placeholder="Search">
-                        <button type="submit" class="nav-btn btn"> Go</button>
+                        <button type="submit" class="nav-btn btn btn-success"> Go</button>
                     </form>
                     <li><a href="/explore">Explore</a></li>
-                    <li><a href="/curate">Curate</a></li>
                     <li><a href="/help">Help</a></li>
                 </ul>
                 <ul class="nav pull-right">
                     {% if user.is_authenticated %}
-                    <li><a href="/favorites">Favorites</a></li>
+                    <li><a href="/curate">Curate</a></li>
                     <li><a href="/accounts/profile">Account</a></li>
                     <li><a href="/accounts/logout">Signout</a></li>
                     {% else %}

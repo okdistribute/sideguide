@@ -1,2 +1,10 @@
 {% extends "browse/base.html" %}
-
+{% block head %}
+   <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKgLxbiAelOaOXsljMdv9xsTWHfLvpmD0&sensor=true"></script>
+{% endblock %}
+{% block content %}
+ <div ng-controller="CurateCtrl">
+        <google-map center="center" draggable="true" zoom="zoom" markers="markers" mark-click="true"></google-map>
+ </div>
+{% endblock %}

@@ -65,6 +65,7 @@ var style = [{
         "visibility": "off"
     }]
 }]
+
 function draw_map(container, lat, lon) {
     var map;
 
@@ -75,7 +76,7 @@ function draw_map(container, lat, lon) {
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    map = new google.maps.Map($(container)[0], options);
+    map = new google.maps.Map(document.getElementById(container), options);
 
     map.setOptions({
         styles: style

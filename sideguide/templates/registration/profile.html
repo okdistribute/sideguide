@@ -19,22 +19,14 @@
                     <a href="/accounts/password/change/">Change your password</a>
                 </div>
                 <div class="tab-pane" id="organization">
-                    <form class="form-horizontal" action="/common/orgs/create" method="post">
-                        {{ form.non_field_errors }}
-                        <legend>Create an organization</legend>
-                        <div class="control-group">
-                            <label class="control-label" for="id_name">Name</label>
-                            <div class="controls">
-                                <input id="id_name" name="name" type="text">
-                                {{ form.name.errors }}
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="controls">
-                                <button type="submit" class="btn btn-success">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                 <div class="row">
+
+                 </div>
+                    <div class="row">
+                        <ul ng-repeat="org in orgs">
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
