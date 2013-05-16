@@ -1,18 +1,6 @@
 
 .section {
     padding-top:100px;
-    height: 800px;
-}
-
-.green {
-    background-color: #2b8949;
-}
-.orange {
-    background-color: #E16E2F;
-}
-
-.blue {
-    background-color: #34495e;
 }
 
 /* Main marketing message and sign up button */
@@ -34,8 +22,9 @@
     line-height: 1.25;
 }
 .header .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+    font-size: 16px;
+    padding: 9px 15px;
+    margin-left: 5px;
 }
 .column {
     width:49%;
@@ -157,29 +146,6 @@
     z-index: 1;
     margin: auto;
     position: relative;
-}
-
-.videobox {
-    float:left;
-    width:49%;
-}
-.signupbox {
-    float:right;
-    width:49%;
-    text-align: center;
-}
-
-.signupbox input[type="text"] {
-    height: 40px;
-    padding: 4px;
-    font-size: 24px;
-    line-height: 33px;
-    margin-bottom: 18px;
-}
-
-.signupbox button[type="submit"] {
-    padding: 9px 40px;
-    font-size: 24px;
 }
 
 .splashbox:hover {
