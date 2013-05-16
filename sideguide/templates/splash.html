@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
-  <head>
-<meta content="Sideguide" property="og:title">
-<meta content="Sideguide - Giving context to space" property="og:description">
-<meta content="" property="og:image">
-<meta content="http://www.mysideguide.com/" property="og:url">
-<meta content="website" property="og:type">
-<meta content="Sideguide" property="og:site_name">
-<meta content="" property="fb:app_id">
-<meta content="summary" name="twitter:card">
-<meta content="@sideguideapp" name="twitter:site">
-<meta content="http://getsideguide.com/" name="twitter:url">
-<meta content="Sideguide" name="twitter:title">
-<meta content="Sideguide - Giving context to space" property="twitter:description">
-<meta content="" name="twitter:image">
-<meta content="" name="google-site-verification">
-<meta content="" name="google-site-verification">
-<meta content="" name="norton-safeweb-site-verification">
-<meta content="" name="msapplication-TileImage">
-<meta content="#34495e" name="msapplication-TileColor">
-<meta name="viewport" content="width=device-width">
+<head>
+    <meta content="Sideguide" property="og:title">
+    <meta content="Sideguide - Interactive tour guide for exhibits and landmarks." property="og:description">
+    <meta content="" property="og:image">
+    <meta content="http://www.mysideguide.com/" property="og:url">
+    <meta content="website" property="og:type">
+    <meta content="Sideguide" property="og:site_name">
+    <meta content="" property="fb:app_id">
+    <meta content="summary" name="twitter:card">
+    <meta content="@sideguideapp" name="twitter:site">
+    <meta content="http://getsideguide.com/" name="twitter:url">
+    <meta content="Sideguide" name="twitter:title">
+    <meta content="Sideguide - Interactive tour guide for exhibits and landmarks." property="twitter:description">
+    <meta content="" name="twitter:image">
+    <meta content="" name="google-site-verification">
+    <meta content="" name="google-site-verification">
+    <meta content="" name="norton-safeweb-site-verification">
+    <meta content="" name="msapplication-TileImage">
+    <meta content="#34495e" name="msapplication-TileColor">
+    <meta name="viewport" content="width=device-width">
 
-    <title>Sideguide - Giving context to space</title>
+    <title>Sideguide - Interactive tour guide for exhibits and landmarks.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/static/packages/flat/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -30,327 +30,68 @@
     <link href="/static/css/main.css" rel="stylesheet" media="screen">
     <script src="/static/js/jquery-1.8.3.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/jquery.masonry.min.js"></script>
-    <script src="/static/js/jquery.scrollto.js"></script>
     <script src="/static/packages/slidesjs-3/source/jquery.slides.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <script type="text/javascript">
-            $(function() {
-                var $container = $('#team .bubbles');
+        $(function() {
 
-                $container.imagesLoaded( function(){
-                    $container.masonry({
-                        itemSelector : '.item'
-                    });
-                });
-
-                // scrolling buttons in nav
-                $(".scroll").each(function(){
-                    $(this).click(function() {
-                        $($(this).attr("href")).ScrollTo();
-                    });
-                });
-                var bgrd = $("#background");
-                // fund us items
-                $(".item").hover(function() { //hover in
-                   bgrd.removeClass("active");
-                   bgrd.addClass("hidden");
-                   href = $(this).find("a").attr("data-item");
-                   $details = $(href+".details");
-                   $details.addClass("active");
-                },
-                function() { //hover out
-                   $(".details").removeClass("active");
-                   bgrd.removeClass("hidden");
-                   bgrd.addClass("active");
-                });
-
-               var triangle =  $(".splashbar");
-                triangle.click(function() {
-                    var togo = $(this).find("div").attr("href");
-                    $(togo).ScrollTo();
-                });
-
-
-                //mobile slideshow
-                $('#slides').slidesjs({
-                    height: 480,
-                    width: 320,
-                    play: {
-                        active: true,
-                        auto: true,
-                        interval: 4000,
-                        swap: true
-                    }
-                });
-
-
-                $('a.scroller').bind('click',function(event){
-                    var $anchor = $(this);
-
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1500,'easeInOutExpo');
-                    /*
-                    if you don't want to use the easing effects:
-                    $('html, body').stop().animate({
-                        scrollTop: $($anchor.attr('href')).offset().top
-                    }, 1000);
-                    */
-                    event.preventDefault();
-                });
-
+            //mobile slideshow
+            $('#slides').slidesjs({
+                height: 480,
+                width: 320,
+                play: {
+                    active: true,
+                    auto: true,
+                    interval: 4000,
+                    swap: true
+                }
             });
-        </script>
-      <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-39488878-1', 'sideguide.co');
-          ga('send', 'pageview');
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      </script>
-  </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="300">
+        ga('create', 'UA-39488878-1', 'sideguide.co');
+        ga('send', 'pageview');
 
-  <div id="wrap">
-  <div id="main" class="container marketing clearfix">
+    </script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="300">
 
-      <div id="sideguide" class="section">
-          <div id="iphone-container">
-              <div id="slides-container">
-                  <div id="slides">
-                      <img  src="/static/img/prototypImgs/JPEG/mockup_03252_4.jpg" alt="" />
-                      <img  src="/static/img/prototypImgs/JPEG/mockup_03252_15.jpg" alt="" />
-                      <img  src="/static/img/prototypImgs/JPEG/mockup_03252_16.jpg" alt="" />
-                      <img  src="/static/img/prototypImgs/JPEG/mockup_03252_19.jpg" alt="" />
-                      <img  src="/static/img/prototypImgs/JPEG/mockup_03252_6.jpg" alt="" />
-                      <img  src="/static/img/prototypImgs/JPEG/mockup_03252_8.jpg" alt="" />
-
-                  </div>
-              </div>
-          </div>
+<div id="wrap">
+    <div id="main" class="container marketing clearfix">
+        <div id="sideguide" class="section">
+            <div id="iphone-container">
+                <div id="slides-container">
+                    <div id="slides">
+                        <img  src="/static/img/prototypImgs/JPEG/mockup_03252_15.jpg" alt="" />
+                        <img  src="/static/img/prototypImgs/JPEG/mockup_03252_16.jpg" alt="" />
+                        <img  src="/static/img/prototypImgs/JPEG/mockup_03252_19.jpg" alt="" />
+                        <img  src="/static/img/prototypImgs/JPEG/mockup_03252_8.jpg" alt="" />
+                        <img  src="/static/img/prototypImgs/JPEG/mockup_03252_6.jpg" alt="" />
+                        <img  src="/static/img/prototypImgs/JPEG/mockup_03252_4.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
             <div class="header">
                 <h1 class="header-logo"><img src="/static/img/sideguidelogo-header.png" /> </h1>
-                <p class="lead">Connecting people to exhibits and landmarks.</p>
+                <p class="lead">Interactive tour guide <br>for exhibits and landmarks.</p>
                 <div id="mc_embed_signup">
-                <form action="http://getsideguide.us5.list-manage.com/subscribe/post?u=cc3f1c3b548018e9abb08aef0&amp;id=ff19a6ec81" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank" novalidate>
-                    <input type="email" value="" name="EMAIL" class="email input-xlarge" id="mce-EMAIL" placeholder="email address" required><br>
-                    <input type="submit" value="Know when it's ready" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success">
-                </form>
+                    <form action="http://getsideguide.us5.list-manage.com/subscribe/post?u=cc3f1c3b548018e9abb08aef0&amp;id=ff19a6ec81" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form" target="_blank" novalidate>
+                        <input type="email" value="" name="EMAIL" class="email input-xlarge" id="mce-EMAIL" placeholder="email address" required><br>
+                        <input type="submit" value="Know when it's ready" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success">
+                    </form>
                 </div>
                 <small>(don't worry, we hate spam too)</small>
             </div>
-          <div class="splashbar left">
-           <div href="#explorers" class="downarrow"></div>
-      </div>
-       </div>
-          <div id="explorers" class="section">
-                <h2 class="featurette-heading">
-                    Explorers,
-                    <span class="muted">rediscover your world</span>
-                </h2>
-                <div class="featurette-text">
-                    <div class="row demo-tiles">
-                        <div class="span3">
-                            <div class="tile">
-                                <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/map.png">
-                                <h3 class="tile-title">Experience</h3>
-                                <p>Know where the exhibits are.</p>
-                            </div>
-                        </div>
-                        <div class="span3">
-                            <div class="tile">
-                                <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/colors.png">
-                                <h3 class="tile-title">Personalize</h3>
-                                <p>Get suggestions on what to see next.</p>
-                            </div>
-                        </div>
-                        <div class="span3">
-                            <div class="tile">
-                                <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/time.png">
-                                <h3 class="tile-title">Limit</h3>
-                                <p>Finish a tour in a given amount time.</p>
-                            </div>
-                        </div>
-                        <div class="span3">
-                            <div class="tile">
-                                <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/book.png">
-                                <h3 class="tile-title">Record</h3>
-                                <p>Rate, save, and share the things you enjoy.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-              <div class="splashbar">
-               <div href="#guides" class="downarrow"></div>
-          </div>
-            </div>
-              <div id="guides" class="section">
-                  <h2 class="featurette-heading">
-                      Cuators,
-                      <span class="muted">a new kind of advertising</span>
-                  </h2>
-
-                  <div class="featurette-text">
-                      <div class="row demo-tiles">
-
-                          <div class="span3">
-                              <div class="tile">
-                                  <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/compass.png">
-                                  <h3 class="tile-title">Guide</h3>
-                                  <p>Create image, text, and audio tours.</p>
-                              </div>
-                          </div>
-
-                          <div class="span3">
-                              <div class="tile">
-                                  <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/clipboard.png">
-                                  <h3 class="tile-title">Catalogue</h3>
-                                  <p>Open your exhibits for browsing.</p>
-                              </div>
-                          </div>
-
-                          <div class="span3">
-                              <div class="tile">
-                                  <img class="tile-image" alt="" src="/static/packages/flat/images/illustrations/retina.png">
-                                  <h3 class="tile-title">Improve</h3>
-                                  <p>Get visitor analyitcs and feedback.</p>
-                              </div>
-                          </div>
-
-
-                          <div class="span3">
-                              <div class="tile">
-                                  <img class="tile-image big-illustration" alt="" src="/static/packages/flat/images/illustrations/mail.png">
-                                  <h3 class="tile-title">Connect</h3>
-                                  <p>Identify and build your community.</p>
-                              </div>
-                          </div>
-
-
-                      </div>
-
-                 </div>
-
-                 <div class="splashbar">
-                       <div href="#team" class="downarrow"></div>
-                  </div>
-           </div>
-        <div class="section" id="team">
-                <div class="hover-wrapper">
-                    <div class="bubbles hover-triggers span5">
-                        <div class="item tile">
-                            <a data-item="#karissa" href="http://rissarae.net" target="_blank"><img src="/static/img/people/karissa-small.png" /></a>
-                            <h4>Karissa</h4>
-                        </div>
-                        <div class="item tile">
-                            <a data-item="#serge" href="http://www.linkedin.com/pub/serge-chernetsky/1b/969/8a2" target="_blank">
-                                <img src="/static/img/people/serge-small.png" /></a>
-                            <h4>Serge</h4>
-                        </div>
-                        <div class="item tile">
-                            <a data-item="#mengyao" href="http://www.mengyaozhao.com/" target="_blank"><img src="/static/img/people/mengyao-small.png" /></a>
-                            <h4>Mengyao</h4>
-                        </div>
-                        <div class="item tile">
-                            <a data-item="#anhe" href="http://anheguo.com" target="_blank"><img src="/static/img/people/anhe-small.png" /></a>
-                            <h4>Anhe</h4>
-                        </div>
-                        <div class="item tile">
-                            <a data-item="#hayley" href="" target="_blank">
-                                <img src="/static/img/people/hayleyp.jpg" /></a>
-                            <h4>Hayley</h4>
-                        </div>
-                        <div class="item tile">
-                            <a data-item="#ashleigh" href="http://www.ashnero.com/" target="_blank"><img src="/static/img/people/ash-small.png" /></a>
-                            <h4>Ashleigh</h4>
-                        </div>
-
-
-                    </div>
-                </div>
-
-            <div class="hover-content span5">
-                <div id="background" class="details active">
-                    <h1>The Team<br></h1>
-                    <hr class="featurette-divider">
-
-                    <h3></h3>
-
-                    <hr class="featurette-divider">
-                    <p>
-                        Currently looking for <b>venture capital</b> to quit our day jobs and <b>make this happen</b>.
-                        Give us a shot by <b><a href="mailto:hello@mysideguide.com">scheduling a meeting</a></b>
-                    </p>
-                </div>
-                <div id="karissa" class="details">
-                    <h1>Karissa McKelvey <br><small>CEO, Principal Web Developer</small></h1>
-
-                    <p> Karissa is a web developer, computational social scientist, and
-                         experienced team player. Her patience and leadership skills bridge the gap between design and
-                        development teams. She enjoys spending her time bringing ideas to life in whiteboard-lined rooms.</p>
-                    <img src="/static/img/people/karissa.jpg" />
-                </div>
-                <div id="serge" class="details">
-                    <h1>Serge Chernetsky <br><small>CTO, Principal Software Developer</small></h1>
-                    <p> Serge has a passion for mobile development, algorithms, and software design.
-                        His wide array of skills acquired over various jobs and
-                        internships translates into technical know-how required to bring projects to fruition. </p>
-                    <img src="/static/img/people/serge.png" />
-
-                </div>
-                <div id="mengyao" class="details">
-                    <h1>Mengyao Zhao <br><small>User Experience Designer</small></h1>
-                    <p>Mengyao is a graduate student in Human-Computer Interaction Design.
-                        She is a Chinese Zeither player, a photographer, a flower lover, a UX designer and a design researcher.
-                        She is interested in Aesthetic Experience, Heritage Study and HCI Design Methods. She gains
-                        inspiration from music, art, and life.</p>
-                    <img src="/static/img/people/mengyao.jpg" />
-                </div>
-                <div id="anhe" class="details">
-                    <h1>Anhe Guo <br><small>User Experience Designer</small></h1>
-                    <p>Anhe is a graduate student in Human-Computer Interaction
-                    Design. Her inspiration comes from the positive influence that
-                   design and technology bring to the world on a personal,
-                    social or political level. She focuses this passion on designing and
-                   imagining a better world. </p>
-                    <img src="/static/img/people/Anhe.JPG" />
-                </div>
-
-                <div id="hayley" class="details">
-                    <h1>Hayley Plageman <br><small>Web Interaction and Graphic Designer </small></h1>
-                    <p>Hayley is pursuing a degree in Informatics with a concentration on
-                        graphic design and web development.  Her creative inspiration comes
-                        from a wide range of topics, including Permaculture, Philosophy, Fine
-                        Art, Art History, Cooking, and Photography.   She strives to use her
-                        expertise to express her ecological world view through digital
-                        artwork.</p>
-                    <img src="/static/img/people/hayleyp.jpg" />
-                </div>
-
-                <div id="ashleigh" class="details">
-                    <h1>Ashleigh Nero <br><small>Animation and Graphic Designer</small></h1>
-                    <p>After finishing a degree in composition from the Jacobs School of
-                        Music of Indiana University, Ashleigh found her interests shifting
-                        toward web, interactive design and animation. She has continued her
-                        education with courses in digital media production and hundreds of
-                        hours of self-teaching and practice. She strives to create media that
-                        are well-designed, artistic and delightful.</p>
-                    <img src="/static/img/people/ash.JPG" />
-
-                </div>
-            </div>
-
-            </div>
-       </div>
+        </div>
     </div>
-  </div>
-  {% include "browse/footer.html" %}
+</div>
+{% include "browse/footer.html" %}
 
-  </body>
+</body>
 </html>
