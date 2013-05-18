@@ -1,7 +1,6 @@
 django==1.5.1
 django-extensions
 python-dateutil
-numpy
 south
 django-tastypie
 django-social-auth
