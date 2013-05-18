@@ -129,11 +129,13 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django_extensions',
+    'autofixture',
     'browse',
     'registration',
     'common',
     'south',
-    'social_auth'
+    'social_auth',
+    'mobile'
 ]
 
 # A sample logging configuration. The only tangible logging
