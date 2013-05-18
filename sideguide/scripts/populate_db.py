@@ -4,38 +4,28 @@ from sideguide.registration.models import ActivationProfile
 from django.contrib.gis.geos import GEOSGeometry
 
 def run():
-    iuart = ActivationProfile.create_inactive_user(
-        username="IUArtMuseumCurator",
-        password="iuart",
-        email="iuart@gmail.com",
-        send_email=False
-    )
-    iuart.is_active = True
-    iuart.save()
+    iuart = User.objects.get(email="krmckelv@gmail.com")
 
-    org = Organization(name="IU Art Museum")
-    org.save()
-    org.owners.add(iuart)
+   
+    try:
+        org = Organization.objects.get(name="iuartmuseum")
+    except:
+        org = Organization(name="iuartmuseum")
+        org.save()
+        org.owners.add(iuart)
 
     hl = Collection(name="Highlight",
-               caption="The best of our gallery.",
                description=u"""This destinations features some of the best art from the
                Indiana University Art Museum. These pieces are on display every day
                unless they are borrowed for destinationss at other institutions.""",
                featured=True,
                created_by=iuart,
                org=org,
-               poly=GEOSGeometry("POLYGON((0 0, 1 0, 1 1, 0 1, 0 0))"),
                image="69.55.jpg")
-        
     hl.save()
-
 
     studio = Stop(name="The Studio",
                 created_by=iuart,
-                caption=u"""June 1934. One of the first major paintings acquired by
-                Henry Radford Hope in 1944 from the New York gallery of Paul
-                Rosenberg""",
                 description=u'''Along with Georges Braque's Napkin Ring, Pablo
                 Picasso's Studio was one of the first major paintings acquired
                 by Henry Radford Hope, former chair of Indiana University's fine
@@ -67,7 +57,6 @@ def run():
 
     servant = Stop(name="Servant Figure",
                created_by=iuart,
-                caption=u"""Old Kingdom, Dynasty 5, 2565-2420 BC. This statuette of a youthful servant is rare for several reasons: it departs from the frontal treatment characteristic of Egyptian sculpture; its execution is extraordinary delicate and refined; the state of preservation of its painted colors is exceptional; and the vivid expressiveness of the figure's face is remarkable, as well.""",
                 description=u'''Despite the fact that the man's arms and lower legs are lost, he clearly is shown in movement. His body leans forward and his knees are slightly bent, with the left one positioned forward. His arms would have reached forth, carrying most of the body's momentum. His stance indicates engagement in an activity, probably as a beer maker, bending over to strain mash with his hands through a sieve into a waist-high vat. 
 
 While the figure is generic, the sculptor rendered the face with unusual sensitivity. We notice the wide cheeks and full lips, rimmed with a ridge, and the extended cosmetic line at the eyes' outer corner (an innovation of the Old Kingdom artistic canon). The eyes look ahead, into the distance, with a gaze that was supposed to go beyond this mortal world. Such a gaze was usual in sculptures of this genre, but this figure's eyes glimmer with an alertness that, together with the hint of a smile on the lips, subtly distinguishes his countenance from the run-of-mill type. The general conventions observed in our statuette became established in the art of the Fifth Dynasty of ancient Egypt; but, in this case, we may also speak of an individual sculptor's remarkable artistry. For, of all known servant figures of the period, this one is certainly among the finest.''',
@@ -80,10 +69,6 @@ While the figure is generic, the sculptor rendered the face with unusual sensiti
 
     stops = Stop(name="Cup",
                 created_by=iuart,
-                caption=u"""This is surely one of the most masterful of the
-                elaborately carved cups made by the Kuba, a name referring
-                to a number of different but related groups living between
-                the Kasai and Sankuru river""",
                 description=u'''This is surely one of the most masterful of
                 the elaborately carved cups made by the Kuba, a name
                 referring to a number of different but related groups living
@@ -121,12 +106,10 @@ While the figure is generic, the sculptor rendered the face with unusual sensiti
     stops.save()
 
     sp = Collection(name="South Pacific",
-               caption="From the South Pacific",
-               description=u"""This destinations contains stopss 
+               description=u"""This destinations contains stops
                attributed to artists in the south pacific""",
                featured=False,
                created_by=iuart,
-               poly=GEOSGeometry("POLYGON((0 1,3 4,5 2, 1 1))"),
                org=org,
                image="81.32.4.jpg")
 
