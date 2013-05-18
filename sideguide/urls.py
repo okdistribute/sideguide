@@ -21,6 +21,7 @@ urlpatterns = patterns('',
 
      url(r'^$', "common.views.splash"),
      url(r'^', include("browse.urls")),
+     url(r'^m/', include("mobile.urls")),
 
     url(r'^api/', include(v1_api.urls)),
     url(r'^favicon\.ico$', RedirectView.as_view(url='/static/img/fav.ico')),
