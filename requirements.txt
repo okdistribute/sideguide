@@ -6,3 +6,4 @@ south
 django-tastypie
 django-social-auth
 psycopg2
+django-autofixture
