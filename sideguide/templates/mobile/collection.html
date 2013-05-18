@@ -1,9 +1,9 @@
 <div id="collection_{{coll.id}}">
     <div class="toolbar">
         <h1>{{coll.name}}</h1>
-        <a href="/m/ajax/{{user.username}}" 
-            class="slideright leftButton button">{{user.username}}</a>
-        <a href="/m/ajax/{{user.username}}/{{coll.id}}?view=map"
+        <a href="/m/ajax/{{org.name}}" 
+            class="slideright leftButton button">{{org.name}}</a>
+        <a href="/m/ajax/{{org.name}}/{{coll.id}}?view=map"
             class="button flipright"
             id="mapButton"><img src="/static/img/icons/location.png"
             class="icon"/></a>
@@ -12,7 +12,7 @@
         <ul class="edgetoedge scroll">
             {% for item in items %}
             <li>
-            <a href="/m/ajax/{{user.username}}/{{coll.id}}/{{item.id}}">
+            <a href="/m/ajax/{{org.name}}/{{coll.id}}/{{item.id}}">
                 <img src="/static/img/{{item.image}}" 
                      class="mobile-scroll-image"></a>
              </li>

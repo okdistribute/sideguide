@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>sideGUIDE</title>
-    <!--JQTouch--> 
+    <meta name="viewport" content="width=device-width">
+    <title>Sideguide</title>
     <script src="/static/packages/jqtouch/src/lib/zepto.min.js" type="text/javascript"
         charset="utf-8"></script>
     <script src="/static/packages/jqtouch/src/jqtouch.js" type="text/javascript"
@@ -11,9 +11,9 @@
         "/static/packages/jqtouch/themes/css/jqtouch.css";</style>
     <style type="text/css" media="screen">@import
         "/static/css/main.css";</style>
-    <!--soundmanager-->
-    <style type="text/css" media="screen">@import
-          "/static/packages/soundmanager/css/mp3-player-button.css";</style>
+    <style type="text/css" media="screen">@import "/static/css/main.css";</style>
+    <style type="text/css" media="screen">@import "/static/css/mobile.css";</style>
+    <style type="text/css" media="screen">@import "/static/packages/soundmanager/css/mp3-player-button.css";</style>
     <script src="/static/packages/soundmanager/script/soundmanager2.js"></script>
     <script type="text/javascript" src="/static/packages/soundmanager/script/mp3-player-button.js"></script>
     <script>
@@ -23,6 +23,7 @@
                   // SM2 is ready to play audio!
             }
         });
+
      var jQT = new $.jQTouch({
                     icon: 'jqtouch.png',
                     icon4: 'jqtouch4.png',
@@ -33,10 +34,9 @@
                     useAnimations: false,
                     useFastTouch: false
                 });
-        
     </script>
   </head>
-  <body>
+  <body ng-controller="FrameController">
     <div id="jqt" class="supports3d portrait">
         {% block content %}{% endblock %}
     </div>

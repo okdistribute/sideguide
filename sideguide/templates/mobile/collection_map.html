@@ -5,7 +5,7 @@
                 var item_id = $(this).data("itemid");
                 
                 if($("#thumb_" + item_id).hasClass("map_thumb_selected")) {
-                    var loc = "\/m/ajax/{{user.username}}/{{coll.id}}/" + item_id;
+                    var loc = "\/m/ajax/{{org.name}}/{{coll.id}}/" + item_id;
                     //jQT.showPageByHref(loc);
                 }
 
@@ -28,12 +28,12 @@
     </script>
     <div class="toolbar">
         <h1>{{coll.name}}</h1>
-        <a href="/m/ajax/{{user.username}}"
-            class="slideright leftButton button">{{user.username}}</a>
-        <a href="/m/ajax/{{user.username}}/{{coll.id}}?view=list" 
+        <a href="/m/ajax/{{org.name}}"
+            class="slideright leftButton button">{{org.name}}</a>
+        <a href="/m/ajax/{{org.name}}/{{coll.id}}?view=list" 
             class="button flipleft"
             id="mapButton"><img src="/static/img/icons/list.png"
-            height="30px"></img></a>
+            height="30px"/></a>
     </div>
     <div>
     <div style="background: black url('/static/img/map.jpg')
