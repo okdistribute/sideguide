@@ -1,0 +1,21 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@1.2.18
+3 info using node@v0.10.5
+4 verbose node symlink /usr/bin/node
+5 verbose read json /home/karissa/dev/sideguide/mobile/package.json
+6 error install Couldn't read dependencies
+7 error Error: ENOENT, open '/home/karissa/dev/sideguide/mobile/package.json'
+8 error If you need help, you may report this log at:
+8 error     <http://github.com/isaacs/npm/issues>
+8 error or email it to:
+8 error     <npm-@googlegroups.com>
+9 error System Linux 3.5.0-17-generic
+10 error command "/usr/bin/node" "/usr/bin/npm" "install"
+11 error cwd /home/karissa/dev/sideguide/mobile
+12 error node -v v0.10.5
+13 error npm -v 1.2.18
+14 error path /home/karissa/dev/sideguide/mobile/package.json
+15 error code ENOENT
+16 error errno 34
+17 verbose exit [ 34, true ]
