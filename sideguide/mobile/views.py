@@ -1,6 +1,6 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.contrib.auth.models import User
-from common.models import Organization, Collection, Stop
+from sideguide.common.models import Organization, Collection, Stop
 
 def view(request, orgname=None, coll_id=None, item_id=None, 
             template_name="browse/user.html"):
@@ -10,7 +10,7 @@ def view(request, orgname=None, coll_id=None, item_id=None,
 
     c = {}
     if not orgname:
-        return HttpResponseRedirect("/")
+        return redirect("/")
 
     if orgname:
         c["org"] = Organization.objects.get(name__iexact=orgname)

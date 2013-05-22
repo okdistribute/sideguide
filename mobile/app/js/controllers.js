@@ -2,10 +2,16 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('sideguide.controllers', [])
+    .controller('IndexControl', [function() {
 
-  }])
-  .controller('MyCtrl2', [function() {
 
-  }]);
+    }])
+    .controller('UserControl', [function() {
+
+    }])
+    .controller('FrameController', [function($scope) {
+        $scope.toggleMenu = function() {
+            $scope.menuopen = !$scope.menuopen;
+        }
+    }]);

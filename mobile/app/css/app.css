@@ -28,3 +28,10 @@
   content: "";
   padding: 0;
 }
+
+body >header, #main {
+    -webkit-transition: 0.3s -webkit-transform;
+}
+.menuopen {
+    -webkit-transform: translate3d(280px,0,0);
+}
